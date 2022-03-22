@@ -10,5 +10,9 @@
   ],
   "devDependencies": {
     "lerna": "^3.22.1"
+  },
+  "dependencies": {
+    "serverless-offline": "^8.5.0",
+    "typeorm": "^0.3.1"
   }
 }
