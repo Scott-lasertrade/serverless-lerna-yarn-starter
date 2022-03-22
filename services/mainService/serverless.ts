@@ -13,7 +13,6 @@ import type { AWS } from "@serverless/typescript";
 const serverlessConfiguration: AWS = {
   service: BaseServiceName,
   app: BaseServiceName,
-  variablesResolutionMode: "20210326",
   useDotenv: true,
   disabledDeprecations: ["CLI_OPTIONS_SCHEMA"],
   frameworkVersion: "2",
