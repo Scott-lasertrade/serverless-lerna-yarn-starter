@@ -1,4 +1,4 @@
-import { Connection, EntityManager } from 'typeorm';
+import { EntityManager } from 'typeorm';
 import {
     Account,
     CartItem,
@@ -8,7 +8,7 @@ import {
     Offer,
     Order,
 } from '@entities';
-import { estimatePrice, ItemDimension } from '@libs/apiTransvirtual';
+import { estimatePrice, ItemDimension } from '@shared/apiTransvirtual';
 import { AppError } from './appError';
 
 export const SECURITY_DEPOSIT_THRESHHOLD = 3000;
@@ -150,7 +150,7 @@ export const getTaxFromLineItems = (lineItems: LineItem[]) => {
 };
 
 export const getCartItemsAsOrders = async (
-    transactionalEntityManager: Connection | EntityManager,
+    transactionalEntityManager: EntityManager,
     cartItems: CartItem[],
     userId: string,
     authorizedUserId: string
@@ -315,7 +315,7 @@ export const getCartItemsAsOrders = async (
 };
 
 export const getPaymentDetails = async (
-    transactionalEntityManager: Connection | EntityManager,
+    transactionalEntityManager: EntityManager,
     listingId: number,
     listingVersion: number,
     offerId: number,
@@ -424,7 +424,7 @@ export const getPaymentDetails = async (
 };
 
 export const getShippingEstimate = async (
-    transactionalEntityManager: Connection | EntityManager,
+    transactionalEntityManager: EntityManager,
     listingId: number,
     address: any
 ) => {
@@ -487,7 +487,7 @@ export const getTaxAmt = (
 };
 
 export const setupLineItem = async (
-    transactionalEntityManager: Connection | EntityManager,
+    transactionalEntityManager: EntityManager,
     order: Order,
     type: string,
     newPrice: number,

@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 import 'typeorm-aurora-data-api-driver';
 import { RelationLoader } from 'typeorm/query-builder/RelationLoader';
-import * as config from '@shared/ormconfig';
+import config from '../ormconfig';
 
 export default class Database {
     private connectionManager: ConnectionManager;
@@ -48,6 +48,7 @@ export default class Database {
         connection.manager = connection.createEntityManager();
         // @ts-ignore
         connection.namingStrategy =
+            // @ts-ignore
             connection.options.namingStrategy || new DefaultNamingStrategy();
         // @ts-ignore
         connection.relationLoader = new RelationLoader(connection);

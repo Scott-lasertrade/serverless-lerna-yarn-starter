@@ -25,7 +25,7 @@ const getAttribute = (
 };
 
 const task = async () => {
-  let dbConn: Connection = await database.getConnection();
+  const dbConn: Connection = await database.getConnection();
 
   const config: CognitoIdentityProviderClientConfig = {
     region: "ap-southeast-2",
@@ -38,14 +38,14 @@ const task = async () => {
   const listUsersCommand = new ListUsersCommand(listUsersInput);
   const listOfUsers = await client.send(listUsersCommand);
 
-  let dbAccounts = await dbConn
+  const dbAccounts = await dbConn
     .createQueryBuilder(Account, "acc")
     .leftJoinAndSelect("acc.users", "user")
     .leftJoinAndSelect("user.login_history", "login_history")
     .getMany();
 
   const mergedAccounts = dbAccounts.map((account) => {
-    let mergedAccount = {
+    const acc = {
       account: account,
       primary_user: {
         ...account.users[0],
@@ -58,7 +58,7 @@ const task = async () => {
         ),
       },
     };
-    return mergedAccount;
+    return acc;
   });
 
   const mappedAccount = mergedAccounts.map((acc) => ({

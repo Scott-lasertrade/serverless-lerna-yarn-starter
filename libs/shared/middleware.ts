@@ -3,7 +3,7 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 
 import { formatJSONResponse } from './apiGateway';
 import { AppError } from './appError';
-import MiddlewareFunction = middy.MiddlewareFunction;
+import MiddlewareFunction = middy.MiddlewareFn;
 
 export const apiGatewayResponseMiddleware = (
     options: { enableErrorLogger?: boolean } = {}

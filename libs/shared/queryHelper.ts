@@ -1,8 +1,8 @@
-import { Connection, EntityTarget } from 'typeorm';
+import { EntityManager, EntityTarget } from 'typeorm';
 
 export const deleteById = async (
     id: number,
-    dbConn: Connection,
+    dbConn: EntityManager,
     Entity: EntityTarget<unknown>,
     EntityName: string
 ) => {
@@ -27,7 +27,7 @@ export const deleteById = async (
 };
 
 export const list = async (
-    dbConn: Connection,
+    dbConn: EntityManager,
     Entity: EntityTarget<unknown>,
     EntityName: string
 ) => {
@@ -44,7 +44,7 @@ export const list = async (
 };
 
 export const search = async (
-    dbConn: Connection,
+    dbConn: EntityManager,
     Entity: EntityTarget<unknown>,
     EntityName: string,
     fieldName: string,

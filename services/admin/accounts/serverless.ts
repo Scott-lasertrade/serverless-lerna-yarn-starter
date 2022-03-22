@@ -10,21 +10,29 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
   frameworkVersion: "2",
   custom: {
     ...SharedConfig,
-    webpack: {
-      webpackConfig: "webpack.config.js",
-      includeModules: true,
-      package: "yarn",
-    },
+    // bundle: {
+    //   aliases: [
+    //     { "@entities": "../../../libs/entities/index.ts" },
+    //     { "@subscribers": "../../../libs/entities/subscriptions.ts" },
+    //     { "@libs": "../../../libs" },
+    //     { "@shared": "../../../libs/shared" },
+    //   ],
+    //   excludeFiles: [".build/**.*"],
+    // },
+  },
+  package: {
+    individually: true,
   },
   plugins: [
+    // "serverless-plugin-typescript",
+    // "serverless-tscpaths",
     "serverless-bundle",
     "serverless-iam-roles-per-function",
-    "serverless-webpack",
   ],
   provider: {
     name: "aws",
     region: "ap-southeast-2",
-    runtime: "nodejs14.x",
+    runtime: "nodejs12.x",
     stage: "${opt:stage,'dev'}",
     timeout: 30,
 
@@ -41,7 +49,6 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
       DATABASE_NAME: "${self:custom.AURORA.DB_NAME}",
       REGION: "${self:provider.region}",
     },
-    lambdaHashingVersion: "20201221",
   },
   // import the function via paths
   functions: functions,

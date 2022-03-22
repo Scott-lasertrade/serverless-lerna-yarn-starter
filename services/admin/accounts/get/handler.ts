@@ -33,7 +33,7 @@ const task = async (event) => {
   }
   const accountId = Number(event.pathParameters.id);
 
-  let dbConn: Connection = await database.getConnection();
+  const dbConn: Connection = await database.getConnection();
 
   const account = await dbConn
     .createQueryBuilder(Account, "acc")

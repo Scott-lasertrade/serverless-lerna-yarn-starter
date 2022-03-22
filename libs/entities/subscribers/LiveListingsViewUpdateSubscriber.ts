@@ -1,13 +1,5 @@
-import {
-    EventSubscriber,
-    EntitySubscriberInterface,
-    UpdateEvent,
-} from 'typeorm';
-import {
-    Listing,
-    LiveListingsSearchView,
-    LiveListingsFuzzySearchView,
-} from '@entities';
+import { EventSubscriber, EntitySubscriberInterface } from 'typeorm';
+import { Listing } from '@entities';
 
 @EventSubscriber()
 export class LiveListingsViewUpdateSubscriber
@@ -17,7 +9,7 @@ export class LiveListingsViewUpdateSubscriber
         return Listing;
     }
 
-    async afterUpdate(event: UpdateEvent<Listing>) {
+    async afterUpdate() {
         // S.Y - TODO: find an efficent way to only update when listing goes from/to live OR
         // Migrate to lambda timed event for updates
         // if (
