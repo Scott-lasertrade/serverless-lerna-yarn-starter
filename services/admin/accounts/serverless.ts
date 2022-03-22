@@ -10,8 +10,17 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
   frameworkVersion: "2",
   custom: {
     ...SharedConfig,
+    webpack: {
+      webpackConfig: "webpack.config.js",
+      includeModules: true,
+      package: "yarn",
+    },
   },
-  plugins: ["serverless-bundle", "serverless-iam-roles-per-function"],
+  plugins: [
+    "serverless-bundle",
+    "serverless-iam-roles-per-function",
+    "serverless-webpack",
+  ],
   provider: {
     name: "aws",
     region: "ap-southeast-2",
