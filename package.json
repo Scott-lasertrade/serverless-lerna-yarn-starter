@@ -19,7 +19,7 @@
     "@hubspot/api-client": "^6.0.1-beta3",
     "@middy/core": "^2.5.7",
     "@middy/http-json-body-parser": "^2.5.7",
-    "@typescript-eslint/typescript-estree": "^5.16.0",
+    "@typescript-eslint/typescript-estree": "4.33.0",
     "aws-lambda": "^1.0.7",
     "axios": "^0.26.1",
     "file-type": "^17.1.1",
