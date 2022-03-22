@@ -22,7 +22,7 @@
     "@typescript-eslint/typescript-estree": "4.33.0",
     "aws-lambda": "^1.0.7",
     "axios": "^0.26.1",
-    "file-type": "^17.1.1",
+    "file-type": "16.5.3",
     "json-schema-to-ts": "^1.6.5",
     "serverless-offline": "^8.5.0",
     "typeorm": "0.2.38",
