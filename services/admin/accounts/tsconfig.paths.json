@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@entities": ["../../../libs/entities/index.ts"],
+      "@subscribers": ["../../../libs/entities/subscriptions.ts"],
+      "@libs/*": ["../../../libs/*"],
+      "@shared/*": ["../../../libs/shared/*"]
+    }
+  }
+}

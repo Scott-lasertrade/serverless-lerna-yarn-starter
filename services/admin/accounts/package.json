@@ -1,0 +1,17 @@
+{
+  "name": "accounts",
+  "version": "1.0.0",
+  "description": "Serverless aws-nodejs-typescript template",
+  "main": "serverless.ts",
+  "license": "MIT",
+  "scripts": {
+    "test": "serverless-bundle test"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.55.0"
+  },
+  "devDependencies": {
+    "@serverless/typescript": "2.55.0",
+    "serverless-bundle": "^1.9.0"
+  }
+}
