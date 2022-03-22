@@ -204,10 +204,8 @@ const CognitoResources = {
         },
       ],
       SupportedLoginProviders: {
-        "graph.facebook.com":
-          "${self:custom.COGNITO.SECRET.${self:provider.stage}.FACEBOOKAPPID}",
-        "accounts.google.com":
-          "${self:custom.COGNITO.SECRET.${self:provider.stage}.GOOGLEAPPID}",
+        "graph.facebook.com": process.env.FACEBOOKAPPID,
+        "accounts.google.com": process.env.GOOGLEAPPID,
       },
     },
   },
