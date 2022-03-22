@@ -98,8 +98,11 @@ const SharedConfig = {
       dev: BaseServiceName + "-${self:provider.stage}",
       prod: BaseServiceName + "-${self:provider.stage}",
     },
-    SECRET:
-      "${ssm:/aws/reference/secretsmanager/${self:provider.stage}/cognito/socials}",
+    SECRET: {
+      offline: "${ssm:/aws/reference/secretsmanager/dev/cognito/socials}",
+      dev: "${ssm:/aws/reference/secretsmanager/dev/cognito/socials}",
+      prod: "${ssm:/aws/reference/secretsmanager/prod/cognito/socials}",
+    },
     CALLBACKURLS: {
       offline: ["http://localhost:3000/auth/federated-sign-in"],
       dev: [

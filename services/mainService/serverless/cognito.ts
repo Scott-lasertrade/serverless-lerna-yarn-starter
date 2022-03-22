@@ -154,8 +154,10 @@ const CognitoResources = {
       },
       ProviderName: "Facebook",
       ProviderDetails: {
-        client_id: "${self:custom.COGNITO.SECRET.FACEBOOKAPPID}",
-        client_secret: "${self:custom.COGNITO.SECRET.FACEBOOKSECRET}",
+        client_id:
+          "${self:custom.COGNITO.SECRET.${self:provider.stage}.FACEBOOKAPPID}",
+        client_secret:
+          "${self:custom.COGNITO.SECRET.${self:provider.stage}.FACEBOOKSECRET}",
         authorize_scopes: "public_profile,email",
       },
       ProviderType: "Facebook",
@@ -174,8 +176,10 @@ const CognitoResources = {
       },
       ProviderName: "Google",
       ProviderDetails: {
-        client_id: "${self:custom.COGNITO.SECRET.GOOGLEAPPID}",
-        client_secret: "${self:custom.COGNITO.SECRET.GOOGLESECRET}",
+        client_id:
+          "${self:custom.COGNITO.SECRET.${self:provider.stage}.GOOGLEAPPID}",
+        client_secret:
+          "${self:custom.COGNITO.SECRET.${self:provider.stage}.GOOGLESECRET}",
         authorize_scopes: "profile email openid",
       },
       ProviderType: "Google",

@@ -219,7 +219,7 @@ const serverlessConfiguration: AWS = {
   provider: {
     name: "aws",
     region: "ap-southeast-2",
-    runtime: "nodejs14.x",
+    runtime: "nodejs12.x",
     stage: "${opt:stage,'dev'}",
     timeout: 30,
 
@@ -230,10 +230,6 @@ const serverlessConfiguration: AWS = {
       restApiRootResourceId: "${self:custom.API.ROOT}",
     },
 
-    eventBridge: {
-      useCloudFormation: true,
-    },
-
     // S.Y. Environment variables for ALL Lambdas
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
@@ -242,7 +238,6 @@ const serverlessConfiguration: AWS = {
       DATABASE_NAME: "${self:custom.AURORA.DB_NAME}",
       REGION: "${self:provider.region}",
     },
-    lambdaHashingVersion: "20201221",
   },
   // import the function via paths
   // functions,
