@@ -1,4 +1,4 @@
-export const BaseServiceName = 'lerna-poc';
+export const BaseServiceName = 'marketplace-backend';
 
 const SharedConfig = {
     enterprise: {
