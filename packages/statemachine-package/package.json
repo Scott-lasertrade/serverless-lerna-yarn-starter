@@ -1,0 +1,9 @@
+{
+    "name": "statemachine-package",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "@aws-sdk/client-sfn": "^3.55.0"
+    }
+}

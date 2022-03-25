@@ -1,1 +1,4 @@
 check_code_change: lerna
+
+after_deploy:
+    - echo "After deploy"

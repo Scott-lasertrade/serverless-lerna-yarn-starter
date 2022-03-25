@@ -1,0 +1,10 @@
+{
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "body": {
+        "id": 1,
+        "name": "A new category",
+        "parentId": 0
+    }
+}

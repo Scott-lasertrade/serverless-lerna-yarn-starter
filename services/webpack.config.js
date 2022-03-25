@@ -1,9 +1,18 @@
-import path from 'path';
-import slsw from 'serverless-webpack';
-import nodeExternals from 'webpack-node-externals';
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+// const sharedConfig = require('@shared/webpack-shared-config.ts');
 
-const webpackConfig = {
+// module.exports = sharedConfig;
+
+// import path from 'path';
+// import slsw from 'serverless-webpack';
+// import nodeExternals from 'webpack-node-externals';
+// import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+
+const path = require('path');
+const slsw = require('serverless-webpack');
+const nodeExternals = require('webpack-node-externals');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
+module.exports = {
     context: __dirname,
     mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
     entry: slsw.lib.entries,
@@ -17,7 +26,6 @@ const webpackConfig = {
         plugins: [
             new TsconfigPathsPlugin({
                 configFile: './tsconfig.paths.json',
-                baseUrl: './',
             }),
         ],
     },
@@ -36,7 +44,7 @@ const webpackConfig = {
         rules: [
             // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
             {
-                test: /\.(tsx?)$/,
+                test: /\.(ts|js)x?$/,
                 loader: 'ts-loader',
                 exclude: [
                     [

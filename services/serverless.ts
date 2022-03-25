@@ -1,14 +1,17 @@
 // import functions from './src/functions';
 
 // import StateMachines from './serverless/statemachines';
-import CognitoResources from './serverless/cognito';
-import AuroraResources from './serverless/aurora';
-import StorageResources from './serverless/s3';
-import SharedConfig, {
-    BaseServiceName,
-} from '../../libs/serverless-shared-custom';
+import CognitoResources from './mainService/serverless/cognito';
+import AuroraResources from './mainService/serverless/aurora';
+import StorageResources from './mainService/serverless/s3';
+import SharedConfig, { BaseServiceName } from '@libs/serverless-shared-custom';
 // import ServerlessWithStepFunctions from '@libs/typedServerlessStepFunction';
 import type { AWS } from '@serverless/typescript';
+
+import adminAccountFunctions from './admin/accounts/index';
+import adminCategoryFunctions from './admin/category/index';
+
+const functions = { ...adminAccountFunctions, ...adminCategoryFunctions };
 
 const serverlessConfiguration: AWS = {
     service: BaseServiceName,
@@ -18,6 +21,23 @@ const serverlessConfiguration: AWS = {
     frameworkVersion: '2',
     custom: {
         ...SharedConfig,
+        // stepFunctionsLocal: {
+        //     accountId: 101010101010,
+        //     region: 'ap-southeast-2',
+        //     lambdaEndpoint: 'http://localhost:3002',
+        //     TaskResourceMapping: {
+        //         RefreshListingViews:
+        //             'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-refreshListingViews',
+        //         ExpireOffer:
+        //             'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-expireOffer',
+        //         ReinstateListings:
+        //             'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-reinstateListings',
+        //     },
+        // },
+        // webpack: {
+        //     webpackConfig: './webpack.config.js',
+        //     includeModules: true,
+        // },
         output: {
             file: 'serverless-config.json',
         },
@@ -174,10 +194,22 @@ const serverlessConfiguration: AWS = {
         },
     },
     plugins: [
+        // 'serverless-step-functions',
+        // 'serverless-step-functions-local',
+        'serverless-offline-lambda',
+        'serverless-offline',
+        // 'serverless-offline-aws-eventbridge',
         'serverless-s3-local',
         'serverless-stack-output',
+        // 'serverless-plugin-scripts',
+        'serverless-iam-roles-per-function',
         'serverless-plugin-additional-stacks',
+        // 'serverless-plugin-split-stacks',
+        'serverless-bundle',
     ],
+    package: {
+        individually: true,
+    },
     provider: {
         name: 'aws',
         region: 'ap-southeast-2',
@@ -202,6 +234,8 @@ const serverlessConfiguration: AWS = {
         },
     },
     // import the function via paths
+    functions: functions,
+    // stepFunctions: StateMachines,
     resources: {
         Outputs: {
             AuthUserPoolId: {
@@ -219,7 +253,6 @@ const serverlessConfiguration: AWS = {
             AuthOauthDomain: {
                 Value: '${self:custom.COGNITO.OAUTHDOMAIN}',
             },
-            // S.Y: Not sure if we need this at the moment, as even if we pushed it, the front-end would need to understand which one to use.
             AuthCallBackUrls: {
                 Value: {
                     'Fn::Join': [

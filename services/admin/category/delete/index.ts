@@ -1,3 +1,4 @@
+import schema from './schema';
 import { handlerPath } from '@shared/handlerResolver';
 import { AWSFunction } from '@shared/lambda';
 import { customCors } from '@shared/customCors';
@@ -9,10 +10,15 @@ export default {
     events: [
         {
             http: {
-                method: 'get',
-                path: 'admin/accounts/get/{id}/orders/received',
+                method: 'post',
+                path: 'admin/category/delete',
                 cors: customCors,
                 authorizer: 'aws_iam',
+                request: {
+                    schema: {
+                        'application/json': schema,
+                    },
+                },
             },
         },
     ],
