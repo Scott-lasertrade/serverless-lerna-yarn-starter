@@ -3,7 +3,7 @@ import SharedConfig, { BaseServiceName } from '@libs/serverless-shared-custom';
 import ServerlessWithStepFunctions from '@shared/typedServerlessStepFunction';
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
-    service: BaseServiceName + '-accounts',
+    service: BaseServiceName + '-category',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',
