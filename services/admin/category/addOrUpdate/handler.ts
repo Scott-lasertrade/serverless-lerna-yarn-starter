@@ -52,6 +52,7 @@ const updateChildren = async (
 };
 
 const task = async (event) => {
+    console.log(event.body);
     const id = event.body.id;
     const name = event.body.name;
     const parentId = event.body.parentId;
