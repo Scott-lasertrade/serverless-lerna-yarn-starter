@@ -1,6 +1,6 @@
 import functions from './index';
 import SharedConfig, { BaseServiceName } from '@libs/serverless-shared-custom';
-import ServerlessWithStepFunctions from '@shared/typedServerlessStepFunction';
+import ServerlessWithStepFunctions from '@package/lambda-package';
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
     service: BaseServiceName + '-category',

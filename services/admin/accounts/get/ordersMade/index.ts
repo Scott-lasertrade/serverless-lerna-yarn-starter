@@ -1,5 +1,5 @@
 import { handlerPath } from '@shared/handlerResolver';
-import { AWSFunction } from '@shared/lambda';
+import { AWSFunction } from '@package/lambda-package';
 import { customCors } from '@shared/customCors';
 
 export default {
@@ -10,7 +10,7 @@ export default {
         {
             http: {
                 method: 'get',
-                path: 'admin/accounts/get/{id}/orders/made',
+                path: 'admin-accounts/get/{id}/orders/made',
                 cors: customCors,
                 authorizer: 'aws_iam',
             },

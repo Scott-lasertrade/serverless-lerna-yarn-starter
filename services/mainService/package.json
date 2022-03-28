@@ -19,7 +19,6 @@
     "devDependencies": {
         "@serverless/typescript": "2.55.0",
         "serverless-bundle": "^1.9.0",
-        "serverless-offline-lambda": "^1.0.6",
         "serverless-tscpaths": "0.0.6",
         "tsconfig-paths-webpack-plugin": "^3.5.2"
     }

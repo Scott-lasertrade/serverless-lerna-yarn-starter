@@ -1,6 +1,6 @@
 import schema from './schema';
 import { handlerPath } from '@shared/handlerResolver';
-import { AWSFunction } from '@shared/lambda';
+import { AWSFunction } from '@package/lambda-package';
 import { customCors } from '@shared/customCors';
 
 export default {
@@ -11,7 +11,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'admin/category/add-or-update',
+                path: 'admin-category/add-or-update',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

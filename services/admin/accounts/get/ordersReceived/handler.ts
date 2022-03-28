@@ -1,6 +1,6 @@
 import type { ValidatedEventAPIGatewayProxyEvent } from '@shared/apiGateway';
 import Database from '@shared/database';
-import { middyfy, handleTimeout } from '@shared/lambda';
+import { middyfy, handleTimeout } from '@package/lambda-package';
 import 'source-map-support/register';
 import 'typeorm-aurora-data-api-driver';
 import { Connection } from 'typeorm';

@@ -5,15 +5,14 @@ import CognitoResources from './mainService/serverless/cognito';
 import AuroraResources from './mainService/serverless/aurora';
 import StorageResources from './mainService/serverless/s3';
 import SharedConfig, { BaseServiceName } from '@libs/serverless-shared-custom';
-// import ServerlessWithStepFunctions from '@libs/typedServerlessStepFunction';
-import type { AWS } from '@serverless/typescript';
-
 import adminAccountFunctions from './admin/accounts/index';
 import adminCategoryFunctions from './admin/category/index';
 
 const functions = { ...adminAccountFunctions, ...adminCategoryFunctions };
 
-const serverlessConfiguration: AWS = {
+import ServerlessWithStepFunctions from '@package/lambda-package';
+
+const serverlessConfiguration: ServerlessWithStepFunctions = {
     service: BaseServiceName,
     app: BaseServiceName,
     useDotenv: true,
@@ -196,7 +195,7 @@ const serverlessConfiguration: AWS = {
     plugins: [
         // 'serverless-step-functions',
         // 'serverless-step-functions-local',
-        'serverless-offline-lambda',
+        // 'serverless-offline-lambda',
         'serverless-offline',
         // 'serverless-offline-aws-eventbridge',
         'serverless-s3-local',
