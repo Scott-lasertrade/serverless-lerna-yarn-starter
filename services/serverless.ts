@@ -11,6 +11,12 @@ import adminCategoryFunctions from './admin/category/index';
 const functions = { ...adminAccountFunctions, ...adminCategoryFunctions };
 
 import ServerlessWithStepFunctions from '@package/lambda-package';
+import Outputs from './mainService/serverless/outputs';
+import CognitoOutputs from './mainService/serverless/cognito-outputs';
+import AuroraOutputs from './mainService/serverless/aurora-outputs';
+import StorageOutputs from './mainService/serverless/s3-outputs';
+import APIGWOutputs from './mainService/serverless/apigateway-outputs';
+import APIGWResources from './mainService/serverless/apigateway';
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
     service: BaseServiceName,
@@ -33,13 +39,6 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         //             'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-reinstateListings',
         //     },
         // },
-        // webpack: {
-        //     webpackConfig: './webpack.config.js',
-        //     includeModules: true,
-        // },
-        output: {
-            file: 'serverless-config.json',
-        },
         s3: {
             host: 'localhost',
         },
@@ -48,35 +47,10 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
             apiGatewayStack: {
                 StackName: '${self:service}-${self:provider.stage}-apigateway',
                 Resources: {
-                    SharedApiGateway: {
-                        Type: 'AWS::ApiGateway::RestApi',
-                        Properties: {
-                            Name: '${self:service}-${self:provider.stage}',
-                        },
-                    },
+                    ...APIGWResources,
                 },
                 Outputs: {
-                    ApiGatewayRestApiId: {
-                        Description: 'Shared ApiGateway Id',
-                        Value: {
-                            Ref: 'SharedApiGateway',
-                        },
-                        Export: {
-                            Name: 'SHARED-API-ID',
-                        },
-                    },
-                    ApiGatewayRestApiRootResourceId: {
-                        Description: 'Shared ApiGateway root resource Id',
-                        Value: {
-                            'Fn::GetAtt': [
-                                'SharedApiGateway',
-                                'RootResourceId',
-                            ],
-                        },
-                        Export: {
-                            Name: 'SHARED-API-ROOT',
-                        },
-                    },
+                    ...APIGWOutputs,
                 },
             },
             // Stack name
@@ -87,24 +61,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
                     ...StorageResources,
                 },
                 Outputs: {
-                    ProductsBucketARN: {
-                        Description: 'The products bucket ARN',
-                        Value: {
-                            'Fn::GetAtt': ['ProductsBucket', 'Arn'],
-                        },
-                        Export: {
-                            Name: 'PRODUCT-BUCKET-ARN',
-                        },
-                    },
-                    ListingsBucketARN: {
-                        Description: 'The listings bucket ARN',
-                        Value: {
-                            'Fn::GetAtt': ['ListingsBucket', 'Arn'],
-                        },
-                        Export: {
-                            Name: 'LISTINGS-BUCKET-ARN',
-                        },
-                    },
+                    ...StorageOutputs,
                 },
             },
             auroraStack: {
@@ -113,25 +70,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
                     ...AuroraResources,
                 },
                 Outputs: {
-                    AuroraClusterARN: {
-                        Description: 'The aurora database ARN',
-                        Value: {
-                            'Fn::Sub':
-                                'arn:${AWS::Partition}:rds:${AWS::Region}:${AWS::AccountId}:cluster:${AuroraRDSCluster}',
-                        },
-                        Export: {
-                            Name: 'AURORA-ARN',
-                        },
-                    },
-                    AuroraClusterSecretARN: {
-                        Description: 'The aurora database secret ARN',
-                        Value: {
-                            Ref: 'AuroraAdminSecret',
-                        },
-                        Export: {
-                            Name: 'AURORA-SECRET-ARN',
-                        },
-                    },
+                    ...AuroraOutputs,
                 },
             },
             cognitoStack: {
@@ -140,54 +79,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
                     ...CognitoResources,
                 },
                 Outputs: {
-                    AuthUserPoolId: {
-                        Description: 'The Cognito User Pool',
-                        Value: { Ref: 'CognitoUserPoolHandel' },
-                        Export: {
-                            Name: 'COGNITO-USER-POOL',
-                        },
-                    },
-                    AuthIdentityPoolId: {
-                        Description: 'The Cognito Identity Pool',
-                        Value: { Ref: 'IdentityPool' },
-                        Export: {
-                            Name: 'COGNITO-IDENTITY-POOL',
-                        },
-                    },
-                    AuthUserPoolWebClientId: {
-                        Description: 'The Cognito User Pool Client',
-                        Value: { Ref: 'CognitoUserPoolClient' },
-                        Export: {
-                            Name: 'COGNITO-USER-POOL-CLIENT',
-                        },
-                    },
-                    AuthRegion: {
-                        Description: 'The Cognito User Pool Region',
-                        Value: {
-                            Ref: 'AWS::Region',
-                        },
-                        Export: {
-                            Name: 'COGNITO-REGION',
-                        },
-                    },
-                    AuthOauthDomain: {
-                        Description: 'The Cognito OAuth Domain',
-                        Value: {
-                            'Fn::Join': [
-                                '.',
-                                [
-                                    { Ref: 'CognitoUserPoolDomain' },
-                                    {
-                                        'Fn::Sub':
-                                            'auth.${AWS::Region}.amazoncognito.com',
-                                    },
-                                ],
-                            ],
-                        },
-                        Export: {
-                            Name: 'COGNITO-DOMAIN',
-                        },
-                    },
+                    ...CognitoOutputs,
                 },
             },
         },
@@ -195,12 +87,9 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     plugins: [
         // 'serverless-step-functions',
         // 'serverless-step-functions-local',
-        // 'serverless-offline-lambda',
         'serverless-offline',
         // 'serverless-offline-aws-eventbridge',
         'serverless-s3-local',
-        'serverless-stack-output',
-        // 'serverless-plugin-scripts',
         'serverless-iam-roles-per-function',
         'serverless-plugin-additional-stacks',
         // 'serverless-plugin-split-stacks',
@@ -236,57 +125,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     functions: functions,
     // stepFunctions: StateMachines,
     resources: {
-        Outputs: {
-            AuthUserPoolId: {
-                Value: '${self:custom.COGNITO.USERPOOLID.${self:provider.stage}}',
-            },
-            AuthIdentityPoolId: {
-                Value: '${self:custom.COGNITO.IDENTITYPOOLID.${self:provider.stage}}',
-            },
-            AuthUserPoolWebClientId: {
-                Value: '${self:custom.COGNITO.USERPOOLCLIENTID}',
-            },
-            AuthRegion: {
-                Value: '${self:custom.COGNITO.REGION}',
-            },
-            AuthOauthDomain: {
-                Value: '${self:custom.COGNITO.OAUTHDOMAIN}',
-            },
-            AuthCallBackUrls: {
-                Value: {
-                    'Fn::Join': [
-                        ',',
-                        '${self:custom.COGNITO.CALLBACKURLS.${self:provider.stage}}',
-                    ],
-                },
-            },
-            AuthLogoutUrls: {
-                Value: {
-                    'Fn::Join': [
-                        ',',
-                        '${self:custom.COGNITO.LOGOUTURLS.${self:provider.stage}}',
-                    ],
-                },
-            },
-            ApiName: {
-                Value: '${self:service}-${self:provider.stage}',
-            },
-            ApiEndpoint: {
-                Value: {
-                    'Fn::Join': [
-                        '',
-                        [
-                            'https://',
-                            '${self:custom.API.ID}',
-                            '.execute-api.${self:provider.region}.amazonaws.com/${self:provider.stage}',
-                        ],
-                    ],
-                },
-            },
-            ApiRegion: {
-                Value: '${self:provider.region}',
-            },
-        },
+        Outputs: { ...Outputs },
     },
 };
 
