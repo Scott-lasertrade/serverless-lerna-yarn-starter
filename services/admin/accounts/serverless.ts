@@ -9,18 +9,19 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     frameworkVersion: '2',
     custom: {
         ...SharedConfig,
-        custom: {
-            seed: {
-                incremental: {
-                    enabled: true,
-                    disabledFor: ['prod', 'staging'],
-                },
+        seed: {
+            incremental: {
+                enabled: true,
+                disabledFor: ['prod', 'staging'],
             },
         },
+        bundle: {
+            ignorePackages: ['pg-native'],
+        },
     },
-    package: {
-        individually: true,
-    },
+    // package: {
+    //     individually: true,
+    // },
     plugins: [
         'serverless-bundle',
         'serverless-iam-roles-per-function',

@@ -1,5 +1,5 @@
-import 'source-map-support/register';
-import 'typeorm-aurora-data-api-driver';
+// import 'source-map-support/register';
+// import 'typeorm-aurora-data-api-driver';
 import { SendEmailCommand, SESClient } from '@aws-sdk/client-ses';
 const sesClient = new SESClient({
     region: 'ap-southeast-2',

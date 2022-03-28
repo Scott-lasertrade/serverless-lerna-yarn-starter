@@ -8,7 +8,10 @@ import {
     Offer,
     Order,
 } from '@entities';
-import { estimatePrice, ItemDimension } from '@shared/apiTransvirtual';
+import {
+    estimatePrice,
+    ItemDimension,
+} from '../../packages/transvirtual-package';
 import { AppError } from './appError';
 
 export const SECURITY_DEPOSIT_THRESHHOLD = 3000;

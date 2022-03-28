@@ -1,0 +1,13 @@
+{
+    "name": "statemachine-package",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+        "@aws-sdk/client-cognito-identity-provider": "^3.56.0",
+        "@aws-sdk/client-ses": "^3.56.0",
+        "@aws-sdk/client-sfn": "^3.55.0",
+        "@hubspot/api-client": "^6.0.1-beta3",
+        "axios": "^0.26.1"
+    }
+}

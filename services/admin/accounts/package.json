@@ -1,26 +1,19 @@
 {
-  "name": "accounts",
-  "version": "1.0.0",
-  "description": "Serverless aws-nodejs-typescript template",
-  "main": "serverless.ts",
-  "license": "MIT",
-  "scripts": {
-    "test": "serverless-bundle test"
-  },
-  "dependencies": {
-    "@aws-sdk/client-cognito-identity-provider": "^3.55.0",
-    "@aws-sdk/client-sfn": "^3.55.0",
-    "@aws-sdk/s3-request-presigner": "^3.55.0",
-    "@typescript-eslint/typescript-estree": "4.33.0",
-    "serverless-iam-roles-per-function": "^3.2.0",
-    "serverless-plugin-typescript": "^2.1.1",
-    "serverless-webpack": "^5.6.1"
-  },
-  "devDependencies": {
-    "@serverless/typescript": "2.55.0",
-    "serverless-bundle": "^5.3.0",
-    "serverless-seed": "^0.3.15",
-    "serverless-tscpaths": "^0.0.6",
-    "tsconfig-paths-webpack-plugin": "^3.5.2"
-  }
+    "name": "accounts",
+    "version": "1.0.0",
+    "description": "Serverless aws-nodejs-typescript template",
+    "main": "serverless.ts",
+    "license": "MIT",
+    "scripts": {
+        "test": "serverless-bundle test"
+    },
+    "dependencies": {
+        "@typescript-eslint/typescript-estree": "4.33.0",
+        "serverless-iam-roles-per-function": "^3.2.0"
+    },
+    "devDependencies": {
+        "serverless-seed": "^0.3.15",
+        "serverless-tscpaths": "^0.0.6",
+        "tsconfig-paths-webpack-plugin": "^3.5.2"
+    }
 }
