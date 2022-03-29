@@ -73,7 +73,7 @@ const serverlessConfiguration: AWS = {
     provider: {
         name: 'aws',
         region: 'ap-southeast-2',
-        runtime: 'nodejs12.x',
+        runtime: 'nodejs14.x',
         stage: "${opt:stage,'dev'}",
         timeout: 30,
 

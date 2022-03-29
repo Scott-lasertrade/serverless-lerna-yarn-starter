@@ -12,7 +12,8 @@
         "serverless-iam-roles-per-function": "^3.2.0",
         "serverless-webpack": "^5.6.1",
         "source-map-support": "0.5.19",
-        "typeorm": "0.2.38"
+        "typeorm": "0.2.38",
+        "typeorm-aurora-data-api-driver": "2.3.1"
     },
     "devDependencies": {
         "serverless-seed": "^0.3.15",

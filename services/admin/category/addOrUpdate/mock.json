@@ -1,6 +1,8 @@
 {
     "headers": {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "AuthorizedUserId": "d3679259-5c17-48a4-b283-078d8072a783",
+        "CurrentUserId": "d3679259-5c17-48a4-b283-078d8072a783"
     },
     "body": {
         "id": 1,
