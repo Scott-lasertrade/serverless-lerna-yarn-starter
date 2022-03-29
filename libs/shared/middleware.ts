@@ -32,17 +32,13 @@ export const apiGatewayResponseMiddleware = (
             return;
         }
 
-        // const existingKeys = Object.keys(request.response);
-        // const isHttpResponse =
-        //     existingKeys.includes('statusCode') &&
-        //     existingKeys.includes('headers') &&
-        //     existingKeys.includes('body');
+        const existingKeys = Object.keys(request.response);
+        const isHttpResponse =
+            existingKeys.includes('statusCode') &&
+            existingKeys.includes('headers') &&
+            existingKeys.includes('body');
 
-        if (
-            'statusCode' in request.response &&
-            'headers' in request.response &&
-            'body' in request.response
-        ) {
+        if (isHttpResponse) {
             return;
         }
         const origin = request.event.headers.Origin;
