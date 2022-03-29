@@ -6,6 +6,7 @@ import { AppError } from '../../libs/shared/appError';
 import { apiGatewayResponseMiddleware } from '../../libs/shared/middleware';
 
 export const middyfy = (handler: Handler) => {
+    console.log('HI', handler);
     return middy(handler)
         .use(middyJsonBodyParser())
         .use(
