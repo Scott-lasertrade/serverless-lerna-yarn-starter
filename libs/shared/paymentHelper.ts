@@ -7,7 +7,7 @@ import {
     Listing,
     Offer,
     Order,
-} from '@entities';
+} from '../entities';
 import {
     estimatePrice,
     ItemDimension,
@@ -346,7 +346,11 @@ export const getPaymentDetails = async (
             .getOneOrFail();
 
         if (
-            !offer.account.users.map((u) => u.cognito_user_id).includes(buyerId)
+            !(
+                offer.account.users
+                    .map((u) => u.cognito_user_id)
+                    .indexOf(buyerId) !== -1
+            )
         ) {
             throw new AppError('Offer does not belong to this user.', 400);
         }
