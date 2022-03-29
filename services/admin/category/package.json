@@ -9,7 +9,10 @@
     },
     "dependencies": {
         "@typescript-eslint/typescript-estree": "4.33.0",
-        "serverless-iam-roles-per-function": "^3.2.0"
+        "serverless-iam-roles-per-function": "^3.2.0",
+        "serverless-webpack": "^5.6.1",
+        "source-map-support": "0.5.19",
+        "typeorm": "0.2.38"
     },
     "devDependencies": {
         "serverless-seed": "^0.3.15",
