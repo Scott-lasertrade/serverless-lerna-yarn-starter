@@ -1,4 +1,4 @@
-import { BaseServiceName } from './index';
+export const BaseServiceName = 'marketplace-backend';
 
 export const SharedConfig = {
     enterprise: {
