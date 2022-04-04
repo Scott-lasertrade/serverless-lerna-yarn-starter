@@ -1,12 +1,11 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from '@shared/apiGateway';
-import Database from '@shared/database';
-import { middyfy, handleTimeout } from '@package/lambda-package';
 import 'source-map-support/register';
-import { Category } from '@entities';
-import schema from './schema';
 import 'typeorm-aurora-data-api-driver';
+import { handleTimeout, middyfy } from '@medii/api-lambda';
+import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
+import { AppError } from '@medii/common';
+import { Database, Category } from '@medii/data';
 import { Connection, EntityManager } from 'typeorm';
-import { AppError } from '@shared/appError';
+import schema from './schema';
 
 const PG_UNIQUE_CONSTRAINT_VIOLATION = '23505';
 
@@ -85,7 +84,7 @@ const task = async (event) => {
         category.parent = parent;
         category.key = parent.key + '|' + name.toLowerCase().replace(' ', '_');
     } else {
-        category.parent_id = null;
+        category.parent_id = undefined;
         category.key = name.toLowerCase().replace(' ', '_');
     }
 
@@ -107,8 +106,10 @@ const task = async (event) => {
         });
     } catch (err) {
         console.log(err);
+        // @ts-ignore
         if (err && err.code === PG_UNIQUE_CONSTRAINT_VIOLATION) {
             throw new AppError(
+                // @ts-ignore
                 `Category must have unique children. SEE - ${err.detail}}`,
                 400
             );

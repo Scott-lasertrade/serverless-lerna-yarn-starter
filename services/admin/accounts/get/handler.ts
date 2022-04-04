@@ -1,8 +1,9 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from '@shared/apiGateway';
-import Database from '@shared/database';
-import { middyfy, handleTimeout } from '@package/lambda-package';
 import 'source-map-support/register';
 import 'typeorm-aurora-data-api-driver';
+import { handleTimeout, middyfy } from '@medii/api-lambda';
+import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
+import { AppError } from '@medii/common';
+import { Database, Account, User } from '@medii/data';
 import { Connection } from 'typeorm';
 import {
     CognitoIdentityProviderClient,
@@ -11,8 +12,6 @@ import {
     AdminGetUserCommand,
     AttributeType,
 } from '@aws-sdk/client-cognito-identity-provider';
-import { Account, User } from '@entities';
-import { AppError } from '@shared/appError';
 import schema from './schema';
 const database = new Database();
 
@@ -89,10 +88,18 @@ const task = async (event) => {
         ...account,
         primary_user: {
             ...primaryAccountUser,
-            email: getAttribute(user.UserAttributes, 'email'),
-            given_name: getAttribute(user.UserAttributes, 'given_name'),
-            family_name: getAttribute(user.UserAttributes, 'family_name'),
-            phone_number: getAttribute(user.UserAttributes, 'phone_number'),
+            email: user?.UserAttributes
+                ? getAttribute(user.UserAttributes, 'email')
+                : '',
+            given_name: user?.UserAttributes
+                ? getAttribute(user.UserAttributes, 'given_name')
+                : '',
+            family_name: user?.UserAttributes
+                ? getAttribute(user.UserAttributes, 'family_name')
+                : '',
+            phone_number: user?.UserAttributes
+                ? getAttribute(user.UserAttributes, 'phone_number')
+                : '',
         },
     };
 

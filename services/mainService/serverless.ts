@@ -4,9 +4,7 @@
 import CognitoResources from './serverless/cognito';
 import AuroraResources from './serverless/aurora';
 import StorageResources from './serverless/s3';
-import SharedConfig, {
-    BaseServiceName,
-} from '../../libs/serverless-shared-custom';
+import { BaseServiceName, SharedConfig } from '@medii/common';
 // import ServerlessWithStepFunctions from '@libs/typedServerlessStepFunction';
 import type { AWS } from '@serverless/typescript';
 import AuroraOutputs from './serverless/aurora-outputs';

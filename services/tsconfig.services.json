@@ -1,0 +1,17 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "declarationMap": true,
+        "emitDecoratorMetadata": true,
+        "module": "commonjs",
+        "noEmit": true,
+        "composite": true,
+        "sourceMap": true
+    },
+    "files": [],
+    "references": [{ "path": "./mainService" }],
+    "ts-node": {
+        "require": ["tsconfig-paths/register"]
+    }
+}

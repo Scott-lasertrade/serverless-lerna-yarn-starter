@@ -1,7 +1,5 @@
 import schema from './schema';
-import { handlerPath } from '@shared/handlerResolver';
-import { AWSFunction } from '@package/lambda-package';
-import { customCors } from '@shared/customCors';
+import { customCors, AWSFunction, handlerPath } from '@medii/api-lambda';
 
 export default {
     handler: `${handlerPath(__dirname)}/handler.main`,

@@ -1,8 +1,8 @@
 import functions from './index';
-import SharedConfig, { BaseServiceName } from '@libs/serverless-shared-custom';
-import ServerlessWithStepFunctions from '@package/lambda-package';
+import { BaseServiceName, SharedConfig } from '@medii/common';
+import type { AWS } from '@serverless/typescript';
 
-const serverlessConfiguration: ServerlessWithStepFunctions = {
+const serverlessConfiguration: AWS = {
     service: BaseServiceName + '-category',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
@@ -19,16 +19,12 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
             webpackConfig: './webpack.config.js',
             includeModules: true,
         },
-        // bundle: {
-        //     ignorePackages: ['pg-native'],
-        // },
     },
     package: {
         individually: true,
     },
     plugins: [
         'serverless-webpack',
-        // 'serverless-bundle',
         'serverless-iam-roles-per-function',
         'serverless-seed',
     ],

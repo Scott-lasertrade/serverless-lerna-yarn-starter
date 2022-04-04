@@ -1,7 +1,7 @@
 {
-    "name": "main",
+    "name": "@medii/main-service",
     "version": "1.0.0",
-    "description": "Serverless aws-nodejs-typescript template",
+    "description": "Serverless main components",
     "main": "serverless.ts",
     "license": "MIT",
     "scripts": {
@@ -11,7 +11,7 @@
         "test": "serverless-bundle test"
     },
     "dependencies": {
-        "sample": "^0.0.1",
+        "@medii/common": "^1.0.0",
         "serverless-plugin-additional-stacks": "^1.6.0",
         "serverless-s3-local": "^0.6.22",
         "serverless-stack-output": "^0.2.3"

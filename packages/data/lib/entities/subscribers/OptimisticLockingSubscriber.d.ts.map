@@ -1,0 +1,1 @@
+{"version":3,"file":"OptimisticLockingSubscriber.d.ts","sourceRoot":"","sources":["../../../src/entities/subscribers/OptimisticLockingSubscriber.ts"],"names":[],"mappings":"AAAA,OAAO,EAEH,yBAAyB,EACzB,WAAW,EACX,WAAW,EACd,MAAM,SAAS,CAAC;AAGjB,qBACa,2BAA4B,YAAW,yBAAyB;IACzE,YAAY,CAAC,KAAK,EAAE,WAAW,CAAC,GAAG,CAAC;IAyBpC,YAAY,CAAC,KAAK,EAAE,WAAW,CAAC,GAAG,CAAC;CAwBvC"}

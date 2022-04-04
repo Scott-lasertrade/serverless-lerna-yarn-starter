@@ -1,0 +1,1 @@
+{"version":3,"file":"OptimisticLockVersionMismatchError.d.ts","sourceRoot":"","sources":["../../../src/entities/subscribers/OptimisticLockVersionMismatchError.ts"],"names":[],"mappings":"AAAA,qBAAa,kCAAmC,SAAQ,KAAK;IACzD,IAAI,SAAwC;gBAExC,MAAM,EAAE,MAAM,EACd,eAAe,EAAE,MAAM,EACvB,aAAa,EAAE,MAAM;CAS5B"}

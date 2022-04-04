@@ -1,0 +1,17 @@
+{
+    "extends": "../tsconfig.base.json",
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "outDir": "lib",
+        "rootDir": "src",
+        "baseUrl": "./",
+        "paths": {
+            "@medii/common": ["../common/src"],
+            "@medii/data": ["../data/src"]
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"],
+    "references": [{ "path": "../common" }, { "path": "../data" }]
+}

@@ -2,11 +2,10 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@entities": ["../../../libs/entities/index.ts"],
-            "@subscribers": ["../../../libs/entities/subscriptions.ts"],
-            "@libs/*": ["../../../libs/*"],
-            "@shared/*": ["../../../libs/shared/*"],
-            "@package/*": ["../../../packages/*"]
+            "@medii/api-common": ["../../../packages/api/common/src"],
+            "@medii/api-lambda": ["../../../packages/api/lambda/src"],
+            "@medii/data": ["../../../packages/data/src"],
+            "@medii/common": ["../../../packages/common/src"]
         }
     }
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"CommonEntity.d.ts","sourceRoot":"","sources":["../../../src/entities/utils/CommonEntity.ts"],"names":[],"mappings":"AAAA,OAAO,EAEH,UAAU,EAKb,MAAM,SAAS,CAAC;AAEjB,qBACa,YAAa,SAAQ,UAAU;gBAC5B,EAAE,CAAC,EAAE,MAAM;IAQvB,EAAE,CAAC,EAAE,MAAM,CAAC;IAGZ,SAAS,EAAE,IAAI,CAAC;IAGhB,UAAU,EAAE,MAAM,CAAC;IAGnB,UAAU,EAAE,IAAI,CAAC;IAGjB,UAAU,EAAE,MAAM,CAAC;CACtB"}

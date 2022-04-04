@@ -1,0 +1,1 @@
+{"version":3,"file":"ImageEntity.d.ts","sourceRoot":"","sources":["../../../src/entities/utils/ImageEntity.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,YAAY,EAAE,MAAM,gBAAgB,CAAC;AAE9C,qBACa,WAAY,SAAQ,YAAY;IAEzC,YAAY,EAAE,IAAI,CAAC;IAGnB,MAAM,EAAE,MAAM,CAAC;IAGf,MAAM,EAAE,MAAM,CAAC;IAGf,GAAG,EAAE,MAAM,CAAC;IAGZ,KAAK,EAAE,MAAM,CAAC;IAGd,WAAW,EAAE,MAAM,CAAC;CACvB"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"UsageType.d.ts","sourceRoot":"","sources":["../../../src/entities/entity/UsageType.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AACpC,OAAO,EAAE,KAAK,EAAE,MAAM,SAAS,CAAC;AAEhC,OAAO,EAAE,YAAY,EAAE,MAAM,uBAAuB,CAAC;AAErD,qBACa,SAAU,SAAQ,YAAY;IAEvC,IAAI,EAAE,MAAM,CAAC;IAGb,QAAQ,EAAE,OAAO,EAAE,CAAC;IAGpB,MAAM,EAAE,KAAK,EAAE,CAAC;CACnB"}

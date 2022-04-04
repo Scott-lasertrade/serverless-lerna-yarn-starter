@@ -1,11 +1,10 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from '@shared/apiGateway';
-import Database from '@shared/database';
-import { middyfy, handleTimeout } from '@package/lambda-package';
 import 'source-map-support/register';
 import 'typeorm-aurora-data-api-driver';
+import { handleTimeout, middyfy } from '@medii/api-lambda';
+import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
+import { AppError } from '@medii/common';
+import { Database, Offer } from '@medii/data';
 import { Connection } from 'typeorm';
-import { Offer } from '@entities';
-import { AppError } from '@shared/appError';
 import schema from './schema';
 const database = new Database();
 

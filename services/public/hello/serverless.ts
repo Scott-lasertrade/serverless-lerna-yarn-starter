@@ -1,9 +1,9 @@
 import functions from './index';
-import SharedConfig, { BaseServiceName } from '@libs/serverless-shared-custom';
-import ServerlessWithStepFunctions from '@package/lambda-package';
+import { BaseServiceName, SharedConfig } from '@medii/common';
+import type { AWS } from '@serverless/typescript';
 
-const serverlessConfiguration: ServerlessWithStepFunctions = {
-    service: BaseServiceName + '-accounts',
+const serverlessConfiguration: AWS = {
+    service: BaseServiceName + '-hello',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',

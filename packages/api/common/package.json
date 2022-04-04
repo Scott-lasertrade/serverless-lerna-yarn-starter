@@ -1,0 +1,20 @@
+{
+    "name": "@medii/api-common",
+    "version": "1.0.0",
+    "main": "lib/index.js",
+    "license": "MIT",
+    "dependencies": {
+        "aws-lambda": "^1.0.7",
+        "@middy/core": "^2.5.7",
+        "json-schema-to-ts": "^1.6.5",
+        "@medii/common": "^1.0.0"
+    },
+    "scripts": {
+        "build": "run-s clean build:tsc",
+        "build:tsc": "tsc -b"
+    },
+    "devDependencies": {
+        "ts-node": "^8.6.2",
+        "@types/aws-lambda": "^8.10.71"
+    }
+}

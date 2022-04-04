@@ -1,0 +1,1 @@
+{"version":3,"file":"OfferRelationView.d.ts","sourceRoot":"","sources":["../../../src/entities/views/OfferRelationView.ts"],"names":[],"mappings":"AAEA,qBA2Ba,iBAAiB;IAE1B,QAAQ,EAAE,MAAM,CAAC;IAGjB,YAAY,EAAE,MAAM,CAAC;IAGrB,UAAU,EAAE,MAAM,CAAC;IAGnB,cAAc,EAAE,MAAM,CAAC;IAGvB,UAAU,EAAE,MAAM,CAAC;IAGnB,YAAY,EAAE,MAAM,CAAC;IAGrB,QAAQ,EAAE,MAAM,CAAC;IAGjB,SAAS,EAAE,MAAM,CAAC;CACrB"}

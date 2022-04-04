@@ -1,8 +1,8 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from '@shared/apiGateway';
-import Database from '@shared/database';
-import { middyfy, handleTimeout } from '@package/lambda-package';
 import 'source-map-support/register';
 import 'typeorm-aurora-data-api-driver';
+import { handleTimeout, middyfy } from '@medii/api-lambda';
+import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
+import { Database, Account } from '@medii/data';
 import { Connection } from 'typeorm';
 import {
     CognitoIdentityProviderClient,
@@ -11,7 +11,6 @@ import {
     ListUsersCommand,
     AttributeType,
 } from '@aws-sdk/client-cognito-identity-provider';
-import { Account } from '@entities';
 import schema from './schema';
 
 const database = new Database();
@@ -38,7 +37,7 @@ const task = async () => {
         UserPoolId: process.env.COGNITO_USER_POOL_ID,
     };
     const listUsersCommand = new ListUsersCommand(listUsersInput);
-    const listOfUsers = await client.send(listUsersCommand);
+    const listOfUsers = (await client.send(listUsersCommand)).Users;
 
     const dbAccounts = await dbConn
         .createQueryBuilder(Account, 'acc')
@@ -46,18 +45,22 @@ const task = async () => {
         .leftJoinAndSelect('user.login_history', 'login_history')
         .getMany();
 
+    const primaryUser = listOfUsers?.find(
+        (usr) =>
+            usr.Attributes?.find((att) => (att?.Name ?? '') === 'sub')
+                ?.Value === dbAccounts[0].users[0].cognito_user_id
+    );
+
     const mergedAccounts = dbAccounts.map((account) => {
         const acc = {
             account: account,
             primary_user: {
                 ...account.users[0],
-                ...listOfUsers.Users.find(
+                ...listOfUsers?.find(
                     (cogUser) =>
-                        (cogUser.Attributes?.length > 0
-                            ? cogUser.Attributes.find(
-                                  (attr) => (attr.Name = 'sub')
-                              ).Value ?? ''
-                            : '') === account.users[0].cognito_user_id
+                        cogUser?.Attributes ??
+                        cogUser?.Attributes?.find((attr) => attr.Name === 'sub')
+                            ?.Value === account.users[0].cognito_user_id
                 ),
             },
         };
@@ -68,16 +71,18 @@ const task = async () => {
         ...acc.account,
         primary_user: {
             id: acc.primary_user.cognito_user_id,
-            email: getAttribute(acc.primary_user.Attributes, 'email'),
-            given_name: getAttribute(acc.primary_user.Attributes, 'given_name'),
-            family_name: getAttribute(
-                acc.primary_user.Attributes,
-                'family_name'
-            ),
-            phone_number: getAttribute(
-                acc.primary_user.Attributes,
-                'phone_number'
-            ),
+            email: acc?.primary_user?.Attributes
+                ? getAttribute(acc.primary_user.Attributes, 'email')
+                : '',
+            given_name: acc?.primary_user?.Attributes
+                ? getAttribute(acc.primary_user.Attributes, 'given_name')
+                : '',
+            family_name: acc?.primary_user?.Attributes
+                ? getAttribute(acc.primary_user.Attributes, 'family_name')
+                : '',
+            phone_number: acc?.primary_user?.Attributes
+                ? getAttribute(acc.primary_user.Attributes, 'phone_number')
+                : '',
             last_login:
                 acc.primary_user.login_history?.length > 0
                     ? acc.primary_user.login_history.reduce((a, b) =>

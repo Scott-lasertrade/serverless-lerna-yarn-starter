@@ -1,0 +1,1 @@
+{"version":3,"file":"1635991619634-seedCategories.d.ts","sourceRoot":"","sources":["../../../src/entities/migration/1635991619634-seedCategories.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,kBAAkB,EAAE,WAAW,EAAE,MAAM,SAAS,CAAC;AAE1D,qBAAa,2BAA4B,YAAW,kBAAkB;IACrD,EAAE,CAAC,WAAW,EAAE,WAAW,GAAG,OAAO,CAAC,IAAI,CAAC;IAuB3C,IAAI,CAAC,WAAW,EAAE,WAAW,GAAG,OAAO,CAAC,IAAI,CAAC;CAsC7D"}

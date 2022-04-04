@@ -1,0 +1,20 @@
+{
+    "name": "@medii/data",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "dependencies": {
+        "typeorm": "0.2.38",
+        "typeorm-aurora-data-api-driver": "2.3.1"
+    },
+    "scripts": {
+        "build": "run-s clean build:tsc",
+        "build:tsc": "tsc -b"
+    },
+    "devDependencies": {
+        "ts-node": "^8.6.2"
+    }
+}

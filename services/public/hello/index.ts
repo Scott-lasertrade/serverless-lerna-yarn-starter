@@ -2,7 +2,7 @@
 // |-------- Public ---------|
 // |_________________________|
 //      Category
-import hello from './src';
+import hello from './handler';
 
 const functions = {
     // Public

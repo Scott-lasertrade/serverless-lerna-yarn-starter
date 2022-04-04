@@ -1,0 +1,16 @@
+{
+    "name": "@medii/common",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "scripts": {
+        "build": "run-s clean build:tsc",
+        "build:tsc": "tsc -b"
+    },
+    "devDependencies": {
+        "ts-node": "^8.6.2"
+    }
+}

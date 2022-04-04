@@ -1,0 +1,19 @@
+{
+    "name": "@medii/statemachine",
+    "version": "1.0.0",
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "@aws-sdk/client-sfn": "^3.55.0"
+    },
+    "scripts": {
+        "build": "run-s clean build:tsc",
+        "build:tsc": "tsc -b"
+    },
+    "devDependencies": {
+        "ts-node": "^8.6.2"
+    }
+}

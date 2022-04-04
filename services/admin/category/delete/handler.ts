@@ -1,16 +1,16 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from '@shared/apiGateway';
-import Database from '@shared/database';
-import { middyfy, handleTimeout } from '@package/lambda-package';
 import 'source-map-support/register';
-import { Category } from '@entities';
-import schema from './schema';
 import 'typeorm-aurora-data-api-driver';
+import { handleTimeout, middyfy } from '@medii/api-lambda';
+import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
+import { Database, Category } from '@medii/data';
 import { Connection, DeleteResult } from 'typeorm';
+import schema from './schema';
+
 const database = new Database();
 
 const task = async (event) => {
     const id = event.body.id;
-    let deletedCategories: DeleteResult[];
+    let deletedCategories: DeleteResult[] = [];
 
     const dbConn: Connection = await database.getConnection();
     await dbConn.transaction(async (transactionalEntityManager) => {
@@ -35,12 +35,14 @@ const task = async (event) => {
             const category = new Category(res.id);
             return category;
         });
-        deletedCategories = await Promise.all(
-            childCategories.map(async (cat: Category) => {
-                const categoryRepository =
-                    transactionalEntityManager.getRepository(Category);
-                return await categoryRepository.delete(cat);
-            })
+        deletedCategories.concat(
+            await Promise.all(
+                childCategories.map(async (cat: Category) => {
+                    const categoryRepository =
+                        transactionalEntityManager.getRepository(Category);
+                    return await categoryRepository.delete(cat);
+                })
+            )
         );
     });
 

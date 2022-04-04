@@ -17,7 +17,7 @@
         "esModuleInterop": true,
         "noEmit": true
     },
-    "include": ["./**/*.ts", "../admin/**/*"],
+    "include": ["src/**/*.ts", "./**/*.ts", "../admin/**/*"],
     "exclude": [
         ".build/**/*",
         "node_modules/**/*",

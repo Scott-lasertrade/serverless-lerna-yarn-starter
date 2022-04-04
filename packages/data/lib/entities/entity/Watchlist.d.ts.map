@@ -1,0 +1,1 @@
+{"version":3,"file":"Watchlist.d.ts","sourceRoot":"","sources":["../../../src/entities/entity/Watchlist.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AACpC,OAAO,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AACpC,OAAO,EAAE,uBAAuB,EAAE,MAAM,kCAAkC,CAAC;AAE3E,qBACa,SAAU,SAAQ,uBAAuB;IAElD,OAAO,EAAE,OAAO,CAAC;IAGjB,OAAO,EAAE,OAAO,CAAC;CACpB"}

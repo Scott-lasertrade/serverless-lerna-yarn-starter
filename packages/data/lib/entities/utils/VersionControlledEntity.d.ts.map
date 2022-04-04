@@ -1,0 +1,1 @@
+{"version":3,"file":"VersionControlledEntity.d.ts","sourceRoot":"","sources":["../../../src/entities/utils/VersionControlledEntity.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,YAAY,EAAE,MAAM,gBAAgB,CAAC;AAE9C,qBACa,uBAAwB,SAAQ,YAAY;gBACzC,EAAE,CAAC,EAAE,MAAM,EAAE,OAAO,CAAC,EAAE,MAAM;IAOzC,OAAO,CAAC,EAAE,MAAM,CAAC;IAGjB,YAAY,EAAE,IAAI,CAAC;CACtB"}

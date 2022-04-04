@@ -1,31 +1,28 @@
 {
-    "extends": "./tsconfig.paths.json",
+    "extends": "../../tsconfig.services.json",
     "compilerOptions": {
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "forceConsistentCasingInFileNames": true,
-        "lib": ["ES2020"],
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
         "outDir": "lib",
-        "removeComments": true,
-        "sourceMap": true,
-        "target": "ES2020",
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "noEmit": true
+        "baseUrl": ".",
+        "paths": {
+            "@medii/api-common": ["../../../packages/api/common/src"],
+            "@medii/api-lambda": ["../../../packages/api/lambda/src"],
+            "@medii/data": ["../../../packages/data/src"],
+            "@medii/common": ["../../../packages/common/src"]
+        }
     },
-    "include": ["./**/*.ts", "../../../libs/**/*"],
+    "include": ["./**/*.ts"],
     "exclude": [
         "node_modules/**/*",
         ".serverless/**/*",
         ".webpack/**/*",
-        "_warmup/**/*",
-        ".vscode/**/*"
+        ".build/**/*",
+        "**/__tests__/*",
+        "**/__e2e__/*"
     ],
-    "ts-node": {
-        "require": ["tsconfig-paths/register"]
-    }
+    "references": [
+        { "path": "../../../packages/common" },
+        { "path": "../../../packages/api/common" },
+        { "path": "../../../packages/api/lambda" },
+        { "path": "../../../packages/data" }
+    ]
 }

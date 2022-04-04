@@ -1,0 +1,1 @@
+{"version":3,"file":"Dimension.d.ts","sourceRoot":"","sources":["../../../src/entities/entity/Dimension.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,YAAY,EAAE,MAAM,uBAAuB,CAAC;AAErD,qBACa,SAAU,SAAQ,YAAY;IAEvC,MAAM,EAAE,MAAM,CAAC;IAGf,MAAM,EAAE,MAAM,CAAC;IAGf,MAAM,EAAE,MAAM,CAAC;IAGf,KAAK,EAAE,MAAM,CAAC;CACjB"}
