@@ -14,9 +14,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppError = exports.BaseServiceName = void 0;
+exports.AppError = void 0;
 __exportStar(require("./shared-custom-config"), exports);
-exports.BaseServiceName = 'marketplace-backend';
 class AppError extends Error {
     constructor(message = '', statusCode = 400) {
         super(message);

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SharedConfig = void 0;
-const index_1 = require("./index");
+exports.SharedConfig = exports.BaseServiceName = void 0;
+exports.BaseServiceName = 'marketplace-backend';
 exports.SharedConfig = {
     enterprise: {
         collectLambdaLogs: false,
@@ -66,9 +66,9 @@ exports.SharedConfig = {
     },
     COGNITO: {
         USERPOOLNAME: {
-            offline: index_1.BaseServiceName + '-dev',
-            dev: index_1.BaseServiceName + '-${self:provider.stage}',
-            prod: index_1.BaseServiceName + '-${self:provider.stage}',
+            offline: 'marketplace-backend-dev',
+            dev: 'marketplace-backend-${self:provider.stage}',
+            prod: 'marketplace-backend-${self:provider.stage}',
         },
         USERPOOLID: {
             offline: 'ap-southeast-2_1q0PND3QW',
@@ -90,14 +90,14 @@ exports.SharedConfig = {
             'Fn::ImportValue': 'COGNITO-DOMAIN',
         },
         IDENTITYPOOLNAME: {
-            offline: index_1.BaseServiceName + '-dev',
-            dev: index_1.BaseServiceName + '-${self:provider.stage}',
-            prod: index_1.BaseServiceName + '-${self:provider.stage}',
+            offline: 'marketplace-backend-dev',
+            dev: 'marketplace-backend-${self:provider.stage}',
+            prod: 'marketplace-backend-${self:provider.stage}',
         },
         DOMAINNAME: {
-            offline: index_1.BaseServiceName + '-dev',
-            dev: index_1.BaseServiceName + '-${self:provider.stage}',
-            prod: index_1.BaseServiceName + '-${self:provider.stage}',
+            offline: 'marketplace-backend-dev',
+            dev: 'marketplace-backend-${self:provider.stage}',
+            prod: 'marketplace-backend-${self:provider.stage}',
         },
         CALLBACKURLS: {
             offline: ['http://localhost:3000/auth/federated-sign-in'],
@@ -126,11 +126,11 @@ exports.SharedConfig = {
         },
     },
     STORAGE: {
-        PRODUCTBUCKETNAME: index_1.BaseServiceName + '-${self:provider.stage}-products-bucket',
+        PRODUCTBUCKETNAME: 'marketplace-backend-${self:provider.stage}-products-bucket',
         PRODUCTBUCKETARN: {
             'Fn::ImportValue': 'PRODUCT-BUCKET-ARN',
         },
-        LISTINGSBUCKETNAME: index_1.BaseServiceName + '-${self:provider.stage}-listings-bucket',
+        LISTINGSBUCKETNAME: 'marketplace-backend-${self:provider.stage}-listings-bucket',
         LISTINGSBUCKETARN: {
             'Fn::ImportValue': 'LISTINGS-BUCKET-ARN',
         },
