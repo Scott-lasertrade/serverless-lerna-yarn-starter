@@ -20,5 +20,5 @@
         "ts-node": "^8.6.2",
         "tsconfig-paths-webpack-plugin": "^3.5.2"
     },
-    "gitHead": "63dd850d17126737d565d822617627d17e98eea2"
+    "gitHead": "6d202781aea6df66e66318ccfd7b3f0c5ea75f78"
 }
