@@ -2,9 +2,9 @@
 // import Database from '@shared/database';
 import 'source-map-support/register';
 import 'typeorm-aurora-data-api-driver';
+import { AppError } from '@medii/common';
 import { handleTimeout, middyfy } from '@medii/api-lambda';
 import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
-import { AppError } from '@medii/common';
 import { Database, Listing } from '@medii/data';
 import { Connection } from 'typeorm';
 import schema from './schema';

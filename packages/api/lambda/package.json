@@ -2,9 +2,6 @@
     "name": "@medii/api-lambda",
     "version": "1.0.0",
     "main": "lib/index.js",
-    "files": [
-        "lib"
-    ],
     "license": "MIT",
     "dependencies": {
         "@aws-sdk/client-cognito-identity-provider": "^3.56.0",
