@@ -19,9 +19,9 @@ const serverlessConfiguration: AWS = {
             ignorePackages: ['pg-native'],
         },
     },
-    // package: {
-    //     individually: true,
-    // },
+    package: {
+        individually: true,
+    },
     plugins: [
         'serverless-bundle',
         'serverless-iam-roles-per-function',
