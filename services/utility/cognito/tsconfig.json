@@ -11,7 +11,7 @@
             "@medii/ses": ["../../../packages/ses/src"]
         }
     },
-    "include": ["./**/*.ts"],
+    "include": ["./**/*.ts", "UserPoolTriggers.ts"],
     "exclude": [
         "node_modules/**/*",
         ".serverless/**/*",
