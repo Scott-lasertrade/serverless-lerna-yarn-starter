@@ -1,8 +1,9 @@
 import middy from '@middy/core';
 import type { AWS } from '@serverless/typescript';
+import { Context, Handler } from 'aws-lambda';
 export * from './customCors';
 export * from './handlerResolver';
-export declare const middyfy: (handler: Handler) => middy.MiddyfiedHandler<any, any, Error, LambdaContext>;
+export declare const middyfy: (handler: Handler) => middy.MiddyfiedHandler<any, any, Error, Context>;
 export declare type AWSFunction = AWS['functions'][0];
 export declare const handleTimeout: (prom: Promise<any>, context: Context, timeOutDeduction?: number) => Promise<any>;
 declare type Definition = {
