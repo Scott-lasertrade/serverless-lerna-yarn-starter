@@ -4,7 +4,6 @@ import { handleTimeout, middyfy } from '@medii/api-lambda';
 import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
 import { AppError } from '@medii/common';
 import { Database, Account, User } from '@medii/data';
-import { Connection } from 'typeorm';
 import {
     CognitoIdentityProviderClient,
     CognitoIdentityProviderClientConfig,
@@ -34,7 +33,7 @@ const task = async (event) => {
     }
     const accountId = Number(event.pathParameters.id);
 
-    const dbConn: Connection = await database.getConnection();
+    const dbConn = await database.getConnection();
 
     const account = await dbConn
         .createQueryBuilder(Account, 'acc')

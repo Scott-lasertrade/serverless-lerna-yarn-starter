@@ -4,7 +4,6 @@ import { handleTimeout, middyfy } from '@medii/api-lambda';
 import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
 import { AppError } from '@medii/common';
 import { Database, Offer } from '@medii/data';
-import { Connection } from 'typeorm';
 import schema from './schema';
 const database = new Database();
 
@@ -17,7 +16,7 @@ const task = async (event) => {
     }
     const accountId = Number(event.pathParameters.id);
 
-    const dbConn: Connection = await database.getConnection();
+    const dbConn = await database.getConnection();
 
     const offers = await dbConn
         .createQueryBuilder(Offer, 'offers_received')

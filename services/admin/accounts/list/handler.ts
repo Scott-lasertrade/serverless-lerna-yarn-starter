@@ -3,7 +3,6 @@ import 'typeorm-aurora-data-api-driver';
 import { handleTimeout, middyfy } from '@medii/api-lambda';
 import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
 import { Database, Account } from '@medii/data';
-import { Connection } from 'typeorm';
 import {
     CognitoIdentityProviderClient,
     CognitoIdentityProviderClientConfig,
@@ -26,7 +25,7 @@ const getAttribute = (
 };
 
 const task = async () => {
-    const dbConn: Connection = await database.getConnection();
+    const dbConn = await database.getConnection();
 
     const config: CognitoIdentityProviderClientConfig = {
         region: 'ap-southeast-2',
