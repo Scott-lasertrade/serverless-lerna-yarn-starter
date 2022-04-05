@@ -6,7 +6,7 @@
         "outDir": "lib",
         "baseUrl": ".",
         "paths": {
-            "@medii/api-common": ["../../../packages/api/common/src"],
+            "@medii/api-lambda": ["../../../packages/api/lambda/src"],
             "@medii/common": ["../../../packages/common/src"],
             "@medii/ses": ["../../../packages/ses/src"]
         }
@@ -22,7 +22,7 @@
     ],
     "references": [
         { "path": "../../../packages/common" },
-        { "path": "../../../packages/api/common" },
+        { "path": "../../../packages/api/lambda" },
         { "path": "../../../packages/ses" }
     ]
 }
