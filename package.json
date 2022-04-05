@@ -6,7 +6,8 @@
     "private": true,
     "workspaces": [
         "packages/**/*",
-        "services/*"
+        "services/admin/**/*",
+        "services/public/**/*"
     ],
     "devDependencies": {
         "@serverless/typescript": "^2.55.0",
@@ -29,5 +30,12 @@
         "serverless-offline": "^8.5.0",
         "typeorm": "0.2.38",
         "typeorm-aurora-data-api-driver": "2.3.1"
+    },
+    "scripts": {
+        "build": "run-p clean run-s build:api",
+        "build:api": "tsc -b ./packages/tsconfig.base.json",
+        "bootstrap": "lerna bootstrap",
+        "clean": "lerna run --parallel clean",
+        "release": "lerna publish"
     }
 }

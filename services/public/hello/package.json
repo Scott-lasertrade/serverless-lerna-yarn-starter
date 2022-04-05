@@ -5,11 +5,11 @@
     "main": "serverless.ts",
     "license": "MIT",
     "dependencies": {
-        "@typescript-eslint/typescript-estree": "4.33.0",
-        "serverless-iam-roles-per-function": "^3.2.0",
-        "@medii/api-lambda": "^1.0.0",
         "@medii/api-common": "^1.0.0",
-        "@medii/common": "^1.0.0"
+        "@medii/api-lambda": "^1.0.0",
+        "@medii/common": "^1.0.0",
+        "@typescript-eslint/typescript-estree": "4.33.0",
+        "serverless-iam-roles-per-function": "^3.2.0"
     },
     "scripts": {
         "test": "serverless-bundle test"
@@ -17,7 +17,7 @@
     "devDependencies": {
         "serverless-seed": "^0.3.15",
         "serverless-tscpaths": "^0.0.6",
-        "tsconfig-paths-webpack-plugin": "^3.5.2",
-        "ts-node": "^8.6.2"
+        "ts-node": "^8.6.2",
+        "tsconfig-paths-webpack-plugin": "^3.5.2"
     }
 }
