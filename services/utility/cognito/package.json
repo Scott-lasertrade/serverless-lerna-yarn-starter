@@ -5,9 +5,9 @@
     "main": "serverless.ts",
     "license": "MIT",
     "dependencies": {
-        "@medii/api-lambda": "^1.0.5",
-        "@medii/common": "^1.0.5",
-        "@medii/ses": "^1.0.5",
+        "@medii/api-lambda": "^1.0.4",
+        "@medii/common": "^1.0.6",
+        "@medii/ses": "^1.0.6",
         "@typescript-eslint/typescript-estree": "4.33.0",
         "serverless-iam-roles-per-function": "^3.2.0",
         "@aws-sdk/client-cognito-identity-provider": "^3.55.0",
