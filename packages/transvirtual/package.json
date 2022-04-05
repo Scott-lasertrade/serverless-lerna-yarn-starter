@@ -1,13 +1,13 @@
 {
     "name": "@medii/transvirtual",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "lib/index.js",
     "files": [
         "lib"
     ],
     "license": "MIT",
     "dependencies": {
-        "@medii/common": "^1.0.2",
+        "@medii/common": "^1.0.3",
         "axios": "^0.26.1"
     },
     "scripts": {

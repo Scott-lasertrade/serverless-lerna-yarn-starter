@@ -1,6 +1,6 @@
 {
     "name": "@medii/admin_category",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Serverless Admin Category Routes",
     "main": "serverless.ts",
     "license": "MIT",
@@ -8,10 +8,10 @@
         "test": "serverless-bundle test"
     },
     "dependencies": {
-        "@medii/api-common": "^1.0.2",
-        "@medii/api-lambda": "^1.0.2",
-        "@medii/common": "^1.0.2",
-        "@medii/data": "^1.0.2",
+        "@medii/api-common": "^1.0.3",
+        "@medii/api-lambda": "^1.0.3",
+        "@medii/common": "^1.0.3",
+        "@medii/data": "^1.0.3",
         "@typescript-eslint/typescript-estree": "4.33.0",
         "serverless-iam-roles-per-function": "^3.2.0",
         "serverless-webpack": "^5.6.1",
