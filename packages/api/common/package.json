@@ -1,10 +1,10 @@
 {
     "name": "@medii/api-common",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "main": "lib/index.js",
     "license": "MIT",
     "dependencies": {
-        "@medii/common": "^1.0.4",
+        "@medii/common": "^1.0.5",
         "@middy/core": "^2.5.7",
         "aws-lambda": "^1.0.7",
         "json-schema-to-ts": "^1.6.5"
