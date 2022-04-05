@@ -27,8 +27,9 @@
         "axios": "^0.26.1",
         "file-type": "16.5.3",
         "json-schema-to-ts": "^1.6.5",
+        "pg": "^8.7.3",
         "serverless-offline": "^8.5.0",
-        "typeorm": "0.2.38",
+        "typeorm": "^0.2.38",
         "typeorm-aurora-data-api-driver": "2.3.1"
     },
     "scripts": {
@@ -36,6 +37,7 @@
         "build:api": "tsc -b ./packages/tsconfig.base.json",
         "bootstrap": "lerna bootstrap",
         "clean": "lerna run --parallel clean",
-        "release": "lerna publish"
+        "release": "lerna publish",
+        "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f ./packages/data/src/ormconfig.ts"
     }
 }
