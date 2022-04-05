@@ -1,6 +1,5 @@
-export const BaseServiceName = 'marketplace-backend';
-
 const SharedConfig = {
+    BaseServiceName: 'marketplace-backend',
     enterprise: {
         collectLambdaLogs: false,
     },
@@ -65,9 +64,9 @@ const SharedConfig = {
     },
     COGNITO: {
         USERPOOLNAME: {
-            offline: BaseServiceName + '-dev',
-            dev: BaseServiceName + '-${self:provider.stage}',
-            prod: BaseServiceName + '-${self:provider.stage}',
+            offline: '${self:custom.BaseServiceName}-dev',
+            dev: '${self:custom.BaseServiceName}-${self:provider.stage}',
+            prod: '${self:custom.BaseServiceName}-${self:provider.stage}',
         },
         USERPOOLID: {
             offline: 'ap-southeast-2_1q0PND3QW',
@@ -89,14 +88,14 @@ const SharedConfig = {
             'Fn::ImportValue': 'COGNITO-DOMAIN',
         },
         IDENTITYPOOLNAME: {
-            offline: BaseServiceName + '-dev',
-            dev: BaseServiceName + '-${self:provider.stage}',
-            prod: BaseServiceName + '-${self:provider.stage}',
+            offline: '${self:custom.BaseServiceName}-dev',
+            dev: '${self:custom.BaseServiceName}-${self:provider.stage}',
+            prod: '${self:custom.BaseServiceName}-${self:provider.stage}',
         },
         DOMAINNAME: {
-            offline: BaseServiceName + '-dev',
-            dev: BaseServiceName + '-${self:provider.stage}',
-            prod: BaseServiceName + '-${self:provider.stage}',
+            offline: '${self:custom.BaseServiceName}-dev',
+            dev: '${self:custom.BaseServiceName}-${self:provider.stage}',
+            prod: '${self:custom.BaseServiceName}-${self:provider.stage}',
         },
         CALLBACKURLS: {
             offline: ['http://localhost:3000/auth/federated-sign-in'],
@@ -126,12 +125,12 @@ const SharedConfig = {
     },
     STORAGE: {
         PRODUCTBUCKETNAME:
-            BaseServiceName + '-${self:provider.stage}-products-bucket',
+            '${self:custom.BaseServiceName}-${self:provider.stage}-products-bucket',
         PRODUCTBUCKETARN: {
             'Fn::ImportValue': 'PRODUCT-BUCKET-ARN',
         },
         LISTINGSBUCKETNAME:
-            BaseServiceName + '-${self:provider.stage}-listings-bucket',
+            '${self:custom.BaseServiceName}-${self:provider.stage}-listings-bucket',
         LISTINGSBUCKETARN: {
             'Fn::ImportValue': 'LISTINGS-BUCKET-ARN',
         },

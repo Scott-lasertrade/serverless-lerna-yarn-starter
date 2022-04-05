@@ -4,7 +4,7 @@
 import CognitoResources from './serverless/cognito';
 import AuroraResources from './serverless/aurora';
 import StorageResources from './serverless/s3';
-import { BaseServiceName, SharedConfig } from '@medii/common';
+import { SharedConfig } from '@medii/common';
 // import ServerlessWithStepFunctions from '@libs/typedServerlessStepFunction';
 import type { AWS } from '@serverless/typescript';
 import AuroraOutputs from './serverless/aurora-outputs';
@@ -15,8 +15,8 @@ import APIGWOutputs from './serverless/apigateway-outputs';
 import Outputs from './serverless/outputs';
 
 const serverlessConfiguration: AWS = {
-    service: BaseServiceName,
-    app: BaseServiceName,
+    service: '${self:custom.BaseServiceName}',
+    app: '${self:custom.BaseServiceName}',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',

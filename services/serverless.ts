@@ -4,7 +4,7 @@
 import CognitoResources from './mainService/serverless/cognito';
 import AuroraResources from './mainService/serverless/aurora';
 import StorageResources from './mainService/serverless/s3';
-import SharedConfig, { BaseServiceName } from '@libs/serverless-shared-custom';
+import SharedConfig from '@libs/serverless-shared-custom';
 import adminAccountFunctions from './admin/accounts/index';
 import adminCategoryFunctions from './admin/category/index';
 
@@ -19,8 +19,8 @@ import APIGWOutputs from './mainService/serverless/apigateway-outputs';
 import APIGWResources from './mainService/serverless/apigateway';
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
-    service: BaseServiceName,
-    app: BaseServiceName,
+    service: '${self:custom.BaseServiceName}',
+    app: '${self:custom.BaseServiceName}',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',
