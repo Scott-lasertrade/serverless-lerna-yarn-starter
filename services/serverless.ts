@@ -4,13 +4,16 @@
 import CognitoResources from './mainService/serverless/cognito';
 import AuroraResources from './mainService/serverless/aurora';
 import StorageResources from './mainService/serverless/s3';
-import SharedConfig from '@libs/serverless-shared-custom';
 import adminAccountFunctions from './admin/accounts/index';
 import adminCategoryFunctions from './admin/category/index';
 
 const functions = { ...adminAccountFunctions, ...adminCategoryFunctions };
 
-import ServerlessWithStepFunctions from '@package/lambda-package';
+import {
+    ServerlessWithStepFunctions,
+    BaseServiceName,
+    SharedConfig,
+} from '@medii/common';
 import Outputs from './mainService/serverless/outputs';
 import CognitoOutputs from './mainService/serverless/cognito-outputs';
 import AuroraOutputs from './mainService/serverless/aurora-outputs';
@@ -19,8 +22,8 @@ import APIGWOutputs from './mainService/serverless/apigateway-outputs';
 import APIGWResources from './mainService/serverless/apigateway';
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
-    service: '${self:custom.BaseServiceName}',
-    app: '${self:custom.BaseServiceName}',
+    service: BaseServiceName,
+    app: BaseServiceName,
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',

@@ -1,32 +1,23 @@
 {
-    "extends": "./tsconfig.paths.json",
+    "extends": "./tsconfig.services.json",
     "compilerOptions": {
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "forceConsistentCasingInFileNames": true,
-        "lib": ["ES2020"],
-        "removeComments": true,
-        "moduleResolution": "node",
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "sourceMap": true,
-        "target": "ES2020",
-        "outDir": "lib",
-        "alwaysStrict": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
-        "noEmit": true
+        "outDir": "lib",
+        "baseUrl": ".",
+        "paths": {
+            "@medii/common": ["../packages/common/src"]
+        },
+        "target": "ES2020"
     },
-    "include": ["src/**/*.ts", "./**/*.ts", "../admin/**/*"],
+    "include": ["./**/*.ts"],
     "exclude": [
-        ".build/**/*",
         "node_modules/**/*",
         ".serverless/**/*",
         ".webpack/**/*",
-        "_warmup/**/*",
-        ".vscode/**/*"
+        ".build/**/*",
+        "**/__tests__/*",
+        "**/__e2e__/*"
     ],
-    "ts-node": {
-        "require": ["tsconfig-paths/register"]
-    }
+    "references": [{ "path": "../packages/common" }]
 }

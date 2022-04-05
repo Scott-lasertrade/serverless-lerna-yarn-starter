@@ -1,0 +1,23 @@
+{
+    "name": "@medii/payment",
+    "version": "1.0.4",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "dependencies": {
+        "typeorm": "0.2.38",
+        "@medii/common": "^1.0.4",
+        "@medii/data": "^1.0.4",
+        "@medii/transvirtual": "^1.0.4"
+    },
+    "scripts": {
+        "build": "run-s clean build:tsc",
+        "build:tsc": "tsc -b"
+    },
+    "devDependencies": {
+        "ts-node": "^8.6.2"
+    },
+    "gitHead": "e965f1a22c2c356eebf2ca408350364305f0383f"
+}

@@ -16,6 +16,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppError = void 0;
 __exportStar(require("./shared-custom-config"), exports);
+__exportStar(require("./typedServerlessStepFunction"), exports);
 class AppError extends Error {
     constructor(message = '', statusCode = 400) {
         super(message);

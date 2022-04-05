@@ -1,4 +1,5 @@
 export * from './shared-custom-config';
+export * from './typedServerlessStepFunction';
 
 export class AppError extends Error {
     statusCode: number;
