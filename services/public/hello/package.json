@@ -1,13 +1,13 @@
 {
     "name": "@medii/hello",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Serverless hello service",
     "main": "serverless.ts",
     "license": "MIT",
     "dependencies": {
-        "@medii/api-common": "^1.0.1",
-        "@medii/api-lambda": "^1.0.1",
-        "@medii/common": "^1.0.1",
+        "@medii/api-common": "^1.0.2",
+        "@medii/api-lambda": "^1.0.2",
+        "@medii/common": "^1.0.2",
         "@typescript-eslint/typescript-estree": "4.33.0",
         "serverless-iam-roles-per-function": "^3.2.0"
     },
