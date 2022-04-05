@@ -1,5 +1,6 @@
+export const BaseServiceName = 'marketplace-backend';
 export const SharedConfig = {
-    BaseServiceName: 'marketplace-backend',
+    BaseServiceName: BaseServiceName,
     enterprise: {
         collectLambdaLogs: false,
     },

@@ -1,9 +1,9 @@
 import functions from './index';
-import { SharedConfig } from '@medii/common';
+import { BaseServiceName, SharedConfig } from '@medii/common';
 import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
-    service: '${self:custom.BaseServiceName}-accounts',
+    service: BaseServiceName + '-accounts',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',
