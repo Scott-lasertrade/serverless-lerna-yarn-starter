@@ -15,16 +15,15 @@ const serverlessConfiguration: AWS = {
                 disabledFor: ['prod', 'staging'],
             },
         },
-        webpack: {
-            webpackConfig: './webpack.config.js',
-            includeModules: true,
+        bundle: {
+            ignorePackages: ['pg-native'],
         },
     },
     package: {
         individually: true,
     },
     plugins: [
-        'serverless-webpack',
+        'serverless-bundle',
         'serverless-iam-roles-per-function',
         'serverless-seed',
     ],
