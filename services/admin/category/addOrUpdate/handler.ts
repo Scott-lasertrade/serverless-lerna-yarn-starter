@@ -4,7 +4,7 @@ import { handleTimeout, middyfy } from '@medii/api-lambda';
 import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
 import { AppError } from '@medii/common';
 import { Database, Category } from '@medii/data';
-import { Connection, EntityManager } from 'typeorm';
+import { Connection, EntityManager, TypeORMError } from 'typeorm';
 import schema from './schema';
 
 const PG_UNIQUE_CONSTRAINT_VIOLATION = '23505';
@@ -106,16 +106,18 @@ const task = async (event) => {
         });
     } catch (err) {
         console.log(err);
-        // @ts-ignore
-        if (err && err.code === PG_UNIQUE_CONSTRAINT_VIOLATION) {
-            throw new AppError(
-                // @ts-ignore
-                `Category must have unique children. SEE - ${err.detail}}`,
-                400
-            );
-        } else {
-            throw err;
-        }
+        // TODO - S.Y: How do I make this type safe?
+        // if (err && err?.code === PG_UNIQUE_CONSTRAINT_VIOLATION) {
+        //     throw new AppError(
+        //         `Category must have unique children. SEE - ${
+        //             err?.detail ?? ''
+        //         }}`,
+        //         400
+        //     );
+        // } else {
+        //     throw err;
+        // }
+        throw err;
     }
 
     return category;

@@ -10,7 +10,7 @@ const database = new Database();
 
 const task = async (event) => {
     const id = event.body.id;
-    let deletedCategories: DeleteResult[] = [];
+    const deletedCategories: DeleteResult[] = [];
 
     const dbConn: Connection = await database.getConnection();
     await dbConn.transaction(async (transactionalEntityManager) => {
