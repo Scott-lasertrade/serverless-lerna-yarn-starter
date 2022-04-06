@@ -1,5 +1,5 @@
 {
-    "name": "@medii/hello",
+    "name": "@medii/stripewh",
     "version": "1.0.7",
     "description": "Serverless hello service",
     "main": "serverless.ts",
