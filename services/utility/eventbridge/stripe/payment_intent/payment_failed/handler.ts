@@ -10,8 +10,8 @@ const database = new Database();
 const task: any = async (event) => {
     console.log(event);
     console.log(`STRIPE| FAILED - PI[${event?.detail?.data?.object?.id}]...`);
-    let dbConn = await database.getConnection();
-    let relatedListings = new Listing[];
+    const dbConn = await database.getConnection();
+    let relatedListings: Listing[] = [];
     let emailParams: {
         id: string;
         type: string;
@@ -19,7 +19,7 @@ const task: any = async (event) => {
         accountId: number;
     };
 
-    let transaction = await dbConn
+    const transaction = await dbConn
         .createQueryBuilder(Transaction, 't')
         .innerJoinAndSelect('t.type', 'tt')
         .leftJoinAndSelect('t.order', 'order')
@@ -118,7 +118,7 @@ const task: any = async (event) => {
         try {
             console.log(`EVENT BRIDGE| Starting...`, params);
             await sendToEventBridge(
-                process.env.EVENT_BRIDGE_STATEMACHINE,
+                process.env.EVENT_BRIDGE_STATEMACHINE ?? '',
                 params,
                 process.env.STAGE
             );

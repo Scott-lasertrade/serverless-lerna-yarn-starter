@@ -45,7 +45,7 @@ const payOrder = async (transactionalEntityManager, order, amount) => {
 
 const task: any = async (event) => {
     console.log(`STRIPE| SUCCESS - PI[${event?.detail?.data?.object?.id}]...`);
-    let dbConn = await database.getConnection();
+    const dbConn = await database.getConnection();
     let relatedListings: Listing[] = [];
     let emailParams: {
         id?: string;
@@ -58,7 +58,7 @@ const task: any = async (event) => {
         throw new AppError('Recieved bad payment intent', 400);
     }
 
-    let transaction = await dbConn
+    const transaction = await dbConn
         .createQueryBuilder(Transaction, 't')
         .innerJoinAndSelect('t.type', 'tt')
         .leftJoinAndSelect('t.order', 'order')
@@ -121,7 +121,7 @@ const task: any = async (event) => {
                 throw new AppError('Transaction failed to send email', 400);
             }
 
-            let relatedOrders = await transactionalEntityManager
+            const relatedOrders = await transactionalEntityManager
                 .createQueryBuilder(Order, 'o')
                 .innerJoinAndSelect('o.listing', 'l')
                 .innerJoinAndSelect('l.account', 'seller')
@@ -132,7 +132,7 @@ const task: any = async (event) => {
                 .getMany();
 
             if (relatedOrders?.length > 0) {
-                let totalToPayOut = relatedOrders
+                const totalToPayOut = relatedOrders
                     .map((order) => {
                         return orderGetPayAmount(order);
                     })
@@ -218,7 +218,7 @@ const task: any = async (event) => {
                 accountId: transaction.order.buyer.id ?? 0,
             };
 
-            let order = transaction.order;
+            const order = transaction.order;
             if (
                 Number(orderGetPayAmount(order) * 100) !==
                 Number(event.detail.data.object.amount)
@@ -268,14 +268,14 @@ const task: any = async (event) => {
             throw new AppError('Transaction tied at invalid state', 400);
         }
 
-        let soldStatus = await transactionalEntityManager
+        const soldStatus = await transactionalEntityManager
             .createQueryBuilder(ListingStatus, 'ls')
             .where('ls.name = :status', {
                 status: 'Sold',
             })
             .getOneOrFail();
 
-        let pendingStatus = await transactionalEntityManager
+        const pendingStatus = await transactionalEntityManager
             .createQueryBuilder(ListingStatus, 'ls')
             .where('ls.name = :status', {
                 status: 'Pending Sale',
@@ -318,7 +318,7 @@ const task: any = async (event) => {
             });
 
             // Remove from everyones carts
-            let cartItemsToDelete = await transactionalEntityManager
+            const cartItemsToDelete = await transactionalEntityManager
                 .createQueryBuilder(CartItem, 'cart')
                 .innerJoinAndSelect('cart.listing', 'listing')
                 .where('listing.id in(:...ids)', {
@@ -356,9 +356,9 @@ const task: any = async (event) => {
             };
             console.log(`EVENT BRIDGE| Starting...`, params);
             await sendToEventBridge(
-                process.env.EVENT_BRIDGE,
+                process.env.EVENT_BRIDGE ?? '',
                 params,
-                process.env.STAGE
+                process.env.STAGE ?? ''
             );
         } catch (err: any) {
             console.log(`EVENT BRIDGE| Error: ${err.message}`);

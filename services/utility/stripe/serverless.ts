@@ -18,6 +18,9 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
                 disabledFor: ['prod', 'staging'],
             },
         },
+        bundle: {
+            ignorePackages: ['pg-native'],
+        },
     },
     package: {
         individually: true,

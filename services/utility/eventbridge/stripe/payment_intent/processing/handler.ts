@@ -11,7 +11,7 @@ const task: any = async (event) => {
     console.log(
         `STRIPE| PROCESSING - PI[${event?.detail?.data?.object?.id}]...`
     );
-    let dbConn = await database.getConnection();
+    const dbConn = await database.getConnection();
 
     if (!event?.detail?.data?.object?.id) {
         throw new AppError('Recieved bad payment intent', 400);
@@ -19,7 +19,7 @@ const task: any = async (event) => {
 
     await dbConn.transaction(async (transactionalEntityManager) => {
         console.log(`STRIPE| PROCESSING, find related listings...`);
-        let relatedListings = await transactionalEntityManager
+        const relatedListings = await transactionalEntityManager
             .createQueryBuilder(Listing, 'l')
             .innerJoin('l.orders', 'ord')
             .leftJoin('ord.transactions', 't')
@@ -38,7 +38,7 @@ const task: any = async (event) => {
             relatedListings
         );
 
-        let pendingStatus = await transactionalEntityManager
+        const pendingStatus = await transactionalEntityManager
             .createQueryBuilder(ListingStatus, 'ls')
             .where('ls.name = :status', {
                 status: 'Pending Sale',
@@ -64,9 +64,9 @@ const task: any = async (event) => {
         };
         console.log(`EVENT BRIDGE| Starting...`, params);
         await sendToEventBridge(
-            process.env.EVENT_BRIDGE,
+            process.env.EVENT_BRIDGE ?? '',
             params,
-            process.env.STAGE
+            process.env.STAGE ?? ''
         );
     } catch (err: any) {
         console.log(`EVENT BRIDGE| Error: ${err.message}`);
