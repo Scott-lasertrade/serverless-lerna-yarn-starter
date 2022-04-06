@@ -3,10 +3,10 @@
 // |_________________________|
 //      Category
 import customMessage from './customMessage';
-import postAuth from 'postAuthentication';
-import postConf from 'postConfirmation';
-import preSignUp from 'preSignUp';
-import preTokenG from 'preTokenGeneration';
+import postAuth from './postAuthentication';
+import postConf from './postConfirmation';
+import preSignUp from './preSignUp';
+import preTokenG from './preTokenGeneration';
 
 const functions = {
     customMessage,
