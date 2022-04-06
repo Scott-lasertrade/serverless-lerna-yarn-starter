@@ -6,9 +6,10 @@ import {
 } from '@medii/common';
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
-    service: BaseServiceName + '-stripeWH',
+    service: BaseServiceName + '-EB-SFN',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
+    variablesResolutionMode: '20210326',
     frameworkVersion: '2',
     custom: {
         ...SharedConfig,
