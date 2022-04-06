@@ -42,6 +42,8 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         eventBridge: {
             useCloudFormation: true,
         },
+
+        lambdaHashingVersion: '20201221',
     },
     // import the function via paths
     functions: functions,
