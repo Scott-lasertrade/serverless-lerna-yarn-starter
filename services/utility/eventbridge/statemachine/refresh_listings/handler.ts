@@ -12,10 +12,10 @@ const task: any = async () => {
     };
 
     await startStateMachine(
-        process.env.REFRESHLISTINGVIEWS_ARN,
-        process.env.OFFLINE_STEP_FUNCTIONS_ARN_RefreshListingViews,
+        process.env.REFRESHLISTINGVIEWS_ARN ?? '',
+        process.env.OFFLINE_STEP_FUNCTIONS_ARN_RefreshListingViews ?? '',
         data,
-        process.env.STAGE === 'offline'
+        (process.env.STAGE ?? '') === 'offline'
     );
 
     const response = {
@@ -28,7 +28,7 @@ export const main = async (event, context) => {
     try {
         console.log(event);
         return await handleTimeout(task(event, context), context);
-    } catch (e) {
+    } catch (e: any) {
         return {
             statusCode: 400,
             body: JSON.stringify({

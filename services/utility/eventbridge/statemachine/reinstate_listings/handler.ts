@@ -17,10 +17,10 @@ const task: any = async (event) => {
     };
 
     await startStateMachine(
-        process.env.REINSTATELISTINGS_ARN,
-        process.env.OFFLINE_STEP_FUNCTIONS_ARN_ReinstateListings,
+        process.env.REINSTATELISTINGS_ARN ?? '',
+        process.env.OFFLINE_STEP_FUNCTIONS_ARN_ReinstateListings ?? '',
         data,
-        process.env.STAGE === 'offline'
+        (process.env.STAGE ?? '') === 'offline'
     );
 
     const response = {
@@ -33,7 +33,7 @@ export const main = async (event, context) => {
     try {
         console.log(event);
         return await handleTimeout(task(event, context), context);
-    } catch (e) {
+    } catch (e: any) {
         return {
             statusCode: 400,
             body: JSON.stringify({
