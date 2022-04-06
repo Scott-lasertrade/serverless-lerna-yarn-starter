@@ -810,10 +810,18 @@
   resolved "https://registry.yarnpkg.com/@medii/common/-/common-1.0.7.tgz#5246b6fd7b523b71a680f0f34914ee244dca557d"
   integrity sha512-FldzIKpaUIVJvy+WsL9jO+R57VDb9nAizHla2K8sqNOt4laM3QKLQ1CYxr/KahfoQeo99YYa6crCkgwE/T6AoQ==
 
-"@medii/data@^1.0.6", "@medii/data@^1.0.7":
+"@medii/data@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@medii/data/-/data-1.0.6.tgz#42d7e50264fbb3317fd492131e398de148b63b1d"
   integrity sha512-OuHuJysmqGglBt0HAX7A5sBjNqu3tIc2IjUSBWrp+qRSquFJwM/JvLpZhQ1BhWlPLAQDnYLBHckvlJz35jwEng==
+  dependencies:
+    typeorm "0.2.38"
+    typeorm-aurora-data-api-driver "2.3.1"
+
+"@medii/data@^1.0.7":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@medii/data/-/data-1.0.8.tgz#1ff40b07231d842961f45386785e71cb46a95132"
+  integrity sha512-DjwVvYbGi9oxn+6LGDFpIDxcPjDLx/ST6zOunM2GG/Ts3I167V7yMUDmZugZiyQPhWZCEd2cQODqVdlqfBsFZw==
   dependencies:
     typeorm "0.2.38"
     typeorm-aurora-data-api-driver "2.3.1"
