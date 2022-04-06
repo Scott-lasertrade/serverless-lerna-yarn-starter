@@ -38,6 +38,10 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
             restApiId: '${self:custom.API.ID}',
             restApiRootResourceId: '${self:custom.API.ROOT}',
         },
+
+        eventBridge: {
+            useCloudFormation: true,
+        },
     },
     // import the function via paths
     functions: functions,
