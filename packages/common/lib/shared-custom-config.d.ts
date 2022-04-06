@@ -11,10 +11,14 @@ export declare const SharedConfig: {
         };
     };
     STRIPE: {
-        SECRETKEY: string | undefined;
-        PUBLISHABLEKEY: string | undefined;
-        CLIENTID: string | undefined;
-        WEBHOOK: string | undefined;
+        prod: string;
+        dev: string;
+        offline: {
+            SECRETKEY: string;
+            PUBLISHABLEKEY: string;
+            CLIENTID: string;
+            WEBHOOK: string;
+        };
     };
     AURORA: {
         ARN: {

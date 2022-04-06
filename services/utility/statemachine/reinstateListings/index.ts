@@ -25,7 +25,8 @@ export default {
         },
     ],
     environment: {
-        STRIPESECRETKEY: '${self:custom.STRIPE.SECRETKEY}',
+        STRIPESECRETKEY:
+            '${self:custom.STRIPE.${self:provider.stage}.SECRETKEY}',
         EVENT_BRIDGE: 'statemachine',
         STAGE: '${self:provider.stage}',
     },

@@ -21,8 +21,9 @@ export default {
         },
     ],
     environment: {
-        STRIPESECRETKEY: '${self:custom.STRIPE.SECRETKEY}',
-        STRIPEWEBHOOK: '${self:custom.STRIPE.WEBHOOK}',
+        STRIPESECRETKEY:
+            '${self:custom.STRIPE.${self:provider.stage}.SECRETKEY}',
+        STRIPEWEBHOOK: '${self:custom.STRIPE.${self:provider.stage}.WEBHOOK}',
         EVENT_BRIDGE: 'stripe',
         STAGE: '${self:provider.stage}',
     },

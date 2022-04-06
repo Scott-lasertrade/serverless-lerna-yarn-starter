@@ -29,10 +29,14 @@ exports.SharedConfig = {
         },
     },
     STRIPE: {
-        SECRETKEY: process.env.STRIPESECRETKEY,
-        PUBLISHABLEKEY: process.env.PUBLISHABLEKEY,
-        CLIENTID: process.env.CLIENTID,
-        WEBHOOK: process.env.WEBHOOK,
+        prod: '${ssm:/aws/reference/secretsmanager/prod/stripe}',
+        dev: '${ssm:/aws/reference/secretsmanager/dev/stripe}',
+        offline: {
+            SECRETKEY: 'sk_test_51HINWDDpQDarlqIHMzsLZ8kHsv8Onk2ReTy8PvJ5rbmG9mqTmXAheYcdVXMDtIHVVFO4Io6sgZEHRe1gM8NLoHjU00wpnl0GX7',
+            PUBLISHABLEKEY: 'pk_test_51HINWDDpQDarlqIHPyO2gQGWoTQb8OHDhdu32voQIa7ZAbE2nePE3neA21B6o7kqJMNnAlw4TazZlwSSTaaRTwkl00jzIAZGwO',
+            CLIENTID: 'ca_KZA5qFeOZRXYelvz9XklgtD1PgDuRZWZ',
+            WEBHOOK: 'whsec_83f6b3e47b2deaaf94d672861150ce1a9fac74e4caa6e7214d0dc5b6ec0b6201',
+        },
     },
     AURORA: {
         ARN: {

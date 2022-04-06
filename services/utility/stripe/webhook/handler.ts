@@ -10,7 +10,7 @@ const stripe = new Stripe(process.env.STRIPESECRETKEY ?? '', {
     apiVersion: '2020-08-27',
 });
 
-const endpointSecret = process.env.STRIPEWEBHOOK;
+const endpointSecret = process.env.STRIPEWEBHOOK ?? '';
 
 const task: any = async (event) => {
     const sig = event.headers['Stripe-Signature'];
