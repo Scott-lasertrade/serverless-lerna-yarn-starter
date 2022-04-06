@@ -6,8 +6,15 @@ import AuroraResources from './mainService/serverless/aurora';
 import StorageResources from './mainService/serverless/s3';
 import adminAccountFunctions from './admin/accounts/index';
 import adminCategoryFunctions from './admin/category/index';
+import cognitoFunctions from './utility/cognito/index';
+import stateMachineFunctions from './utility/statemachine/index';
 
-const functions = { ...adminAccountFunctions, ...adminCategoryFunctions };
+const functions = {
+    ...adminAccountFunctions,
+    ...adminCategoryFunctions,
+    ...cognitoFunctions,
+    ...stateMachineFunctions,
+};
 
 import {
     ServerlessWithStepFunctions,
@@ -20,6 +27,7 @@ import AuroraOutputs from './mainService/serverless/aurora-outputs';
 import StorageOutputs from './mainService/serverless/s3-outputs';
 import APIGWOutputs from './mainService/serverless/apigateway-outputs';
 import APIGWResources from './mainService/serverless/apigateway';
+import StateMachines from './utility/statemachine/statemachines';
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
     service: BaseServiceName,
@@ -29,19 +37,19 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     frameworkVersion: '2',
     custom: {
         ...SharedConfig,
-        // stepFunctionsLocal: {
-        //     accountId: 101010101010,
-        //     region: 'ap-southeast-2',
-        //     lambdaEndpoint: 'http://localhost:3002',
-        //     TaskResourceMapping: {
-        //         RefreshListingViews:
-        //             'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-refreshListingViews',
-        //         ExpireOffer:
-        //             'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-expireOffer',
-        //         ReinstateListings:
-        //             'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-reinstateListings',
-        //     },
-        // },
+        stepFunctionsLocal: {
+            accountId: 101010101010,
+            region: 'ap-southeast-2',
+            lambdaEndpoint: 'http://localhost:3002',
+            TaskResourceMapping: {
+                RefreshListingViews:
+                    'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-refreshShopViews',
+                ExpireOffer:
+                    'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-expireOffer',
+                ReinstateListings:
+                    'arn:aws:lambda:${self:provider.region}:101010101010:function:${self:service}-${self:provider.stage}-reinstateListings',
+            },
+        },
         s3: {
             host: 'localhost',
         },
@@ -88,8 +96,8 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         },
     },
     plugins: [
-        // 'serverless-step-functions',
-        // 'serverless-step-functions-local',
+        'serverless-step-functions',
+        'serverless-step-functions-local',
         'serverless-offline',
         // 'serverless-offline-aws-eventbridge',
         'serverless-s3-local',
@@ -126,7 +134,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     },
     // import the function via paths
     functions: functions,
-    // stepFunctions: StateMachines,
+    stepFunctions: StateMachines,
     resources: {
         Outputs: { ...Outputs },
     },
