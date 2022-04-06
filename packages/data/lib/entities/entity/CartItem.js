@@ -17,22 +17,22 @@ const Listing_1 = require("./Listing");
 let CartItem = class CartItem extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.ManyToOne(() => Listing_1.Listing, (listing) => listing.cart_items),
+    (0, typeorm_1.ManyToOne)(() => Listing_1.Listing, (listing) => listing.cart_items),
     __metadata("design:type", Listing_1.Listing)
 ], CartItem.prototype, "listing", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Account_1.Account, (account) => account.cart_items),
+    (0, typeorm_1.ManyToOne)(() => Account_1.Account, (account) => account.cart_items),
     __metadata("design:type", Account_1.Account)
 ], CartItem.prototype, "account", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 12, scale: 2, nullable: true }),
+    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, nullable: true }),
     __metadata("design:type", Number)
 ], CartItem.prototype, "shipping_estimate", void 0);
 __decorate([
-    typeorm_1.Column({ default: 1 }),
+    (0, typeorm_1.Column)({ default: 1 }),
     __metadata("design:type", Number)
 ], CartItem.prototype, "listing_version", void 0);
 CartItem = __decorate([
-    typeorm_1.Entity('cart_item')
+    (0, typeorm_1.Entity)('cart_item')
 ], CartItem);
 exports.CartItem = CartItem;

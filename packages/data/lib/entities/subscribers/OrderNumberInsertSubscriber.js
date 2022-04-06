@@ -62,6 +62,6 @@ let OrderNumberInsertSubscriber = class OrderNumberInsertSubscriber {
     }
 };
 OrderNumberInsertSubscriber = __decorate([
-    typeorm_1.EventSubscriber()
+    (0, typeorm_1.EventSubscriber)()
 ], OrderNumberInsertSubscriber);
 exports.OrderNumberInsertSubscriber = OrderNumberInsertSubscriber;

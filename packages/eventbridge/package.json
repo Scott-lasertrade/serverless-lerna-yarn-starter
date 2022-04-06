@@ -1,0 +1,20 @@
+{
+    "name": "@medii/eventbridge",
+    "version": "1.0.7",
+    "main": "lib/index.js",
+    "files": [
+        "lib"
+    ],
+    "license": "MIT",
+    "dependencies": {
+        "@aws-sdk/client-eventbridge": "^3.58.0"
+    },
+    "scripts": {
+        "build": "run-s clean build:tsc",
+        "build:tsc": "tsc -b"
+    },
+    "devDependencies": {
+        "ts-node": "^8.6.2"
+    },
+    "gitHead": "d75e2c38ae8433bbedf119015fc2b85a372064c0"
+}

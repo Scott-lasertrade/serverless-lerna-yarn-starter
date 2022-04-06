@@ -16,15 +16,15 @@ const OrderLineItem_1 = require("./OrderLineItem");
 let LineItemType = class LineItemType extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.Column(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], LineItemType.prototype, "name", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => OrderLineItem_1.LineItem, (lineItem) => lineItem.type),
+    (0, typeorm_1.OneToMany)(() => OrderLineItem_1.LineItem, (lineItem) => lineItem.type),
     __metadata("design:type", Array)
 ], LineItemType.prototype, "line_items", void 0);
 LineItemType = __decorate([
-    typeorm_1.Entity('order_line_item_type'),
-    typeorm_1.Unique(['name'])
+    (0, typeorm_1.Entity)('order_line_item_type'),
+    (0, typeorm_1.Unique)(['name'])
 ], LineItemType);
 exports.LineItemType = LineItemType;

@@ -20,47 +20,47 @@ const Order_1 = require("./Order");
 let Offer = class Offer extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    typeorm_1.Column(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
 ], Offer.prototype, "value", void 0);
 __decorate([
-    typeorm_1.Column(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
 ], Offer.prototype, "offers_towards_limit", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Listing_1.Listing, (listing) => listing.offers, {
+    (0, typeorm_1.ManyToOne)(() => Listing_1.Listing, (listing) => listing.offers, {
         nullable: true,
     }),
     __metadata("design:type", Listing_1.Listing)
 ], Offer.prototype, "listing", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Account_1.Account, (account) => account.offers, {
+    (0, typeorm_1.ManyToOne)(() => Account_1.Account, (account) => account.offers, {
         nullable: true,
     }),
     __metadata("design:type", Account_1.Account)
 ], Offer.prototype, "account", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => OfferStatus_1.OfferStatus, {
+    (0, typeorm_1.ManyToOne)(() => OfferStatus_1.OfferStatus, {
         cascade: true,
     }),
-    typeorm_1.JoinColumn(),
+    (0, typeorm_1.JoinColumn)(),
     __metadata("design:type", OfferStatus_1.OfferStatus)
 ], Offer.prototype, "status", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'timestamptz', default: '2021-11-23T05:00:30.006Z' }),
+    (0, typeorm_1.Column)({ type: 'timestamptz', default: '2021-11-23T05:00:30.006Z' }),
     __metadata("design:type", Date)
 ], Offer.prototype, "offer_expiry_date", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => OfferHistory_1.OfferHistory, (offer_history) => offer_history.offer, {
+    (0, typeorm_1.OneToMany)(() => OfferHistory_1.OfferHistory, (offer_history) => offer_history.offer, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Offer.prototype, "offer_history", void 0);
 __decorate([
-    typeorm_1.OneToOne(() => Order_1.Order, { nullable: true }),
+    (0, typeorm_1.OneToOne)(() => Order_1.Order, { nullable: true }),
     __metadata("design:type", Order_1.Order)
 ], Offer.prototype, "order", void 0);
 Offer = __decorate([
-    typeorm_1.Entity('offer')
+    (0, typeorm_1.Entity)('offer')
 ], Offer);
 exports.Offer = Offer;

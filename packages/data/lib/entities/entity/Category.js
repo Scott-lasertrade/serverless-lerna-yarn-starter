@@ -17,25 +17,25 @@ const Product_1 = require("./Product");
 let Category = Category_1 = class Category extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.Column(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Category.prototype, "key", void 0);
 __decorate([
-    typeorm_1.Column(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Category.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
 ], Category.prototype, "parent_id", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Category_1, (category) => category.id),
-    typeorm_1.JoinColumn({ name: 'parent_id' }),
+    (0, typeorm_1.ManyToOne)(() => Category_1, (category) => category.id),
+    (0, typeorm_1.JoinColumn)({ name: 'parent_id' }),
     __metadata("design:type", Category)
 ], Category.prototype, "parent", void 0);
 __decorate([
-    typeorm_1.ManyToMany(() => Product_1.Product, (product) => product.categories),
-    typeorm_1.JoinTable({
+    (0, typeorm_1.ManyToMany)(() => Product_1.Product, (product) => product.categories),
+    (0, typeorm_1.JoinTable)({
         name: 'category_to_product',
         joinColumn: {
             name: 'category',
@@ -49,7 +49,7 @@ __decorate([
     __metadata("design:type", Array)
 ], Category.prototype, "products", void 0);
 Category = Category_1 = __decorate([
-    typeorm_1.Entity('category'),
-    typeorm_1.Unique(['key'])
+    (0, typeorm_1.Entity)('category'),
+    (0, typeorm_1.Unique)(['key'])
 ], Category);
 exports.Category = Category;

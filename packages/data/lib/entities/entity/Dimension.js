@@ -15,22 +15,22 @@ const CommonEntity_1 = require("../utils/CommonEntity");
 let Dimension = class Dimension extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.Column('decimal', { precision: 12, scale: 2, nullable: true }),
+    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, nullable: true }),
     __metadata("design:type", Number)
 ], Dimension.prototype, "weight", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
 ], Dimension.prototype, "length", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
 ], Dimension.prototype, "height", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
 ], Dimension.prototype, "width", void 0);
 Dimension = __decorate([
-    typeorm_1.Entity('dimension')
+    (0, typeorm_1.Entity)('dimension')
 ], Dimension);
 exports.Dimension = Dimension;

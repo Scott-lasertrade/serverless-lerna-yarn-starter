@@ -16,16 +16,16 @@ const VersionControlledEntity_1 = require("../utils/VersionControlledEntity");
 let Usage = class Usage extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Number)
 ], Usage.prototype, "value", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => UsageType_1.UsageType, (usageType) => usageType.usages, {
+    (0, typeorm_1.ManyToOne)(() => UsageType_1.UsageType, (usageType) => usageType.usages, {
         nullable: true,
     }),
     __metadata("design:type", UsageType_1.UsageType)
 ], Usage.prototype, "usage_type", void 0);
 Usage = __decorate([
-    typeorm_1.Entity('usage')
+    (0, typeorm_1.Entity)('usage')
 ], Usage);
 exports.Usage = Usage;

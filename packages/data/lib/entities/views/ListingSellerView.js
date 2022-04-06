@@ -14,27 +14,27 @@ const typeorm_1 = require("typeorm");
 let ListingSellerView = class ListingSellerView {
 };
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", Number)
 ], ListingSellerView.prototype, "listing_id", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], ListingSellerView.prototype, "listing_status", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", Number)
 ], ListingSellerView.prototype, "product_id", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], ListingSellerView.prototype, "product_name", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], ListingSellerView.prototype, "lister_id", void 0);
 ListingSellerView = __decorate([
-    typeorm_1.ViewEntity({
+    (0, typeorm_1.ViewEntity)({
         name: 'listing_seller_view',
         expression: `
         select  l.id as listing_id, 

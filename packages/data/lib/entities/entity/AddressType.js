@@ -16,14 +16,14 @@ const Address_1 = require("./Address");
 let AddressType = class AddressType extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.Column({ length: 16 }),
+    (0, typeorm_1.Column)({ length: 16 }),
     __metadata("design:type", String)
 ], AddressType.prototype, "name", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => Address_1.Address, (address) => address.address_type),
+    (0, typeorm_1.OneToMany)(() => Address_1.Address, (address) => address.address_type),
     __metadata("design:type", Array)
 ], AddressType.prototype, "addresses", void 0);
 AddressType = __decorate([
-    typeorm_1.Entity('address_type')
+    (0, typeorm_1.Entity)('address_type')
 ], AddressType);
 exports.AddressType = AddressType;

@@ -75,6 +75,6 @@ let ManufacturerViewUpdateSubscriber = class ManufacturerViewUpdateSubscriber {
     }
 };
 ManufacturerViewUpdateSubscriber = __decorate([
-    typeorm_1.EventSubscriber()
+    (0, typeorm_1.EventSubscriber)()
 ], ManufacturerViewUpdateSubscriber);
 exports.ManufacturerViewUpdateSubscriber = ManufacturerViewUpdateSubscriber;

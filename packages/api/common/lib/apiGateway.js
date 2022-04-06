@@ -7,7 +7,7 @@ const ALLOWED_ORIGINS = [
     'https://scott.vercel.app',
     'https://www.lasersharks.click',
 ];
-exports.formatJSONResponse = (response, origin, statusCode = 200) => {
+const formatJSONResponse = (response, origin, statusCode = 200) => {
     if (ALLOWED_ORIGINS.includes(origin)) {
         return {
             headers: {
@@ -35,3 +35,4 @@ exports.formatJSONResponse = (response, origin, statusCode = 200) => {
         };
     }
 };
+exports.formatJSONResponse = formatJSONResponse;

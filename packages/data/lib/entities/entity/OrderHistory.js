@@ -20,54 +20,54 @@ const OrderStatus_1 = require("./OrderStatus");
 let OrderHistory = class OrderHistory extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.ManyToOne(() => Order_1.Order, (order) => order.history, {
+    (0, typeorm_1.ManyToOne)(() => Order_1.Order, (order) => order.history, {
         nullable: true,
     }),
     __metadata("design:type", Order_1.Order)
 ], OrderHistory.prototype, "order", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Listing_1.Listing, (listing) => listing.orders),
+    (0, typeorm_1.ManyToOne)(() => Listing_1.Listing, (listing) => listing.orders),
     __metadata("design:type", Listing_1.Listing)
 ], OrderHistory.prototype, "listing", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => OrderStatus_1.OrderStatus, (orderStatus) => orderStatus.orders),
+    (0, typeorm_1.ManyToOne)(() => OrderStatus_1.OrderStatus, (orderStatus) => orderStatus.orders),
     __metadata("design:type", OrderStatus_1.OrderStatus)
 ], OrderHistory.prototype, "status", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Account_1.Account, (account) => account.orders_bought),
+    (0, typeorm_1.ManyToOne)(() => Account_1.Account, (account) => account.orders_bought),
     __metadata("design:type", Account_1.Account)
 ], OrderHistory.prototype, "buyer", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Checkout_1.Checkout, (checkout) => checkout.orders, {
+    (0, typeorm_1.ManyToOne)(() => Checkout_1.Checkout, (checkout) => checkout.orders, {
         onDelete: 'CASCADE',
     }),
     __metadata("design:type", Checkout_1.Checkout)
 ], OrderHistory.prototype, "checkout", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], OrderHistory.prototype, "order_number", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 12, scale: 2, nullable: true }),
+    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, nullable: true }),
     __metadata("design:type", Number)
 ], OrderHistory.prototype, "total", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 12, scale: 2, nullable: true }),
+    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, nullable: true }),
     __metadata("design:type", Number)
 ], OrderHistory.prototype, "paid", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 12, scale: 2, nullable: true }),
+    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, nullable: true }),
     __metadata("design:type", Number)
 ], OrderHistory.prototype, "deposit", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 12, scale: 2, default: 0 }),
+    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], OrderHistory.prototype, "fixed_fee", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 3, scale: 0, default: 11 }),
+    (0, typeorm_1.Column)('decimal', { precision: 3, scale: 0, default: 11 }),
     __metadata("design:type", Number)
 ], OrderHistory.prototype, "variable_fee", void 0);
 OrderHistory = __decorate([
-    typeorm_1.Entity('order_history')
+    (0, typeorm_1.Entity)('order_history')
 ], OrderHistory);
 exports.OrderHistory = OrderHistory;

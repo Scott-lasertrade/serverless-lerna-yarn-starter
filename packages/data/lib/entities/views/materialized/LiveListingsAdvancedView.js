@@ -14,51 +14,51 @@ const typeorm_1 = require("typeorm");
 let LiveListingsAdvancedView = class LiveListingsAdvancedView {
 };
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", Number)
 ], LiveListingsAdvancedView.prototype, "id", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", Number)
 ], LiveListingsAdvancedView.prototype, "productId", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], LiveListingsAdvancedView.prototype, "title", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", Number)
 ], LiveListingsAdvancedView.prototype, "price", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], LiveListingsAdvancedView.prototype, "status", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], LiveListingsAdvancedView.prototype, "thumbnail_key", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], LiveListingsAdvancedView.prototype, "thumbnail_bucket", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], LiveListingsAdvancedView.prototype, "thumbnail_region", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], LiveListingsAdvancedView.prototype, "manufacturer", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", Number)
 ], LiveListingsAdvancedView.prototype, "category", void 0);
 __decorate([
-    typeorm_1.Column({ type: 'tsvector' }),
+    (0, typeorm_1.Column)({ type: 'tsvector' }),
     __metadata("design:type", String)
 ], LiveListingsAdvancedView.prototype, "document", void 0);
 LiveListingsAdvancedView = __decorate([
-    typeorm_1.ViewEntity({
+    (0, typeorm_1.ViewEntity)({
         name: 'live_listings_advanced_view',
         expression: `
         select  l.id,
