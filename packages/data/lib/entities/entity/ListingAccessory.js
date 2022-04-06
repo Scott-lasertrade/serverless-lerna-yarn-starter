@@ -18,25 +18,25 @@ const Product_1 = require("./Product");
 let ListingAccessory = class ListingAccessory extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Product_1.Product, (product) => product.listing_accessories, {
+    typeorm_1.ManyToOne(() => Product_1.Product, (product) => product.listing_accessories, {
         nullable: true,
     }),
     __metadata("design:type", Product_1.Product)
 ], ListingAccessory.prototype, "product", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Listing_1.Listing, (listing) => listing.listing_accessories, {
+    typeorm_1.ManyToOne(() => Listing_1.Listing, (listing) => listing.listing_accessories, {
         onDelete: 'CASCADE',
     }),
     __metadata("design:type", Listing_1.Listing)
 ], ListingAccessory.prototype, "listing", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Usage_1.Usage, {
+    typeorm_1.OneToOne(() => Usage_1.Usage, {
         cascade: true,
     }),
-    (0, typeorm_1.JoinColumn)(),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", Usage_1.Usage)
 ], ListingAccessory.prototype, "usage", void 0);
 ListingAccessory = __decorate([
-    (0, typeorm_1.Entity)('listing_accessory')
+    typeorm_1.Entity('listing_accessory')
 ], ListingAccessory);
 exports.ListingAccessory = ListingAccessory;

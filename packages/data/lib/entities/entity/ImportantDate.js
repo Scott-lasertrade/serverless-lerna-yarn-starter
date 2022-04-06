@@ -20,32 +20,32 @@ let ImportantDate = class ImportantDate extends typeorm_1.BaseEntity {
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], ImportantDate.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], ImportantDate.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 0 }),
+    typeorm_1.Column({ default: 0 }),
     __metadata("design:type", Number)
 ], ImportantDate.prototype, "iteration", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", Date)
 ], ImportantDate.prototype, "run_started", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", Date)
 ], ImportantDate.prototype, "run_ended", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    typeorm_1.CreateDateColumn(),
     __metadata("design:type", Date)
 ], ImportantDate.prototype, "created_on", void 0);
 ImportantDate = __decorate([
-    (0, typeorm_1.Entity)('important_date'),
-    (0, typeorm_1.Unique)(['name']),
+    typeorm_1.Entity('important_date'),
+    typeorm_1.Unique(['name']),
     __metadata("design:paramtypes", [Number])
 ], ImportantDate);
 exports.ImportantDate = ImportantDate;

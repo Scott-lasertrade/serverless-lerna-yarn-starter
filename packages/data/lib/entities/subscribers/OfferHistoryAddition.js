@@ -47,6 +47,6 @@ let OfferHistoryAddition = class OfferHistoryAddition {
     }
 };
 OfferHistoryAddition = __decorate([
-    (0, typeorm_1.EventSubscriber)()
+    typeorm_1.EventSubscriber()
 ], OfferHistoryAddition);
 exports.OfferHistoryAddition = OfferHistoryAddition;

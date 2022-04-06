@@ -33,7 +33,7 @@ else {
     };
 }
 const s3Client = new client_s3_1.S3Client(s3Parameters);
-const prepareImageData = (imageList, existingImages) => {
+exports.prepareImageData = (imageList, existingImages) => {
     const imagesToDelete = (imageList === null || imageList === void 0 ? void 0 : imageList.length) > 0
         ? existingImages.filter((existingImage) => !imageList
             .filter((img) => Number(img.id))
@@ -85,8 +85,7 @@ const prepareImageData = (imageList, existingImages) => {
         : [];
     return { imagesToDelete, imagesToReplace, imagesToShift, imagesToCreate };
 };
-exports.prepareImageData = prepareImageData;
-const removeImages = (id, filesToDelete, bucket) => __awaiter(void 0, void 0, void 0, function* () {
+exports.removeImages = (id, filesToDelete, bucket) => __awaiter(void 0, void 0, void 0, function* () {
     const getExistingObjects = yield Promise.all(filesToDelete.map((file) => __awaiter(void 0, void 0, void 0, function* () {
         const retrievedFile = yield Storage.get(
         //file.bucket ?? bucket,
@@ -107,8 +106,7 @@ const removeImages = (id, filesToDelete, bucket) => __awaiter(void 0, void 0, vo
     })));
     return deletedObjects;
 });
-exports.removeImages = removeImages;
-const addImages = (id, fileList, bucket) => __awaiter(void 0, void 0, void 0, function* () {
+exports.addImages = (id, fileList, bucket) => __awaiter(void 0, void 0, void 0, function* () {
     const fixedImageData = fileList.map((file) => {
         let imageFile = file;
         if (imageFile.image.substr(0, 10) === 'data:image') {
@@ -136,7 +134,6 @@ const addImages = (id, fileList, bucket) => __awaiter(void 0, void 0, void 0, fu
     })));
     return uploadResults;
 });
-exports.addImages = addImages;
 let legacyS3Client;
 if (process.env.IS_OFFLINE) {
     legacyS3Client = new aws_sdk_1.S3({
@@ -196,7 +193,7 @@ const Storage = {
                 Key: fileName,
             };
             const getObjectCommand = new client_s3_1.GetObjectCommand(getObjectInput);
-            return yield (0, s3_request_presigner_1.getSignedUrl)(s3Client, getObjectCommand, {
+            return yield s3_request_presigner_1.getSignedUrl(s3Client, getObjectCommand, {
                 expiresIn: expirySeconds,
             });
         });

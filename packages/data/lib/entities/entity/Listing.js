@@ -28,118 +28,118 @@ const CartItem_1 = require("./CartItem");
 let Listing = class Listing extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => CurrencyType_1.CurrencyType, (currencyType) => currencyType.listings, {
+    typeorm_1.ManyToOne(() => CurrencyType_1.CurrencyType, (currencyType) => currencyType.listings, {
         nullable: true,
     }),
     __metadata("design:type", CurrencyType_1.CurrencyType)
 ], Listing.prototype, "currency_type", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Account_1.Account, (account) => account.listings, {
+    typeorm_1.ManyToOne(() => Account_1.Account, (account) => account.listings, {
         onDelete: 'CASCADE',
     }),
     __metadata("design:type", Account_1.Account)
 ], Listing.prototype, "account", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => ListingStatus_1.ListingStatus, (listing_status) => listing_status.listings),
+    typeorm_1.ManyToOne(() => ListingStatus_1.ListingStatus, (listing_status) => listing_status.listings),
     __metadata("design:type", ListingStatus_1.ListingStatus)
 ], Listing.prototype, "listing_status", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Product_1.Product, (product) => product.listings, {
+    typeorm_1.ManyToOne(() => Product_1.Product, (product) => product.listings, {
         onDelete: 'CASCADE',
     }),
     __metadata("design:type", Product_1.Product)
 ], Listing.prototype, "product", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Address_1.Address),
-    (0, typeorm_1.JoinColumn)(),
+    typeorm_1.OneToOne(() => Address_1.Address),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", Address_1.Address)
 ], Listing.prototype, "address", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Usage_1.Usage, {
+    typeorm_1.OneToOne(() => Usage_1.Usage, {
         cascade: true,
     }),
-    (0, typeorm_1.JoinColumn)(),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", Usage_1.Usage)
 ], Listing.prototype, "usage", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", String)
 ], Listing.prototype, "serial_number", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", Number)
 ], Listing.prototype, "YOM", void 0);
 __decorate([
-    (0, typeorm_1.Column)('text', { nullable: true }),
+    typeorm_1.Column('text', { nullable: true }),
     __metadata("design:type", String)
 ], Listing.prototype, "comment", void 0);
 __decorate([
-    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, nullable: true }),
+    typeorm_1.Column('decimal', { precision: 12, scale: 2, nullable: true }),
     __metadata("design:type", Number)
 ], Listing.prototype, "cost", void 0);
 __decorate([
-    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, nullable: true }),
+    typeorm_1.Column('decimal', { precision: 12, scale: 2, nullable: true }),
     __metadata("design:type", Number)
 ], Listing.prototype, "reject_below", void 0);
 __decorate([
-    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, nullable: true }),
+    typeorm_1.Column('decimal', { precision: 12, scale: 2, nullable: true }),
     __metadata("design:type", Number)
 ], Listing.prototype, "accept_above", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", Boolean)
 ], Listing.prototype, "is_on_ground_floor", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", Boolean)
 ], Listing.prototype, "is_there_steps", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", Boolean)
 ], Listing.prototype, "is_packaging_required", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => ListingAccessory_1.ListingAccessory, (listing_accessory) => listing_accessory.listing, {
+    typeorm_1.OneToMany(() => ListingAccessory_1.ListingAccessory, (listing_accessory) => listing_accessory.listing, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Listing.prototype, "listing_accessories", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => ListingImage_1.ListingImage, (listingImage) => listingImage.listing, {
+    typeorm_1.OneToMany(() => ListingImage_1.ListingImage, (listingImage) => listingImage.listing, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Listing.prototype, "listing_images", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Offer_1.Offer, (offer) => offer.listing, {
+    typeorm_1.OneToMany(() => Offer_1.Offer, (offer) => offer.listing, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Listing.prototype, "offers", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Watchlist_1.Watchlist, (watchlist) => watchlist.listing, {
+    typeorm_1.OneToMany(() => Watchlist_1.Watchlist, (watchlist) => watchlist.listing, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Listing.prototype, "watchlists", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => CartItem_1.CartItem, (cartItem) => cartItem.listing, {
+    typeorm_1.OneToMany(() => CartItem_1.CartItem, (cartItem) => cartItem.listing, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Listing.prototype, "cart_items", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Order_1.Order, (order) => order.listing, {
+    typeorm_1.OneToMany(() => Order_1.Order, (order) => order.listing, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Listing.prototype, "orders", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Question_1.Question, (question) => question.listing, {
+    typeorm_1.OneToMany(() => Question_1.Question, (question) => question.listing, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Listing.prototype, "questions", void 0);
 Listing = __decorate([
-    (0, typeorm_1.Entity)('listing')
+    typeorm_1.Entity('listing')
 ], Listing);
 exports.Listing = Listing;

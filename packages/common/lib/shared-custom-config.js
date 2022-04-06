@@ -25,7 +25,7 @@ exports.SharedConfig = {
         DEFAULT_EXPIRY: {
             offline: 1 * 60 * 1000,
             dev: 30 * 60 * 1000,
-            prod: 72 * 60 * 60 * 1000, // 72 hours
+            prod: 72 * 60 * 60 * 1000,
         },
     },
     // STRIPE: {

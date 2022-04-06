@@ -16,12 +16,12 @@ const ImageEntity_1 = require("../utils/ImageEntity");
 let ListingImage = class ListingImage extends ImageEntity_1.ImageEntity {
 };
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Listing_1.Listing, (listing) => listing.listing_images, {
+    typeorm_1.ManyToOne(() => Listing_1.Listing, (listing) => listing.listing_images, {
         onDelete: 'CASCADE',
     }),
     __metadata("design:type", Listing_1.Listing)
 ], ListingImage.prototype, "listing", void 0);
 ListingImage = __decorate([
-    (0, typeorm_1.Entity)('listing_image')
+    typeorm_1.Entity('listing_image')
 ], ListingImage);
 exports.ListingImage = ListingImage;

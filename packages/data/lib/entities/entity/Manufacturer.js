@@ -16,16 +16,16 @@ const VersionControlledEntity_1 = require("../utils/VersionControlledEntity");
 let Manufacturer = class Manufacturer extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Manufacturer.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: true }),
+    typeorm_1.Column({ default: true }),
     __metadata("design:type", Boolean)
 ], Manufacturer.prototype, "is_approved", void 0);
 __decorate([
-    (0, typeorm_1.ManyToMany)(() => Product_1.Product, (product) => product.manufacturers),
-    (0, typeorm_1.JoinTable)({
+    typeorm_1.ManyToMany(() => Product_1.Product, (product) => product.manufacturers),
+    typeorm_1.JoinTable({
         name: 'product_to_manufacturer',
         joinColumn: {
             name: 'manufacturer',
@@ -39,6 +39,6 @@ __decorate([
     __metadata("design:type", Array)
 ], Manufacturer.prototype, "products", void 0);
 Manufacturer = __decorate([
-    (0, typeorm_1.Entity)('manufacturer')
+    typeorm_1.Entity('manufacturer')
 ], Manufacturer);
 exports.Manufacturer = Manufacturer;

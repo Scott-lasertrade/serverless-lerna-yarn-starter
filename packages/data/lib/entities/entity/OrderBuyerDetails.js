@@ -17,40 +17,40 @@ const Checkout_1 = require("./Checkout");
 let OrderBuyerDetails = class OrderBuyerDetails extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Checkout_1.Checkout, (order) => order.buyer_details),
-    (0, typeorm_1.JoinColumn)(),
+    typeorm_1.OneToOne(() => Checkout_1.Checkout, (order) => order.buyer_details),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", Checkout_1.Checkout)
 ], OrderBuyerDetails.prototype, "checkout", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Address_1.Address),
-    (0, typeorm_1.JoinColumn)(),
+    typeorm_1.OneToOne(() => Address_1.Address),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", Address_1.Address)
 ], OrderBuyerDetails.prototype, "address", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderBuyerDetails.prototype, "first_name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderBuyerDetails.prototype, "last_name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderBuyerDetails.prototype, "email", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderBuyerDetails.prototype, "phone", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderBuyerDetails.prototype, "business_name", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderBuyerDetails.prototype, "tax_id", void 0);
 OrderBuyerDetails = __decorate([
-    (0, typeorm_1.Entity)('order_buyer_details')
+    typeorm_1.Entity('order_buyer_details')
 ], OrderBuyerDetails);
 exports.OrderBuyerDetails = OrderBuyerDetails;

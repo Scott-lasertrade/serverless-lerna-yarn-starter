@@ -67,6 +67,6 @@ let ProductViewUpdateSubscriber = class ProductViewUpdateSubscriber {
     }
 };
 ProductViewUpdateSubscriber = __decorate([
-    (0, typeorm_1.EventSubscriber)()
+    typeorm_1.EventSubscriber()
 ], ProductViewUpdateSubscriber);
 exports.ProductViewUpdateSubscriber = ProductViewUpdateSubscriber;

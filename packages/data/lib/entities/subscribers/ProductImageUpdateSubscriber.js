@@ -46,6 +46,6 @@ let ProductImageUpdateSubscriber = class ProductImageUpdateSubscriber {
     }
 };
 ProductImageUpdateSubscriber = __decorate([
-    (0, typeorm_1.EventSubscriber)()
+    typeorm_1.EventSubscriber()
 ], ProductImageUpdateSubscriber);
 exports.ProductImageUpdateSubscriber = ProductImageUpdateSubscriber;

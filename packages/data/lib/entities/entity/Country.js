@@ -16,18 +16,18 @@ const Address_1 = require("./Address");
 let Country = class Country extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    (0, typeorm_1.Column)({ length: 64 }),
+    typeorm_1.Column({ length: 64 }),
     __metadata("design:type", String)
 ], Country.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 3 }),
+    typeorm_1.Column({ length: 3 }),
     __metadata("design:type", String)
 ], Country.prototype, "abbreviation", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Address_1.Address, (address) => address.country),
+    typeorm_1.OneToMany(() => Address_1.Address, (address) => address.country),
     __metadata("design:type", Array)
 ], Country.prototype, "addresses", void 0);
 Country = __decorate([
-    (0, typeorm_1.Entity)('country')
+    typeorm_1.Entity('country')
 ], Country);
 exports.Country = Country;

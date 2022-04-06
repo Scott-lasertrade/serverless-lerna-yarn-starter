@@ -1,5 +1,5 @@
 import { handlerPath } from '@medii/api-lambda';
-import { UserpoolTriggers } from 'UserpoolTriggers';
+import { UserpoolTriggers } from '@medii/common';
 
 export default {
     handler: `${handlerPath(__dirname)}/handler.main`,

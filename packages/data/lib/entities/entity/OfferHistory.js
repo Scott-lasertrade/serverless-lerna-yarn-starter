@@ -17,31 +17,31 @@ const VersionControlledEntity_1 = require("../utils/VersionControlledEntity");
 let OfferHistory = class OfferHistory extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Date)
 ], OfferHistory.prototype, "date", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Offer_1.Offer, (offer) => offer.offer_history, {
+    typeorm_1.ManyToOne(() => Offer_1.Offer, (offer) => offer.offer_history, {
         nullable: true,
     }),
     __metadata("design:type", Offer_1.Offer)
 ], OfferHistory.prototype, "offer", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", Number)
 ], OfferHistory.prototype, "value", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => OfferStatus_1.OfferStatus, {
+    typeorm_1.ManyToOne(() => OfferStatus_1.OfferStatus, {
         cascade: true,
     }),
-    (0, typeorm_1.JoinColumn)(),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", OfferStatus_1.OfferStatus)
 ], OfferHistory.prototype, "status", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ nullable: true }),
+    typeorm_1.Column({ nullable: true }),
     __metadata("design:type", String)
 ], OfferHistory.prototype, "info", void 0);
 OfferHistory = __decorate([
-    (0, typeorm_1.Entity)('offer_history')
+    typeorm_1.Entity('offer_history')
 ], OfferHistory);
 exports.OfferHistory = OfferHistory;

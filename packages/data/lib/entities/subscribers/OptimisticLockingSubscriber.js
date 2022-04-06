@@ -40,6 +40,6 @@ let OptimisticLockingSubscriber = class OptimisticLockingSubscriber {
     }
 };
 OptimisticLockingSubscriber = __decorate([
-    (0, typeorm_1.EventSubscriber)()
+    typeorm_1.EventSubscriber()
 ], OptimisticLockingSubscriber);
 exports.OptimisticLockingSubscriber = OptimisticLockingSubscriber;

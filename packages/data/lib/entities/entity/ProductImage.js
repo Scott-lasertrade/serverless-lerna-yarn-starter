@@ -16,12 +16,12 @@ const ImageEntity_1 = require("../utils/ImageEntity");
 let ProductImage = class ProductImage extends ImageEntity_1.ImageEntity {
 };
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Product_1.Product, (product) => product.product_images, {
+    typeorm_1.ManyToOne(() => Product_1.Product, (product) => product.product_images, {
         onDelete: 'CASCADE',
     }),
     __metadata("design:type", Product_1.Product)
 ], ProductImage.prototype, "product", void 0);
 ProductImage = __decorate([
-    (0, typeorm_1.Entity)('product_image')
+    typeorm_1.Entity('product_image')
 ], ProductImage);
 exports.ProductImage = ProductImage;
