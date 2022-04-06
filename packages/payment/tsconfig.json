@@ -1,10 +1,22 @@
 {
     "extends": "../tsconfig.base.json",
     "compilerOptions": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
         "outDir": "lib",
         "rootDir": "src",
-        "baseUrl": "./"
+        "baseUrl": "./",
+        "paths": {
+            "@medii/data": ["../data/src"],
+            "@medii/common": ["../common/src"],
+            "@medii/transvirtual": ["../transvirtual/src"]
+        }
     },
     "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"]
+    "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"],
+    "references": [
+        { "path": "../common" },
+        { "path": "../data" },
+        { "path": "../transvirtual" }
+    ]
 }

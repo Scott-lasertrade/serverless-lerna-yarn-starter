@@ -131,9 +131,9 @@ const task: any = async (event) => {
     try {
         console.log(`EVENT BRIDGE| Starting...`, emailParams);
         await sendToEventBridge(
-            process.env.EVENT_BRIDGE_EMAIL,
+            process.env.EVENT_BRIDGE_EMAIL ?? '',
             emailParams,
-            process.env.STAGE
+            process.env.STAGE ?? ''
         );
     } catch (err: any) {
         console.error(`EVENT BRIDGE| Error: ${err.message}`);

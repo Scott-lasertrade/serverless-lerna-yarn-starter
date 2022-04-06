@@ -14,9 +14,12 @@ import {
 } from '@medii/data';
 import { sendToEventBridge } from '@medii/eventbridge';
 import { orderGetPayAmount, orderGetApplicationFee } from '@medii/payment';
+import Stripe from 'stripe';
 
+const stripe = new Stripe(process.env.STRIPESECRETKEY ?? '', {
+    apiVersion: '2020-08-27',
+});
 const database = new Database();
-const stripe = require('stripe')(process.env.STRIPESECRETKEY);
 
 const payOrder = async (transactionalEntityManager, order, amount) => {
     order.paid = Number(order.paid) + Number(amount);
@@ -366,9 +369,9 @@ const task: any = async (event) => {
     try {
         console.log(`EVENT BRIDGE| Starting...`, emailParams);
         await sendToEventBridge(
-            process.env.EVENT_BRIDGE_EMAIL,
+            process.env.EVENT_BRIDGE_EMAIL ?? '',
             emailParams,
-            process.env.STAGE
+            process.env.STAGE ?? ''
         );
     } catch (err: any) {
         console.error(`EVENT BRIDGE| Error: ${err.message}`);

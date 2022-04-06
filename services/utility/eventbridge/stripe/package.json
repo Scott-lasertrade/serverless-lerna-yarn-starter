@@ -7,12 +7,13 @@
     "dependencies": {
         "@medii/api-lambda": "^1.0.4",
         "@medii/common": "^1.0.7",
-        "@medii/statemachine": "^1.0.7",
         "@medii/data": "^1.0.6",
         "@medii/eventbridge": "^1.0.7",
         "@medii/payment": "^1.0.7",
+        "@medii/statemachine": "^1.0.7",
         "@typescript-eslint/typescript-estree": "4.33.0",
-        "serverless-iam-roles-per-function": "^3.2.0"
+        "serverless-iam-roles-per-function": "^3.2.0",
+        "stripe": "^8.215.0"
     },
     "scripts": {
         "test": "serverless-bundle test"

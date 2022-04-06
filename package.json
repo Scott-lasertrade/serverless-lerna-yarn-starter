@@ -5,9 +5,7 @@
     "license": "MIT",
     "private": true,
     "workspaces": [
-        "packages/**/*",
-        "services/admin/**/*",
-        "services/public/**/*"
+        "packages/**/*"
     ],
     "devDependencies": {
         "@serverless/typescript": "^2.55.0",
