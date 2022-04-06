@@ -9,7 +9,7 @@
     "dependencies": {
         "@aws-sdk/client-s3": "^3.56.0",
         "@medii/common": "^1.0.7",
-        "@medii/data": "^1.0.7"
+        "@medii/data": "^1.0.6"
     },
     "scripts": {
         "build": "run-s clean build:tsc",

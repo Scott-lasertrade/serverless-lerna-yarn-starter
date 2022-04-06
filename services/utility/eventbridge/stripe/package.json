@@ -1,5 +1,5 @@
 {
-    "name": "@medii/eventbridge_sfn",
+    "name": "@medii/eventbridge_stripe",
     "version": "1.0.7",
     "description": "Serverless hello service",
     "main": "serverless.ts",
