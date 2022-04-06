@@ -58,7 +58,7 @@ const StateMachines: StateMachine = {
                     RefreshListingViews: {
                         Type: 'Task',
                         Resource: {
-                            'Fn::GetAtt': ['refreshListingViews', 'Arn'],
+                            'Fn::GetAtt': ['refreshShopViews', 'Arn'],
                         },
                         End: true,
                     },

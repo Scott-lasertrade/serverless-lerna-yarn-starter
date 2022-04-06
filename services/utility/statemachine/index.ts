@@ -3,12 +3,12 @@
 // |_________________________|
 //      Category
 import expireOffer from './expireOffer';
-import refreshListingViews from './refreshListingViews';
+import refreshShopViews from './refreshListingViews';
 import reinstateListings from './reinstateListings';
 
 const functions = {
     expireOffer,
-    refreshListingViews,
+    refreshShopViews,
     reinstateListings,
 };
 
