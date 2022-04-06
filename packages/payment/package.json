@@ -1,15 +1,15 @@
 {
     "name": "@medii/payment",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "license": "MIT",
     "main": "lib/index.js",
     "files": [
         "lib"
     ],
     "dependencies": {
-        "@medii/common": "^1.0.6",
-        "@medii/data": "^1.0.6",
-        "@medii/transvirtual": "^1.0.6",
+        "@medii/common": "^1.0.7",
+        "@medii/data": "^1.0.7",
+        "@medii/transvirtual": "^1.0.7",
         "typeorm": "0.2.38"
     },
     "scripts": {
