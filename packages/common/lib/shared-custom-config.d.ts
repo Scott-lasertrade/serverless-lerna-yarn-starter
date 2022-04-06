@@ -10,6 +10,12 @@ export declare const SharedConfig: {
             prod: number;
         };
     };
+    STRIPE: {
+        SECRETKEY: string | undefined;
+        PUBLISHABLEKEY: string | undefined;
+        CLIENTID: string | undefined;
+        WEBHOOK: string | undefined;
+    };
     AURORA: {
         ARN: {
             'Fn::ImportValue': string;
