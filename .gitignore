@@ -8,3 +8,8 @@ jspm_packages
 .build
 
 .*.sw*
+
+node_modules/
+lerna-debug.log
+npm-debug.log
+packages/*/lib

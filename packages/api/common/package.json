@@ -11,7 +11,7 @@
     },
     "scripts": {
         "build": "run-s clean build:tsc",
-        "build:tsc": "tsc -b"
+        "tsc": "tsc"
     },
     "devDependencies": {
         "@types/aws-lambda": "^8.10.71",

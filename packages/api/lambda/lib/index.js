@@ -58,3 +58,4 @@ const handleTimeout = (prom, context, timeOutDeduction = 500) => __awaiter(void 
     }
 });
 exports.handleTimeout = handleTimeout;
+//# sourceMappingURL=index.js.map

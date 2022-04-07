@@ -28,18 +28,6 @@ const common_1 = require("@medii/common");
 const apiGateway_1 = require("./apiGateway");
 __exportStar(require("./apiGateway"), exports);
 const apiGatewayResponseMiddleware = (options = {}) => {
-    // const before: MiddlewareFunction<APIGatewayProxyEvent, any> = async (
-    //     request
-    // ) => {
-    //     if (!request.event.headers.authorizeduserid) {
-    //         throw new AppError('AuthorizedUserId Header missing', 400);
-    //     }
-    //     request.event.headers.currentuserid =
-    //         request.event.headers.currentuserid &&
-    //         request.event.headers.currentuserid !== 'undefined'
-    //             ? request.event.headers.currentuserid
-    //             : request.event.headers.AuthorizedUserId?? event.headers.authorizeduserid;
-    // };
     const after = (request) => __awaiter(void 0, void 0, void 0, function* () {
         var _a, _b;
         if (!((_a = request.event) === null || _a === void 0 ? void 0 : _a.httpMethod) ||
@@ -71,9 +59,9 @@ const apiGatewayResponseMiddleware = (options = {}) => {
         return Promise.resolve();
     });
     return {
-        // before,
         after,
         onError,
     };
 };
 exports.apiGatewayResponseMiddleware = apiGatewayResponseMiddleware;
+//# sourceMappingURL=index.js.map

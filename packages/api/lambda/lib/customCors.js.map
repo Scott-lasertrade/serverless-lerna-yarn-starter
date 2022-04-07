@@ -1,0 +1,1 @@
+{"version":3,"file":"customCors.js","sourceRoot":"","sources":["../src/customCors.ts"],"names":[],"mappings":";;;AAAa,QAAA,UAAU,GAAG;IACtB,MAAM,EAAE,GAAG;IACX,OAAO,EAAE;QACL,cAAc;QACd,YAAY;QACZ,eAAe;QACf,WAAW;QACX,sBAAsB;QACtB,kBAAkB;QAClB,kBAAkB;QAClB,eAAe;KAClB;IACD,gBAAgB,EAAE,KAAK;CAC1B,CAAC"}

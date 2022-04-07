@@ -8,3 +8,4 @@ const handlerPath = (context) => {
         .replace(/\\/g, '/')}`;
 };
 exports.handlerPath = handlerPath;
+//# sourceMappingURL=handlerResolver.js.map

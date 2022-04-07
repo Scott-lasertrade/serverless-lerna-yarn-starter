@@ -15,3 +15,4 @@ exports.customCors = {
     ],
     allowCredentials: false,
 };
+//# sourceMappingURL=customCors.js.map

@@ -9,3 +9,5 @@ export * from './entities/utils/VersionControlledEntity';
 
 // Database
 export { default as Database } from './database';
+
+export const TEST = 'TEST';

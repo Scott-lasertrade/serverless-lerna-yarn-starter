@@ -12,9 +12,15 @@
         "@middy/core": "^2.5.7",
         "aws-lambda": "^1.0.7"
     },
+    "files": [
+        "lib"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "build": "run-s clean build:tsc",
-        "build:tsc": "tsc -b"
+        "tsc": "tsc"
     },
     "devDependencies": {
         "ts-node": "^8.6.2"

@@ -36,3 +36,4 @@ const formatJSONResponse = (response, origin, statusCode = 200) => {
     }
 };
 exports.formatJSONResponse = formatJSONResponse;
+//# sourceMappingURL=apiGateway.js.map
