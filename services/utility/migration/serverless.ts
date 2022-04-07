@@ -41,6 +41,14 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
             restApiId: '${self:custom.API.ID}',
             restApiRootResourceId: '${self:custom.API.ROOT}',
         },
+
+        environment: {
+            AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
+            AURORA_DB_ARN: '${self:custom.AURORA.ARN}',
+            SECRET_ARN: '${self:custom.AURORA.SECRET_ARN}',
+            DATABASE_NAME: '${self:custom.AURORA.DB_NAME}',
+            REGION: '${self:provider.region}',
+        },
     },
     // import the function via paths
     functions: functions,
