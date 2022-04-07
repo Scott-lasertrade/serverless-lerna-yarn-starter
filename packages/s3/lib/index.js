@@ -33,7 +33,7 @@ else {
     };
 }
 const s3Client = new client_s3_1.S3Client(s3Parameters);
-exports.prepareImageData = (imageList, existingImages) => {
+const prepareImageData = (imageList, existingImages) => {
     const imagesToDelete = (imageList === null || imageList === void 0 ? void 0 : imageList.length) > 0
         ? existingImages.filter((existingImage) => !imageList
             .filter((img) => Number(img.id))
@@ -85,11 +85,10 @@ exports.prepareImageData = (imageList, existingImages) => {
         : [];
     return { imagesToDelete, imagesToReplace, imagesToShift, imagesToCreate };
 };
-exports.removeImages = (id, filesToDelete, bucket) => __awaiter(void 0, void 0, void 0, function* () {
+exports.prepareImageData = prepareImageData;
+const removeImages = (id, filesToDelete, bucket) => __awaiter(void 0, void 0, void 0, function* () {
     const getExistingObjects = yield Promise.all(filesToDelete.map((file) => __awaiter(void 0, void 0, void 0, function* () {
-        const retrievedFile = yield Storage.get(
-        //file.bucket ?? bucket,
-        bucket, `${id}/${file.key}`);
+        const retrievedFile = yield Storage.get(bucket, `${id}/${file.key}`);
         return retrievedFile;
     })));
     if (getExistingObjects.length != filesToDelete.length) {
@@ -97,16 +96,15 @@ exports.removeImages = (id, filesToDelete, bucket) => __awaiter(void 0, void 0, 
     }
     const deletedObjects = yield Promise.all(filesToDelete.map((file) => __awaiter(void 0, void 0, void 0, function* () {
         var _a;
-        const deletedFile = yield Storage.remove(
-        //file.bucket ?? bucket,
-        bucket, `${id}/${file.key}`);
+        const deletedFile = yield Storage.remove(bucket, `${id}/${file.key}`);
         file.s3VersionId = (_a = deletedFile === null || deletedFile === void 0 ? void 0 : deletedFile.VersionId) !== null && _a !== void 0 ? _a : '';
         file.deleted_date = new Date();
         return file;
     })));
     return deletedObjects;
 });
-exports.addImages = (id, fileList, bucket) => __awaiter(void 0, void 0, void 0, function* () {
+exports.removeImages = removeImages;
+const addImages = (id, fileList, bucket) => __awaiter(void 0, void 0, void 0, function* () {
     const fixedImageData = fileList.map((file) => {
         let imageFile = file;
         if (imageFile.image.substr(0, 10) === 'data:image') {
@@ -126,14 +124,13 @@ exports.addImages = (id, fileList, bucket) => __awaiter(void 0, void 0, void 0, 
             console.log(`Mime types don't match [${detectedMime}, ${imageData.mime}]`);
             throw new common_1.AppError(`Mime types don't match [${detectedMime}, ${imageData.mime}]`);
         }
-        const writeResults = yield Storage.write(buffer, `${id}/${imageData.key}`, 
-        //imageData.bucket ?? bucket,
-        bucket, null, imageData.mime.toString());
+        const writeResults = yield Storage.write(buffer, `${id}/${imageData.key}`, bucket, null, imageData.mime.toString());
         imageData.versionId = (_b = writeResults === null || writeResults === void 0 ? void 0 : writeResults.VersionId) !== null && _b !== void 0 ? _b : '';
         return imageData;
     })));
     return uploadResults;
 });
+exports.addImages = addImages;
 let legacyS3Client;
 if (process.env.IS_OFFLINE) {
     legacyS3Client = new aws_sdk_1.S3({
@@ -147,7 +144,6 @@ else {
     legacyS3Client = new aws_sdk_1.S3();
 }
 const Storage = {
-    // TODO - S.Y: Convert to new aws-sdk v3 when this issue is resolved: https://github.com/aws/aws-sdk-js-v3/issues/1877
     get(bucket, fileName, region = 'ap-southeast-2') {
         var _a;
         return __awaiter(this, void 0, void 0, function* () {
@@ -186,14 +182,12 @@ const Storage = {
     },
     getSignedUrl(bucket, fileName, expirySeconds) {
         return __awaiter(this, void 0, void 0, function* () {
-            // TODO - S.Y: Work out how to change region for new AWS-SDK setup
-            // s3Client.config.region = region;
             const getObjectInput = {
                 Bucket: bucket,
                 Key: fileName,
             };
             const getObjectCommand = new client_s3_1.GetObjectCommand(getObjectInput);
-            return yield s3_request_presigner_1.getSignedUrl(s3Client, getObjectCommand, {
+            return yield (0, s3_request_presigner_1.getSignedUrl)(s3Client, getObjectCommand, {
                 expiresIn: expirySeconds,
             });
         });
@@ -214,3 +208,4 @@ const Storage = {
     },
 };
 exports.default = Storage;
+//# sourceMappingURL=index.js.map

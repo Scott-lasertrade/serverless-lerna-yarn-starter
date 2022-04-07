@@ -190,7 +190,7 @@ const handelTemplateFooter = () => {
 </table><!-- End -->
 </body>`;
 };
-exports.handelTemplateEmail = (emailSubject, emailBody, emailToAddress) => __awaiter(void 0, void 0, void 0, function* () {
+const handelTemplateEmail = (emailSubject, emailBody, emailToAddress) => __awaiter(void 0, void 0, void 0, function* () {
     const subject = {
         Data: emailSubject,
     };
@@ -226,7 +226,8 @@ exports.handelTemplateEmail = (emailSubject, emailBody, emailToAddress) => __awa
         };
     }
 });
-exports.getUNAndEmailFromCogId = (cogId) => __awaiter(void 0, void 0, void 0, function* () {
+exports.handelTemplateEmail = handelTemplateEmail;
+const getUNAndEmailFromCogId = (cogId) => __awaiter(void 0, void 0, void 0, function* () {
     let user;
     try {
         const config = {
@@ -249,5 +250,6 @@ exports.getUNAndEmailFromCogId = (cogId) => __awaiter(void 0, void 0, void 0, fu
     console.log(user);
     return { userName, emailAddress };
 });
+exports.getUNAndEmailFromCogId = getUNAndEmailFromCogId;
 exports.default = exports.handelTemplateEmail;
 //# sourceMappingURL=index.js.map

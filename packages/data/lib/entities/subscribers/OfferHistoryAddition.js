@@ -47,7 +47,7 @@ let OfferHistoryAddition = class OfferHistoryAddition {
     }
 };
 OfferHistoryAddition = __decorate([
-    typeorm_1.EventSubscriber()
+    (0, typeorm_1.EventSubscriber)()
 ], OfferHistoryAddition);
 exports.OfferHistoryAddition = OfferHistoryAddition;
 //# sourceMappingURL=OfferHistoryAddition.js.map

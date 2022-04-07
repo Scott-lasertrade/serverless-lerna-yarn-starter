@@ -56,34 +56,25 @@ const addHSCompany = (businessName, businessPhoneNumber, connectHSContacts) => _
         return apiResponse.id;
     }
     catch (e) {
-        // @ts-ignore
-        const error = // @ts-ignore
-         e.message === 'HTTP request failed' // @ts-ignore
+        const error = e.message === 'HTTP request failed'
             ? JSON.stringify(e.response, null, 2)
             : e;
-        if (
-        // @ts-ignore
-        (_c = (_b = (_a = e.response) === null || _a === void 0 ? void 0 : _a.body) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.startsWith('Company already exists. Existing ID: ')) {
+        if ((_c = (_b = (_a = e.response) === null || _a === void 0 ? void 0 : _a.body) === null || _b === void 0 ? void 0 : _b.message) === null || _c === void 0 ? void 0 : _c.startsWith('Company already exists. Existing ID: ')) {
             try {
-                // @ts-ignore
                 const companyId = (_f = (_e = (_d = e.response) === null || _d === void 0 ? void 0 : _d.body) === null || _e === void 0 ? void 0 : _e.message) === null || _f === void 0 ? void 0 : _f.replace('Company already exists. Existing ID: ', '');
-                // S.Y. Technically could return the id, but best to make sure it can be retrieved and validate the emails match.
                 const apiResponse = yield hubspotClient.crm.companies.basicApi.getById(companyId);
                 console.log('Hubspot Company: ', apiResponse.id);
                 return apiResponse.id;
             }
             catch (e) {
-                const error = // @ts-ignore
-                 e.message === 'HTTP request failed' // @ts-ignore
+                const error = e.message === 'HTTP request failed'
                     ? JSON.stringify(e.response, null, 2)
                     : e;
                 console.error(error);
-                // @ts-ignore
                 throw new common_1.AppError(error);
             }
         }
         else {
-            // @ts-ignore
             throw new common_1.AppError(error);
         }
     }
@@ -107,13 +98,10 @@ const associateContactWithCompany = (contactId, companyId) => __awaiter(void 0, 
         return apiResponse.results;
     }
     catch (e) {
-        const error = 
-        // @ts-ignore
-        e.message === 'HTTP request failed'
-            ? // @ts-ignore
+        const error = e.message === 'HTTP request failed'
+            ?
                 JSON.stringify(e.response, null, 2)
             : e;
-        // @ts-ignore
         throw new common_1.AppError(error);
     }
 });
@@ -131,37 +119,27 @@ const addHSContact = (emailAddress, firstName) => __awaiter(void 0, void 0, void
         return apiResponse.id;
     }
     catch (e) {
-        const error = 
-        // @ts-ignore
-        e.message === 'HTTP request failed'
-            ? // @ts-ignore
+        const error = e.message === 'HTTP request failed'
+            ?
                 JSON.stringify(e.response, null, 2)
             : e;
-        if (
-        // @ts-ignore
-        (_j = (_h = (_g = e.response) === null || _g === void 0 ? void 0 : _g.body) === null || _h === void 0 ? void 0 : _h.message) === null || _j === void 0 ? void 0 : _j.startsWith('Contact already exists. Existing ID: ')) {
+        if ((_j = (_h = (_g = e.response) === null || _g === void 0 ? void 0 : _g.body) === null || _h === void 0 ? void 0 : _h.message) === null || _j === void 0 ? void 0 : _j.startsWith('Contact already exists. Existing ID: ')) {
             try {
-                // @ts-ignore
                 const contactId = (_m = (_l = (_k = e.response) === null || _k === void 0 ? void 0 : _k.body) === null || _l === void 0 ? void 0 : _l.message) === null || _m === void 0 ? void 0 : _m.replace('Contact already exists. Existing ID: ', '');
-                // S.Y. Technically could return the id, but best to make sure it can be retrieved and validate the emails match.
                 const apiResponse = yield hubspotClient.crm.contacts.basicApi.getById(contactId);
                 console.log('Hubspot Contact: ', apiResponse.id);
                 return apiResponse.id;
             }
             catch (e) {
-                const error = 
-                // @ts-ignore
-                e.message === 'HTTP request failed'
-                    ? // @ts-ignore
+                const error = e.message === 'HTTP request failed'
+                    ?
                         JSON.stringify(e.response, null, 2)
                     : e;
                 console.error(error);
-                // @ts-ignore
                 throw new common_1.AppError(error);
             }
         }
         else {
-            // @ts-ignore
             throw new common_1.AppError(error);
         }
     }
@@ -180,13 +158,10 @@ const updateHSContact = (HsId, firstName, lastName, phoneNumber) => __awaiter(vo
         return apiResponse.id;
     }
     catch (e) {
-        const error = 
-        // @ts-ignore
-        e.message === 'HTTP request failed'
-            ? // @ts-ignore
+        const error = e.message === 'HTTP request failed'
+            ?
                 JSON.stringify(e.response, null, 2)
             : e;
-        // @ts-ignore
         throw new common_1.AppError(error);
     }
 });
@@ -217,13 +192,10 @@ const addHSTask = (taskBody, taskHeader) => __awaiter(void 0, void 0, void 0, fu
         return task.data;
     }
     catch (e) {
-        const error = 
-        // @ts-ignore
-        e.message === 'HTTP request failed'
-            ? // @ts-ignore
+        const error = e.message === 'HTTP request failed'
+            ?
                 JSON.stringify(e.response, null, 2)
             : e;
-        // @ts-ignore
         throw new common_1.AppError(error);
     }
 });
@@ -234,7 +206,7 @@ const getHSDueDate = (dateIssued) => {
     const isFridayAfternoon = nowAEST.getDay() % 6 === 5 && nowAEST.getHours() >= 16;
     const isMondayMorning = nowAEST.getDay() % 6 === 1 && nowAEST.getHours() < 9;
     const isWorkHours = nowAEST.getHours() >= 9 && nowAEST.getHours() < 16;
-    const anHour = 1000 * 60 * 60; // an hour
+    const anHour = 1000 * 60 * 60;
     let dueDate = new Date(nowAEST.getTime());
     if (isWeekend || !isWorkHours || isFridayAfternoon || isMondayMorning) {
         if (isWeekend || isFridayAfternoon || isMondayMorning) {
@@ -274,13 +246,10 @@ const associateContactWithTask = (contactId, taskId) => __awaiter(void 0, void 0
         return association.data;
     }
     catch (e) {
-        const error = 
-        // @ts-ignore
-        e.message === 'HTTP request failed'
-            ? // @ts-ignore
+        const error = e.message === 'HTTP request failed'
+            ?
                 JSON.stringify(e.response, null, 2)
             : e;
-        // @ts-ignore
         throw new common_1.AppError(error);
     }
 });
@@ -309,22 +278,18 @@ const addReportTicket = (accountId, listingId, productId) => __awaiter(void 0, v
             return finalResponse;
         }
         catch (e) {
-            // @ts-ignore
             e.message === 'HTTP request failed'
-                ? // @ts-ignore
+                ?
                     console.error(JSON.stringify(e.response, null, 2))
                 : console.error(e);
-            // @ts-ignore
             throw new common_1.AppError(e);
         }
     }
     catch (e) {
-        // @ts-ignore
         e.message === 'HTTP request failed'
-            ? // @ts-ignore
+            ?
                 console.error(JSON.stringify(e.response, null, 2))
             : console.error(e);
-        // @ts-ignore
         throw new common_1.AppError(e);
     }
 });
@@ -351,22 +316,18 @@ const addQuestionReportTicket = (accountId, questionId) => __awaiter(void 0, voi
             return finalResponse;
         }
         catch (e) {
-            // @ts-ignore
             e.message === 'HTTP request failed'
-                ? // @ts-ignore
+                ?
                     console.error(JSON.stringify(e.response, null, 2))
                 : console.error(e);
-            // @ts-ignore
             throw new common_1.AppError(e);
         }
     }
     catch (e) {
-        // @ts-ignore
         e.message === 'HTTP request failed'
-            ? // @ts-ignore
+            ?
                 console.error(JSON.stringify(e.response, null, 2))
             : console.error(e);
-        // @ts-ignore
         throw new common_1.AppError(e);
     }
 });
@@ -382,13 +343,10 @@ const getHSDeal = (dealId) => __awaiter(void 0, void 0, void 0, function* () {
         return deal;
     }
     catch (e) {
-        const error = 
-        // @ts-ignore
-        e.message === 'HTTP request failed'
-            ? // @ts-ignore
+        const error = e.message === 'HTTP request failed'
+            ?
                 JSON.stringify(e.response, null, 2)
             : e;
-        // @ts-ignore
         throw new common_1.AppError(error);
     }
 });
@@ -437,14 +395,12 @@ const addHSDeal = (hSBuyerId, buyerName, buyerPhone, buyerAddress, hSSellerId, s
         };
     }
     catch (e) {
-        const error = 
-        // @ts-ignore
-        e.message === 'HTTP request failed'
-            ? // @ts-ignore
+        const error = e.message === 'HTTP request failed'
+            ?
                 JSON.stringify(e.response, null, 2)
             : e;
-        // @ts-ignore
         throw new common_1.AppError(error);
     }
 });
 exports.addHSDeal = addHSDeal;
+//# sourceMappingURL=index.js.map

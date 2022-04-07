@@ -16,15 +16,15 @@ const Listing_1 = require("./Listing");
 let ListingStatus = class ListingStatus extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.Column({ length: 16 }),
+    (0, typeorm_1.Column)({ length: 16 }),
     __metadata("design:type", String)
 ], ListingStatus.prototype, "name", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => Listing_1.Listing, (listing) => listing.listing_status),
+    (0, typeorm_1.OneToMany)(() => Listing_1.Listing, (listing) => listing.listing_status),
     __metadata("design:type", Array)
 ], ListingStatus.prototype, "listings", void 0);
 ListingStatus = __decorate([
-    typeorm_1.Entity('listing_status')
+    (0, typeorm_1.Entity)('listing_status')
 ], ListingStatus);
 exports.ListingStatus = ListingStatus;
 //# sourceMappingURL=ListingStatus.js.map

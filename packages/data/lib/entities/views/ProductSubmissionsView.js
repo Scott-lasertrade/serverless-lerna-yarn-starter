@@ -14,35 +14,35 @@ const typeorm_1 = require("typeorm");
 let ProductSubmissionsView = class ProductSubmissionsView {
 };
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", Number)
 ], ProductSubmissionsView.prototype, "id", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], ProductSubmissionsView.prototype, "title", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], ProductSubmissionsView.prototype, "thumbnail_key", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], ProductSubmissionsView.prototype, "thumbnail_bucket", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", String)
 ], ProductSubmissionsView.prototype, "thumbnail_region", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", Boolean)
 ], ProductSubmissionsView.prototype, "requires_approval", void 0);
 __decorate([
-    typeorm_1.ViewColumn(),
+    (0, typeorm_1.ViewColumn)(),
     __metadata("design:type", Date)
 ], ProductSubmissionsView.prototype, "create_at", void 0);
 ProductSubmissionsView = __decorate([
-    typeorm_1.ViewEntity({
+    (0, typeorm_1.ViewEntity)({
         name: 'product_submissions_view',
         expression: `
         select 	p.id, 

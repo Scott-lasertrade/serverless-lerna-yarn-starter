@@ -17,27 +17,27 @@ const VersionControlledEntity_1 = require("../utils/VersionControlledEntity");
 let Question = class Question extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    typeorm_1.ManyToOne(() => Listing_1.Listing, (listing) => listing.questions, {
+    (0, typeorm_1.ManyToOne)(() => Listing_1.Listing, (listing) => listing.questions, {
         nullable: true,
     }),
     __metadata("design:type", Listing_1.Listing)
 ], Question.prototype, "listing", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Account_1.Account, (account) => account.questions, {
+    (0, typeorm_1.ManyToOne)(() => Account_1.Account, (account) => account.questions, {
         nullable: true,
     }),
     __metadata("design:type", Account_1.Account)
 ], Question.prototype, "asker", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], Question.prototype, "question", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], Question.prototype, "answer", void 0);
 Question = __decorate([
-    typeorm_1.Entity('question')
+    (0, typeorm_1.Entity)('question')
 ], Question);
 exports.Question = Question;
 //# sourceMappingURL=Question.js.map

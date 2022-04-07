@@ -18,7 +18,7 @@ const RelationLoader_1 = require("typeorm/query-builder/RelationLoader");
 const ormconfig_1 = __importDefault(require("./ormconfig"));
 class Database {
     constructor() {
-        this.connectionManager = typeorm_1.getConnectionManager();
+        this.connectionManager = (0, typeorm_1.getConnectionManager)();
     }
     getConnection() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -30,7 +30,7 @@ class Database {
             }
             else {
                 console.log(`Create new connection...`);
-                connection = yield typeorm_1.createConnection(ormconfig_1.default);
+                connection = yield (0, typeorm_1.createConnection)(ormconfig_1.default);
             }
             return connection;
         });

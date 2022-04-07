@@ -15,13 +15,13 @@ const CommonEntity_1 = require("../utils/CommonEntity");
 let OfferStatus = class OfferStatus extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.Column({
+    (0, typeorm_1.Column)({
         length: 100,
     }),
     __metadata("design:type", String)
 ], OfferStatus.prototype, "name", void 0);
 OfferStatus = __decorate([
-    typeorm_1.Entity('offer_status')
+    (0, typeorm_1.Entity)('offer_status')
 ], OfferStatus);
 exports.OfferStatus = OfferStatus;
 //# sourceMappingURL=OfferStatus.js.map

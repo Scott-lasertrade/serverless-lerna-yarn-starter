@@ -35,6 +35,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',
+    variablesResolutionMode: '20210326',
     custom: {
         ...SharedConfig,
         stepFunctionsLocal: {

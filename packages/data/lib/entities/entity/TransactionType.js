@@ -16,15 +16,15 @@ const Transaction_1 = require("./Transaction");
 let TransactionType = class TransactionType extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.Column(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], TransactionType.prototype, "name", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => Transaction_1.Transaction, (transaction) => transaction.type),
+    (0, typeorm_1.OneToMany)(() => Transaction_1.Transaction, (transaction) => transaction.type),
     __metadata("design:type", Array)
 ], TransactionType.prototype, "transactions", void 0);
 TransactionType = __decorate([
-    typeorm_1.Entity('transaction_type')
+    (0, typeorm_1.Entity)('transaction_type')
 ], TransactionType);
 exports.TransactionType = TransactionType;
 //# sourceMappingURL=TransactionType.js.map

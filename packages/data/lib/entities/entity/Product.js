@@ -24,88 +24,88 @@ const ListingAccessory_1 = require("./ListingAccessory");
 let Product = Product_1 = class Product extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    typeorm_1.Column({
+    (0, typeorm_1.Column)({
         length: 100,
     }),
     __metadata("design:type", String)
 ], Product.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column('text', { nullable: true }),
+    (0, typeorm_1.Column)('text', { nullable: true }),
     __metadata("design:type", String)
 ], Product.prototype, "specification", void 0);
 __decorate([
-    typeorm_1.Column('text', { nullable: true }),
+    (0, typeorm_1.Column)('text', { nullable: true }),
     __metadata("design:type", String)
 ], Product.prototype, "description", void 0);
 __decorate([
-    typeorm_1.Column({ default: false }),
+    (0, typeorm_1.Column)({ default: false }),
     __metadata("design:type", Boolean)
 ], Product.prototype, "is_active", void 0);
 __decorate([
-    typeorm_1.Column({ default: false }),
+    (0, typeorm_1.Column)({ default: false }),
     __metadata("design:type", Boolean)
 ], Product.prototype, "is_draft", void 0);
 __decorate([
-    typeorm_1.OneToOne(() => Dimension_1.Dimension, {
+    (0, typeorm_1.OneToOne)(() => Dimension_1.Dimension, {
         nullable: true,
     }),
-    typeorm_1.JoinColumn(),
+    (0, typeorm_1.JoinColumn)(),
     __metadata("design:type", Dimension_1.Dimension)
 ], Product.prototype, "dimensions", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => UsageType_1.UsageType, (usageType) => usageType.products, {
+    (0, typeorm_1.ManyToOne)(() => UsageType_1.UsageType, (usageType) => usageType.products, {
         nullable: true,
     }),
     __metadata("design:type", UsageType_1.UsageType)
 ], Product.prototype, "usage_type", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => ProductType_1.ProductType, (productType) => productType.products, {
+    (0, typeorm_1.ManyToOne)(() => ProductType_1.ProductType, (productType) => productType.products, {
         nullable: true,
     }),
     __metadata("design:type", ProductType_1.ProductType)
 ], Product.prototype, "product_type", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => ProductImage_1.ProductImage, (productImage) => productImage.product, {
+    (0, typeorm_1.OneToMany)(() => ProductImage_1.ProductImage, (productImage) => productImage.product, {
         nullable: true,
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Product.prototype, "product_images", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => Listing_1.Listing, (listing) => listing.product, {
+    (0, typeorm_1.OneToMany)(() => Listing_1.Listing, (listing) => listing.product, {
         nullable: true,
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Product.prototype, "listings", void 0);
 __decorate([
-    typeorm_1.ManyToMany(() => Manufacturer_1.Manufacturer, (manufacturer) => manufacturer.products, {
+    (0, typeorm_1.ManyToMany)(() => Manufacturer_1.Manufacturer, (manufacturer) => manufacturer.products, {
         nullable: true,
     }),
     __metadata("design:type", Array)
 ], Product.prototype, "manufacturers", void 0);
 __decorate([
-    typeorm_1.ManyToMany(() => Category_1.Category, (category) => category.products, {
+    (0, typeorm_1.ManyToMany)(() => Category_1.Category, (category) => category.products, {
         nullable: true,
     }),
     __metadata("design:type", Array)
 ], Product.prototype, "categories", void 0);
 __decorate([
-    typeorm_1.ManyToMany(() => Product_1),
-    typeorm_1.JoinTable({
+    (0, typeorm_1.ManyToMany)(() => Product_1),
+    (0, typeorm_1.JoinTable)({
         joinColumn: { name: 'product' },
         inverseJoinColumn: { name: 'accessory' },
     }),
     __metadata("design:type", Array)
 ], Product.prototype, "connections", void 0);
 __decorate([
-    typeorm_1.OneToMany(() => ListingAccessory_1.ListingAccessory, (listing_accessory) => listing_accessory.product, {
+    (0, typeorm_1.OneToMany)(() => ListingAccessory_1.ListingAccessory, (listing_accessory) => listing_accessory.product, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Product.prototype, "listing_accessories", void 0);
 Product = Product_1 = __decorate([
-    typeorm_1.Entity('product')
+    (0, typeorm_1.Entity)('product')
 ], Product);
 exports.Product = Product;
 //# sourceMappingURL=Product.js.map

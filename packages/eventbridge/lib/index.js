@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendToEventBridge = void 0;
 const client_eventbridge_1 = require("@aws-sdk/client-eventbridge");
-exports.sendToEventBridge = (bridgeName, event, stage) => __awaiter(void 0, void 0, void 0, function* () {
+const sendToEventBridge = (bridgeName, event, stage) => __awaiter(void 0, void 0, void 0, function* () {
     const { id, type } = event;
     let client = new client_eventbridge_1.EventBridgeClient({ region: 'ap-southeast-2' });
     if (stage === 'offline') {
@@ -42,4 +42,5 @@ exports.sendToEventBridge = (bridgeName, event, stage) => __awaiter(void 0, void
         return err;
     }
 });
+exports.sendToEventBridge = sendToEventBridge;
 //# sourceMappingURL=index.js.map

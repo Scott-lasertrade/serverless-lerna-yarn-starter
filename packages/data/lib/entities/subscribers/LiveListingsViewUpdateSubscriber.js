@@ -28,7 +28,7 @@ let LiveListingsViewUpdateSubscriber = class LiveListingsViewUpdateSubscriber {
     }
 };
 LiveListingsViewUpdateSubscriber = __decorate([
-    typeorm_1.EventSubscriber()
+    (0, typeorm_1.EventSubscriber)()
 ], LiveListingsViewUpdateSubscriber);
 exports.LiveListingsViewUpdateSubscriber = LiveListingsViewUpdateSubscriber;
 //# sourceMappingURL=LiveListingsViewUpdateSubscriber.js.map

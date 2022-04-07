@@ -30,7 +30,7 @@ let OptimisticLockingSubscriber = class OptimisticLockingSubscriber {
     }
 };
 OptimisticLockingSubscriber = __decorate([
-    typeorm_1.EventSubscriber()
+    (0, typeorm_1.EventSubscriber)()
 ], OptimisticLockingSubscriber);
 exports.OptimisticLockingSubscriber = OptimisticLockingSubscriber;
 //# sourceMappingURL=OptimisticLockingSubscriber.js.map

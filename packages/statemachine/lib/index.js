@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.startStateMachine = void 0;
 const client_sfn_1 = require("@aws-sdk/client-sfn");
-exports.startStateMachine = (stateMachineARN, offlineStateMachineARN, data, offlineMode = false) => __awaiter(void 0, void 0, void 0, function* () {
+const startStateMachine = (stateMachineARN, offlineStateMachineARN, data, offlineMode = false) => __awaiter(void 0, void 0, void 0, function* () {
     let config = { region: 'ap-southeast-2' };
     let params;
     let currentStateMachine = stateMachineARN;
@@ -37,4 +37,5 @@ exports.startStateMachine = (stateMachineARN, offlineStateMachineARN, data, offl
         console.log('State Machine|Failed to Initiate', err);
     }
 });
+exports.startStateMachine = startStateMachine;
 //# sourceMappingURL=index.js.map

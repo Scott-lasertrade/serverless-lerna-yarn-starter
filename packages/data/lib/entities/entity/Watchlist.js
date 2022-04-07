@@ -17,15 +17,15 @@ const VersionControlledEntity_1 = require("../utils/VersionControlledEntity");
 let Watchlist = class Watchlist extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    typeorm_1.ManyToOne(() => Listing_1.Listing, (listing) => listing.watchlists),
+    (0, typeorm_1.ManyToOne)(() => Listing_1.Listing, (listing) => listing.watchlists),
     __metadata("design:type", Listing_1.Listing)
 ], Watchlist.prototype, "listing", void 0);
 __decorate([
-    typeorm_1.ManyToOne(() => Account_1.Account, (account) => account.watchlists),
+    (0, typeorm_1.ManyToOne)(() => Account_1.Account, (account) => account.watchlists),
     __metadata("design:type", Account_1.Account)
 ], Watchlist.prototype, "account", void 0);
 Watchlist = __decorate([
-    typeorm_1.Entity('watchlist')
+    (0, typeorm_1.Entity)('watchlist')
 ], Watchlist);
 exports.Watchlist = Watchlist;
 //# sourceMappingURL=Watchlist.js.map

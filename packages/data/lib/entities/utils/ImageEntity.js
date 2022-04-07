@@ -15,31 +15,31 @@ const CommonEntity_1 = require("./CommonEntity");
 let ImageEntity = class ImageEntity extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    typeorm_1.DeleteDateColumn(),
+    (0, typeorm_1.DeleteDateColumn)(),
     __metadata("design:type", Date)
 ], ImageEntity.prototype, "deleted_date", void 0);
 __decorate([
-    typeorm_1.Column(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], ImageEntity.prototype, "bucket", void 0);
 __decorate([
-    typeorm_1.Column(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], ImageEntity.prototype, "region", void 0);
 __decorate([
-    typeorm_1.Column({ nullable: true }),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], ImageEntity.prototype, "key", void 0);
 __decorate([
-    typeorm_1.Column(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", Number)
 ], ImageEntity.prototype, "order", void 0);
 __decorate([
-    typeorm_1.Column({ default: 0 }),
+    (0, typeorm_1.Column)({ default: 0 }),
     __metadata("design:type", String)
 ], ImageEntity.prototype, "s3VersionId", void 0);
 ImageEntity = __decorate([
-    typeorm_1.Entity('image_entity')
+    (0, typeorm_1.Entity)('image_entity')
 ], ImageEntity);
 exports.ImageEntity = ImageEntity;
 //# sourceMappingURL=ImageEntity.js.map
