@@ -3,14 +3,14 @@ export const SharedConfig = {
     enterprise: {
         collectLambdaLogs: false,
     },
-    // TRANSVIRTUAL: {
-    //     prod: '${ssm:/aws/reference/secretsmanager/prod/transvirtual}',
-    //     dev: '${ssm:/aws/reference/secretsmanager/dev/transvirtual}',
-    //     offline: {
-    //         APIKEY: '78746|YRMKTSNZZP',
-    //         CUSTOMER_CODE: 'LASRTECH',
-    //     },
-    // },
+    TRANSVIRTUAL: {
+        prod: '${ssm:/aws/reference/secretsmanager/prod/transvirtual}',
+        dev: '${ssm:/aws/reference/secretsmanager/dev/transvirtual}',
+        offline: {
+            APIKEY: '78746|YRMKTSNZZP',
+            CUSTOMER_CODE: 'LASRTECH',
+        },
+    },
     // HUBSPOT: {
     //     prod: '${ssm:/aws/reference/secretsmanager/prod/hubspot}',
     //     dev: '${ssm:/aws/reference/secretsmanager/dev/hubspot}',

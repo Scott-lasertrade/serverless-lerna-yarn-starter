@@ -3,6 +3,14 @@ export declare const SharedConfig: {
     enterprise: {
         collectLambdaLogs: boolean;
     };
+    TRANSVIRTUAL: {
+        prod: string;
+        dev: string;
+        offline: {
+            APIKEY: string;
+            CUSTOMER_CODE: string;
+        };
+    };
     OFFER: {
         DEFAULT_EXPIRY: {
             offline: number;
