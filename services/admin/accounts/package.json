@@ -8,10 +8,10 @@
         "test": "serverless-bundle test"
     },
     "dependencies": {
-        "@medii/api-common": "^1.0.8",
-        "@medii/api-lambda": "^1.0.8",
-        "@medii/common": "^1.0.8",
-        "@medii/data": "^1.0.8",
+        "@medii/api-common": "file:../../../packages/api/common",
+        "@medii/api-lambda": "file:../../../packages/api/lambda",
+        "@medii/common": "file:../../../packages/common",
+        "@medii/data": "file:../../../packages/data",
         "@typescript-eslint/typescript-estree": "4.33.0",
         "serverless-iam-roles-per-function": "^3.2.0"
     },
