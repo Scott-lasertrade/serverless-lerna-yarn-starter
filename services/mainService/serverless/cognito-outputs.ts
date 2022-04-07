@@ -3,21 +3,21 @@ const CognitoOutputs = {
         Description: 'The Cognito User Pool',
         Value: { Ref: 'CognitoUserPoolHandel' },
         Export: {
-            Name: 'COGNITO-USER-POOL',
+            Name: '${self:provider.stage}-COGNITO-USER-POOL',
         },
     },
     AuthIdentityPoolId: {
         Description: 'The Cognito Identity Pool',
         Value: { Ref: 'IdentityPool' },
         Export: {
-            Name: 'COGNITO-IDENTITY-POOL',
+            Name: '${self:provider.stage}-COGNITO-IDENTITY-POOL',
         },
     },
     AuthUserPoolWebClientId: {
         Description: 'The Cognito User Pool Client',
         Value: { Ref: 'CognitoUserPoolClient' },
         Export: {
-            Name: 'COGNITO-USER-POOL-CLIENT',
+            Name: '${self:provider.stage}-COGNITO-USER-POOL-CLIENT',
         },
     },
     AuthRegion: {
@@ -26,7 +26,7 @@ const CognitoOutputs = {
             Ref: 'AWS::Region',
         },
         Export: {
-            Name: 'COGNITO-REGION',
+            Name: '${self:provider.stage}-COGNITO-REGION',
         },
     },
     AuthOauthDomain: {
@@ -43,7 +43,7 @@ const CognitoOutputs = {
             ],
         },
         Export: {
-            Name: 'COGNITO-DOMAIN',
+            Name: '${self:provider.stage}-COGNITO-DOMAIN',
         },
     },
 };

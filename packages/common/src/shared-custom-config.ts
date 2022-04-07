@@ -41,10 +41,10 @@ export const SharedConfig = {
 
     AURORA: {
         ARN: {
-            'Fn::ImportValue': 'AURORA-ARN',
+            'Fn::ImportValue': '${self:provider.stage}-AURORA-ARN',
         },
         SECRET_ARN: {
-            'Fn::ImportValue': 'AURORA-SECRET-ARN',
+            'Fn::ImportValue': '${self:provider.stage}-AURORA-SECRET-ARN',
         },
         VPC_CIDR: 10,
         DB_NAME: 'marketplacedb_${self:provider.stage}',
@@ -56,13 +56,13 @@ export const SharedConfig = {
     },
     API: {
         ID: {
-            'Fn::ImportValue': 'SHARED-API-ID',
+            'Fn::ImportValue': '${self:provider.stage}-SHARED-API-ID',
         },
         ROOT: {
-            'Fn::ImportValue': 'SHARED-API-ROOT',
+            'Fn::ImportValue': '${self:provider.stage}-SHARED-API-ROOT',
         },
         ADMIN: {
-            'Fn::ImportValue': 'ADMIN-API-ROOT',
+            'Fn::ImportValue': '${self:provider.stage}-ADMIN-API-ROOT',
         },
     },
     COGNITO: {
@@ -73,22 +73,33 @@ export const SharedConfig = {
         },
         USERPOOLID: {
             offline: 'ap-southeast-2_1q0PND3QW',
-            dev: { 'Fn::ImportValue': 'COGNITO-USER-POOL' },
-            prod: { 'Fn::ImportValue': 'COGNITO-USER-POOL' },
+            dev: {
+                'Fn::ImportValue': '${self:provider.stage}-COGNITO-USER-POOL',
+            },
+            prod: {
+                'Fn::ImportValue': '${self:provider.stage}-COGNITO-USER-POOL',
+            },
         },
         IDENTITYPOOLID: {
             offline: 'TODO - VALUE',
-            dev: { 'Fn::ImportValue': 'COGNITO-IDENTITY-POOL' },
-            prod: { 'Fn::ImportValue': 'COGNITO-IDENTITY-POOL' },
+            dev: {
+                'Fn::ImportValue':
+                    '${self:provider.stage}-COGNITO-IDENTITY-POOL',
+            },
+            prod: {
+                'Fn::ImportValue':
+                    '${self:provider.stage}-COGNITO-IDENTITY-POOL',
+            },
         },
         USERPOOLCLIENTID: {
-            'Fn::ImportValue': 'COGNITO-USER-POOL-CLIENT',
+            'Fn::ImportValue':
+                '${self:provider.stage}-COGNITO-USER-POOL-CLIENT',
         },
         REGION: {
-            'Fn::ImportValue': 'COGNITO-REGION',
+            'Fn::ImportValue': '${self:provider.stage}-COGNITO-REGION',
         },
         OAUTHDOMAIN: {
-            'Fn::ImportValue': 'COGNITO-DOMAIN',
+            'Fn::ImportValue': '${self:provider.stage}-COGNITO-DOMAIN',
         },
         IDENTITYPOOLNAME: {
             offline: 'medii-dev',
@@ -129,11 +140,11 @@ export const SharedConfig = {
     STORAGE: {
         PRODUCTBUCKETNAME: 'medii-${self:provider.stage}-products-bucket',
         PRODUCTBUCKETARN: {
-            'Fn::ImportValue': 'PRODUCT-BUCKET-ARN',
+            'Fn::ImportValue': '${self:provider.stage}-PRODUCT-BUCKET-ARN',
         },
         LISTINGSBUCKETNAME: 'medii-${self:provider.stage}-listings-bucket',
         LISTINGSBUCKETARN: {
-            'Fn::ImportValue': 'LISTINGS-BUCKET-ARN',
+            'Fn::ImportValue': '${self:provider.stage}-LISTINGS-BUCKET-ARN',
         },
     },
 };

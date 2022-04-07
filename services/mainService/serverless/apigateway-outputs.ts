@@ -5,7 +5,7 @@ const APIGWOutputs = {
             Ref: 'SharedApiGateway',
         },
         Export: {
-            Name: 'SHARED-API-ID',
+            Name: '${self:provider.stage}-SHARED-API-ID',
         },
     },
     ApiGatewayRestApiRootResourceId: {
@@ -14,7 +14,7 @@ const APIGWOutputs = {
             'Fn::GetAtt': ['SharedApiGateway', 'RootResourceId'],
         },
         Export: {
-            Name: 'SHARED-API-ROOT',
+            Name: '${self:provider.stage}-SHARED-API-ROOT',
         },
     },
     ApiGatewayAdminResourceId: {
@@ -23,7 +23,7 @@ const APIGWOutputs = {
             Ref: 'AdminPartPath',
         },
         Export: {
-            Name: 'ADMIN-API-ROOT',
+            Name: '${self:provider.stage}-ADMIN-API-ROOT',
         },
     },
 };

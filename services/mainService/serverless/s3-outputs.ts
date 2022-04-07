@@ -5,7 +5,7 @@ const StorageOutputs = {
             'Fn::GetAtt': ['ProductsBucket', 'Arn'],
         },
         Export: {
-            Name: 'PRODUCT-BUCKET-ARN',
+            Name: '${self:provider.stage}-PRODUCT-BUCKET-ARN',
         },
     },
     ListingsBucketARN: {
@@ -14,7 +14,7 @@ const StorageOutputs = {
             'Fn::GetAtt': ['ListingsBucket', 'Arn'],
         },
         Export: {
-            Name: 'LISTINGS-BUCKET-ARN',
+            Name: '${self:provider.stage}-LISTINGS-BUCKET-ARN',
         },
     },
 };

@@ -6,7 +6,7 @@ const AuroraOutputs = {
                 'arn:${AWS::Partition}:rds:${AWS::Region}:${AWS::AccountId}:cluster:${AuroraRDSCluster}',
         },
         Export: {
-            Name: 'AURORA-ARN',
+            Name: '${self:provider.stage}-AURORA-ARN',
         },
     },
     AuroraClusterSecretARN: {
@@ -15,7 +15,7 @@ const AuroraOutputs = {
             Ref: 'AuroraAdminSecret',
         },
         Export: {
-            Name: 'AURORA-SECRET-ARN',
+            Name: '${self:provider.stage}-AURORA-SECRET-ARN',
         },
     },
 };
