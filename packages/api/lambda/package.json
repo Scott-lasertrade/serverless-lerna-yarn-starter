@@ -1,14 +1,14 @@
 {
     "name": "@medii/api-lambda",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "main": "lib/index.js",
     "license": "MIT",
     "dependencies": {
         "@aws-sdk/client-cognito-identity-provider": "^3.56.0",
         "@aws-sdk/client-ses": "^3.56.0",
         "@aws-sdk/client-sfn": "^3.55.0",
-        "@medii/api-common": "^1.0.9",
-        "@medii/common": "^1.0.9",
+        "@medii/api-common": "^1.0.10",
+        "@medii/common": "^1.0.10",
         "@middy/core": "^2.5.7",
         "aws-lambda": "^1.0.7"
     },
