@@ -6,7 +6,7 @@ import {
 } from '@medii/common';
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
-    service: BaseServiceName + '-EB-SFN',
+    service: BaseServiceName + '-EB-STRIPE',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',
