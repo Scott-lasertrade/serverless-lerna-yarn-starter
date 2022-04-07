@@ -22,7 +22,8 @@ export default {
             Effect: 'Allow',
             Action: ['states:StartExecution'],
             Resource: {
-                'Fn::ImportValue': 'REINSTATE-LISTINGS-SM',
+                'Fn::ImportValue':
+                    '${self:provider.stage}-REINSTATE-LISTINGS-SM',
             },
         },
         {
@@ -34,7 +35,7 @@ export default {
     ],
     environment: {
         REINSTATELISTINGS_ARN: {
-            'Fn::ImportValue': 'REINSTATE-LISTINGS-SM',
+            'Fn::ImportValue': '${self:provider.stage}-REINSTATE-LISTINGS-SM',
         },
         STAGE: '${self:provider.stage}',
     },

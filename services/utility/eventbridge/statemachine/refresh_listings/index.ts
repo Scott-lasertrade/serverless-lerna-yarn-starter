@@ -22,7 +22,7 @@ export default {
             Effect: 'Allow',
             Action: ['states:StartExecution'],
             Resource: {
-                'Fn::ImportValue': 'REFRESH-LISTINGS-SM',
+                'Fn::ImportValue': '${self:provider.stage}-REFRESH-LISTINGS-SM',
             },
         },
         {
@@ -34,7 +34,7 @@ export default {
     ],
     environment: {
         REFRESHLISTINGVIEWS_ARN: {
-            'Fn::ImportValue': 'REFRESH-LISTINGS-SM',
+            'Fn::ImportValue': '${self:provider.stage}-REFRESH-LISTINGS-SM',
         },
         STAGE: '${self:provider.stage}',
     },

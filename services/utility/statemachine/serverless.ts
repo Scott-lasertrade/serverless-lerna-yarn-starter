@@ -63,7 +63,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
                     Ref: 'SMRefreshListingViewsDash${self:provider.stage}',
                 },
                 Export: {
-                    Name: 'REFRESH-LISTINGS-SM',
+                    Name: '${self:provider.stage}-REFRESH-LISTINGS-SM',
                 },
             },
             SMReinstateListingsArn: {
@@ -71,7 +71,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
                     Ref: 'SMReinstateListingsDash${self:provider.stage}',
                 },
                 Export: {
-                    Name: 'REINSTATE-LISTINGS-SM',
+                    Name: '${self:provider.stage}-REINSTATE-LISTINGS-SM',
                 },
             },
             SMExpireOfferArn: {
@@ -79,7 +79,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
                     Ref: 'SMExpireOfferDash${self:provider.stage}',
                 },
                 Export: {
-                    Name: 'EXPIRE-OFFER-SM',
+                    Name: '${self:provider.stage}-EXPIRE-OFFER-SM',
                 },
             },
         },

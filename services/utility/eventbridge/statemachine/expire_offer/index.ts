@@ -22,7 +22,7 @@ export default {
             Effect: 'Allow',
             Action: ['states:StartExecution'],
             Resource: {
-                'Fn::ImportValue': 'EXPIRE-OFFER-SM',
+                'Fn::ImportValue': '${self:provider.stage}-EXPIRE-OFFER-SM',
             },
         },
         {
@@ -34,7 +34,7 @@ export default {
     ],
     environment: {
         EXPIREOFFER_ARN: {
-            'Fn::ImportValue': 'EXPIRE-OFFER-SM',
+            'Fn::ImportValue': '${self:provider.stage}-EXPIRE-OFFER-SM',
         },
         STAGE: '${self:provider.stage}',
     },
