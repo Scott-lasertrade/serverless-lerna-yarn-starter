@@ -36,7 +36,7 @@ const serverlessConfiguration: AWS = {
 
         apiGateway: {
             restApiId: '${self:custom.API.ID}',
-            restApiRootResourceId: '${self:custom.API.ROOT}',
+            restApiRootResourceId: '${self:custom.API.ADMIN}',
         },
 
         // S.Y. Environment variables for ALL Lambdas
