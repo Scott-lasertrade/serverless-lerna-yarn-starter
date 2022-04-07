@@ -14,75 +14,75 @@ const typeorm_1 = require("typeorm");
 let ListingApprovalsView = class ListingApprovalsView {
 };
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], ListingApprovalsView.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], ListingApprovalsView.prototype, "account_id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ListingApprovalsView.prototype, "product_id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ListingApprovalsView.prototype, "product_name", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], ListingApprovalsView.prototype, "cost", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Boolean)
 ], ListingApprovalsView.prototype, "product_is_active", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Boolean)
 ], ListingApprovalsView.prototype, "product_is_draft", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], ListingApprovalsView.prototype, "product_version", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], ListingApprovalsView.prototype, "version", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ListingApprovalsView.prototype, "listing_status", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ListingApprovalsView.prototype, "title", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ListingApprovalsView.prototype, "thumbnail_key", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ListingApprovalsView.prototype, "thumbnail_bucket", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ListingApprovalsView.prototype, "thumbnail_region", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ListingApprovalsView.prototype, "submitted_by", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Date)
 ], ListingApprovalsView.prototype, "create_at", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ListingApprovalsView.prototype, "manufacturers", void 0);
 ListingApprovalsView = __decorate([
-    (0, typeorm_1.ViewEntity)({
+    typeorm_1.ViewEntity({
         name: 'listings_approval_view',
         expression: `
         select 	l.id, 
@@ -115,3 +115,4 @@ ListingApprovalsView = __decorate([
     })
 ], ListingApprovalsView);
 exports.ListingApprovalsView = ListingApprovalsView;
+//# sourceMappingURL=ListingApprovalsView.js.map

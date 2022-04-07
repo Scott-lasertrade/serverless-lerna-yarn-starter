@@ -28,3 +28,4 @@ class AccessoryToManufactureOtoM1637037718905 {
     }
 }
 exports.AccessoryToManufactureOtoM1637037718905 = AccessoryToManufactureOtoM1637037718905;
+//# sourceMappingURL=1637037718905-AccessoryToManufactureOtoM.js.map

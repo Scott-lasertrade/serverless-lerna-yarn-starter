@@ -17,22 +17,23 @@ const Order_1 = require("./Order");
 let LineItem = class LineItem extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], LineItem.prototype, "title", void 0);
 __decorate([
-    (0, typeorm_1.Column)('decimal', { precision: 12, scale: 2, nullable: true }),
+    typeorm_1.Column('decimal', { precision: 12, scale: 2, nullable: true }),
     __metadata("design:type", Number)
 ], LineItem.prototype, "price", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => OrderLineItemType_1.LineItemType, (type) => type.line_items),
+    typeorm_1.ManyToOne(() => OrderLineItemType_1.LineItemType, (type) => type.line_items),
     __metadata("design:type", OrderLineItemType_1.LineItemType)
 ], LineItem.prototype, "type", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Order_1.Order, (order) => order.line_items),
+    typeorm_1.ManyToOne(() => Order_1.Order, (order) => order.line_items),
     __metadata("design:type", Order_1.Order)
 ], LineItem.prototype, "order", void 0);
 LineItem = __decorate([
-    (0, typeorm_1.Entity)('order_line_item')
+    typeorm_1.Entity('order_line_item')
 ], LineItem);
 exports.LineItem = LineItem;
+//# sourceMappingURL=OrderLineItem.js.map

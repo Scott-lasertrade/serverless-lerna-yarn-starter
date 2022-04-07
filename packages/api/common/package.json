@@ -4,13 +4,12 @@
     "main": "lib/index.js",
     "license": "MIT",
     "dependencies": {
-        "@medii/common": "^1.0.12",
+        "@medii/common": "file:../../common",
         "@middy/core": "^2.5.7",
         "aws-lambda": "^1.0.7",
         "json-schema-to-ts": "^1.6.5"
     },
     "scripts": {
-        "build": "run-s clean build:tsc",
         "tsc": "tsc"
     },
     "devDependencies": {

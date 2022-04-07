@@ -98,12 +98,20 @@ export async function main(event: any) {
                         params,
                         process.env.STAGE ?? ''
                     );
-                } catch (err: any) {
-                    console.log(`EVENT BRIDGE| Error: ${err.message}`);
-                    throw new AppError(
-                        `EVENT BRIDGE| Error: ${err.message}`,
-                        400
-                    );
+                } catch (err) {
+                    if (err instanceof Error) {
+                        console.error(`EVENT BRIDGE| Error: ${err.message}`);
+                        throw new AppError(
+                            `EVENT BRIDGE| Error: ${err.message}`,
+                            400
+                        );
+                    } else {
+                        console.error(`EVENT BRIDGE| Unexpected Error: ${err}`);
+                        throw new AppError(
+                            `EVENT BRIDGE| Unexpected Error: ${err}`,
+                            400
+                        );
+                    }
                 }
             } else {
                 console.log(

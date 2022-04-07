@@ -30,3 +30,4 @@ class TransactionTable1641450312848 {
     }
 }
 exports.TransactionTable1641450312848 = TransactionTable1641450312848;
+//# sourceMappingURL=1641450312848-TransactionTable.js.map

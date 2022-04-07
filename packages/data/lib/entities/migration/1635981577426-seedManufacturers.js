@@ -93,3 +93,4 @@ class seedManufacturers1635981577426 {
     }
 }
 exports.seedManufacturers1635981577426 = seedManufacturers1635981577426;
+//# sourceMappingURL=1635981577426-seedManufacturers.js.map

@@ -33,3 +33,4 @@ class seedTransactionTypes1644991906041 {
     }
 }
 exports.seedTransactionTypes1644991906041 = seedTransactionTypes1644991906041;
+//# sourceMappingURL=1644991906041-seedTransactionTypes.js.map

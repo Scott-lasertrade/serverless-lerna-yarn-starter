@@ -16,22 +16,23 @@ const Listing_1 = require("./Listing");
 let CurrencyType = class CurrencyType extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    (0, typeorm_1.Column)({ length: 32 }),
+    typeorm_1.Column({ length: 32 }),
     __metadata("design:type", String)
 ], CurrencyType.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 3 }),
+    typeorm_1.Column({ length: 3 }),
     __metadata("design:type", String)
 ], CurrencyType.prototype, "abbreviation", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 1 }),
+    typeorm_1.Column({ length: 1 }),
     __metadata("design:type", String)
 ], CurrencyType.prototype, "symbol", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Listing_1.Listing, (listing) => listing.currency_type),
+    typeorm_1.OneToMany(() => Listing_1.Listing, (listing) => listing.currency_type),
     __metadata("design:type", Array)
 ], CurrencyType.prototype, "listings", void 0);
 CurrencyType = __decorate([
-    (0, typeorm_1.Entity)('currency_type')
+    typeorm_1.Entity('currency_type')
 ], CurrencyType);
 exports.CurrencyType = CurrencyType;
+//# sourceMappingURL=CurrencyType.js.map

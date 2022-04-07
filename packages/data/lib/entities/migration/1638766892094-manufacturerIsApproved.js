@@ -54,3 +54,4 @@ class manufacturerIsApproved1638766892094 {
     }
 }
 exports.manufacturerIsApproved1638766892094 = manufacturerIsApproved1638766892094;
+//# sourceMappingURL=1638766892094-manufacturerIsApproved.js.map

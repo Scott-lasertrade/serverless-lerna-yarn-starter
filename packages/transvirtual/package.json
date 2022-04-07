@@ -7,12 +7,11 @@
     ],
     "license": "MIT",
     "dependencies": {
-        "@medii/common": "^1.0.12",
+        "@medii/common": "file:../common",
         "axios": "^0.26.1"
     },
     "scripts": {
-        "build": "run-s clean build:tsc",
-        "build:tsc": "tsc -b"
+        "tsc": "tsc"
     },
     "devDependencies": {
         "ts-node": "^8.6.2"

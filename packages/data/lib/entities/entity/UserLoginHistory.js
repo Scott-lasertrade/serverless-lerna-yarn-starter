@@ -15,20 +15,21 @@ const User_1 = require("./User");
 let UserLoginHistory = class UserLoginHistory {
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], UserLoginHistory.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'timestamptz' }),
+    typeorm_1.Column({ type: 'timestamptz' }),
     __metadata("design:type", Date)
 ], UserLoginHistory.prototype, "date", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => User_1.User, (user) => user.login_history, {
+    typeorm_1.ManyToOne(() => User_1.User, (user) => user.login_history, {
         nullable: true,
     }),
     __metadata("design:type", User_1.User)
 ], UserLoginHistory.prototype, "user", void 0);
 UserLoginHistory = __decorate([
-    (0, typeorm_1.Entity)('user_login_history')
+    typeorm_1.Entity('user_login_history')
 ], UserLoginHistory);
 exports.UserLoginHistory = UserLoginHistory;
+//# sourceMappingURL=UserLoginHistory.js.map

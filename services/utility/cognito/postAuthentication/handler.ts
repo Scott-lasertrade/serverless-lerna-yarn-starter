@@ -36,12 +36,16 @@ export async function main(
                 await client.send(command);
 
                 return callback(null, event);
-            } catch (error: any) {
+            } catch (error) {
                 console.log(
                     'POST AUTHENTICATION ERROR: ',
                     JSON.stringify(error, null, 2)
                 );
-                return callback(error, event);
+                if (error instanceof Error) {
+                    callback(error, null);
+                } else {
+                    // handle
+                }
             }
         }
     }

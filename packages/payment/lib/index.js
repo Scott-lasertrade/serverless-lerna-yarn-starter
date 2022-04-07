@@ -18,7 +18,6 @@ exports.SECURITY_DEPOSIT_AMOUNT = 1000;
 const getSellerAccount = (transactionalEntityManager, listingId, offerId, buyerId) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b;
     if (offerId && buyerId) {
-        // TODO Account for Seller countered.
         const offer = yield transactionalEntityManager
             .createQueryBuilder(data_1.Offer, 'o')
             .innerJoinAndSelect('o.status', 'os')
@@ -53,7 +52,6 @@ const getSellerAccount = (transactionalEntityManager, listingId, offerId, buyerI
         };
     }
     else {
-        // TODO Account for Seller countered.
         const listing = yield transactionalEntityManager
             .createQueryBuilder(data_1.Listing, 'l')
             .innerJoinAndSelect('l.product', 'p')
@@ -83,12 +81,10 @@ const orderGetApplicationFee = (order) => {
             console.error(`CREATE TRANSACTION| Order [${order.order_number}] has already been paid for, Paid >= Total: [$ ${order.paid} >= $ ${order.total}]`);
             throw new common_1.AppError(`Order [${order.order_number}] has already been paid for`, 400);
         }
-        // BALANCE - REMOVE VARIABLE FEE & FIXED FEE
         return (Math.round(((order.total - order.paid) / 100) * order.variable_fee * 100) /
             100 +
             Number(order.fixed_fee));
     }
-    // DEPOSIT - ONLY REMOVE VARIABLE FEE
     return (Math.round(((order.deposit - order.paid) / 100) * order.variable_fee * 100) / 100);
 };
 exports.orderGetApplicationFee = orderGetApplicationFee;
@@ -242,7 +238,6 @@ exports.getCartItemsAsOrders = getCartItemsAsOrders;
 const getPaymentDetails = (transactionalEntityManager, listingId, listingVersion, offerId, offerVersion, buyerId) => __awaiter(void 0, void 0, void 0, function* () {
     var _k, _l;
     if (offerId && buyerId) {
-        // TODO Account for Seller countered.
         const offer = yield transactionalEntityManager
             .createQueryBuilder(data_1.Offer, 'o')
             .innerJoinAndSelect('o.status', 'os')
@@ -289,7 +284,6 @@ const getPaymentDetails = (transactionalEntityManager, listingId, listingVersion
         };
     }
     else {
-        // TODO Account for Seller countered.
         const listing = yield transactionalEntityManager
             .createQueryBuilder(data_1.Listing, 'l')
             .innerJoinAndSelect('l.product', 'p')
@@ -379,3 +373,4 @@ const setupLineItem = (transactionalEntityManager, order, type, newPrice, title)
     return lineItem;
 });
 exports.setupLineItem = setupLineItem;
+//# sourceMappingURL=index.js.map

@@ -244,3 +244,4 @@ class InitialSetup1635981526022 {
     }
 }
 exports.InitialSetup1635981526022 = InitialSetup1635981526022;
+//# sourceMappingURL=1635981526022-InitialSetup.js.map

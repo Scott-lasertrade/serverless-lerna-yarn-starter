@@ -20,27 +20,28 @@ let CommonEntity = class CommonEntity extends typeorm_1.BaseEntity {
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], CommonEntity.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    typeorm_1.CreateDateColumn(),
     __metadata("design:type", Date)
 ], CommonEntity.prototype, "create_at", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'TBD' }),
+    typeorm_1.Column({ default: 'TBD' }),
     __metadata("design:type", String)
 ], CommonEntity.prototype, "created_by", void 0);
 __decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
+    typeorm_1.UpdateDateColumn(),
     __metadata("design:type", Date)
 ], CommonEntity.prototype, "updated_at", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'TBD' }),
+    typeorm_1.Column({ default: 'TBD' }),
     __metadata("design:type", String)
 ], CommonEntity.prototype, "updated_by", void 0);
 CommonEntity = __decorate([
-    (0, typeorm_1.Entity)(),
+    typeorm_1.Entity(),
     __metadata("design:paramtypes", [Number])
 ], CommonEntity);
 exports.CommonEntity = CommonEntity;
+//# sourceMappingURL=CommonEntity.js.map

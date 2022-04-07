@@ -27,3 +27,4 @@ class seedCurrencyTypes1635986407025 {
     }
 }
 exports.seedCurrencyTypes1635986407025 = seedCurrencyTypes1635986407025;
+//# sourceMappingURL=1635986407025-seedCurrencyTypes.js.map

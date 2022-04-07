@@ -22,20 +22,20 @@ const handler: any = async (event) => {
             statusCode: 200,
             body: JSON.stringify(migrationResult),
         };
-    } catch (e: any) {
-        console.log(e);
-        return {
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Methods': '*',
-                'Access-Control-Allow-Origin': '*',
-            },
-            statusCode: 400,
-            body: JSON.stringify({
-                message: 'Failed to handle migrations',
-                error: e,
-            }),
-        };
+    } catch (e) {
+        if (e instanceof Error) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({
+                    message: e.message ? e.message : e,
+                }),
+            };
+        } else {
+            return {
+                statusCode: 400,
+                body: e,
+            };
+        }
     }
 };
 

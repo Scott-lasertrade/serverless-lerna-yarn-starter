@@ -28,3 +28,4 @@ class addUserLoginHistory1646188030891 {
     }
 }
 exports.addUserLoginHistory1646188030891 = addUserLoginHistory1646188030891;
+//# sourceMappingURL=1646188030891-addUserLoginHistory.js.map

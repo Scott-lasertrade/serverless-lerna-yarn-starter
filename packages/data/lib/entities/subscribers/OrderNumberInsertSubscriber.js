@@ -62,6 +62,7 @@ let OrderNumberInsertSubscriber = class OrderNumberInsertSubscriber {
     }
 };
 OrderNumberInsertSubscriber = __decorate([
-    (0, typeorm_1.EventSubscriber)()
+    typeorm_1.EventSubscriber()
 ], OrderNumberInsertSubscriber);
 exports.OrderNumberInsertSubscriber = OrderNumberInsertSubscriber;
+//# sourceMappingURL=OrderNumberInsertSubscriber.js.map

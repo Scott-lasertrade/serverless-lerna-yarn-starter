@@ -14,23 +14,23 @@ const typeorm_1 = require("typeorm");
 let ManufacturerSearchView = class ManufacturerSearchView {
 };
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], ManufacturerSearchView.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Boolean)
 ], ManufacturerSearchView.prototype, "is_approved", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ManufacturerSearchView.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'tsvector' }),
+    typeorm_1.Column({ type: 'tsvector' }),
     __metadata("design:type", String)
 ], ManufacturerSearchView.prototype, "document", void 0);
 ManufacturerSearchView = __decorate([
-    (0, typeorm_1.ViewEntity)({
+    typeorm_1.ViewEntity({
         name: 'manufacturer_search_view',
         expression: `
         select 	m.id,
@@ -43,3 +43,4 @@ ManufacturerSearchView = __decorate([
     })
 ], ManufacturerSearchView);
 exports.ManufacturerSearchView = ManufacturerSearchView;
+//# sourceMappingURL=ManufacturerSearchView.js.map

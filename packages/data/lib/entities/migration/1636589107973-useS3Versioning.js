@@ -36,3 +36,4 @@ class useS3Versioning1636589107973 {
     }
 }
 exports.useS3Versioning1636589107973 = useS3Versioning1636589107973;
+//# sourceMappingURL=1636589107973-useS3Versioning.js.map

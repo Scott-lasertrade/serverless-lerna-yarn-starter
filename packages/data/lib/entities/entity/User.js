@@ -17,20 +17,20 @@ const UserLoginHistory_1 = require("./UserLoginHistory");
 let User = class User extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], User.prototype, "cognito_user_id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: 'Manually replace' }),
+    typeorm_1.Column({ default: 'Manually replace' }),
     __metadata("design:type", String)
 ], User.prototype, "hubspot_user_id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ default: true }),
+    typeorm_1.Column({ default: true }),
     __metadata("design:type", Boolean)
 ], User.prototype, "enabled", void 0);
 __decorate([
-    (0, typeorm_1.ManyToMany)(() => Account_1.Account, (account) => account.users),
-    (0, typeorm_1.JoinTable)({
+    typeorm_1.ManyToMany(() => Account_1.Account, (account) => account.users),
+    typeorm_1.JoinTable({
         name: 'account_to_user',
         joinColumn: {
             name: 'user',
@@ -44,13 +44,14 @@ __decorate([
     __metadata("design:type", Array)
 ], User.prototype, "accounts", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => UserLoginHistory_1.UserLoginHistory, (login_history) => login_history.user, {
+    typeorm_1.OneToMany(() => UserLoginHistory_1.UserLoginHistory, (login_history) => login_history.user, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], User.prototype, "login_history", void 0);
 User = __decorate([
-    (0, typeorm_1.Entity)('user'),
-    (0, typeorm_1.Unique)(['cognito_user_id'])
+    typeorm_1.Entity('user'),
+    typeorm_1.Unique(['cognito_user_id'])
 ], User);
 exports.User = User;
+//# sourceMappingURL=User.js.map

@@ -31,3 +31,4 @@ class seedUnpublishedListingStatus1639979589036 {
     }
 }
 exports.seedUnpublishedListingStatus1639979589036 = seedUnpublishedListingStatus1639979589036;
+//# sourceMappingURL=1639979589036-seedUnpublishedListingStatus.js.map

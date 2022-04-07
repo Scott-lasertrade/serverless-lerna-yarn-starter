@@ -11,12 +11,11 @@
         "@aws-sdk/client-ses": "^3.56.0",
         "@aws-sdk/client-sfn": "^3.55.0",
         "@hubspot/api-client": "^6.0.1-beta3",
-        "@medii/common": "^1.0.12",
+        "@medii/common": "file:../common",
         "axios": "^0.26.1"
     },
     "scripts": {
-        "build": "run-s clean build:tsc",
-        "build:tsc": "tsc -b"
+        "tsc": "tsc"
     },
     "devDependencies": {
         "ts-node": "^8.6.2"

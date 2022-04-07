@@ -65,3 +65,4 @@ class productManufacturerApproval1638833926216 {
     }
 }
 exports.productManufacturerApproval1638833926216 = productManufacturerApproval1638833926216;
+//# sourceMappingURL=1638833926216-productManufacturerApproval.js.map

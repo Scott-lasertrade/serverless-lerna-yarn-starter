@@ -35,3 +35,4 @@ class seedNewListingStatuses1640143295612 {
     }
 }
 exports.seedNewListingStatuses1640143295612 = seedNewListingStatuses1640143295612;
+//# sourceMappingURL=1640143295612-seedNewListingStatuses.js.map

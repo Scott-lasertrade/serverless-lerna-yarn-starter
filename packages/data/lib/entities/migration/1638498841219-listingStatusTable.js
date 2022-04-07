@@ -54,3 +54,4 @@ class listingStatusTable1638498841219 {
     }
 }
 exports.listingStatusTable1638498841219 = listingStatusTable1638498841219;
+//# sourceMappingURL=1638498841219-listingStatusTable.js.map

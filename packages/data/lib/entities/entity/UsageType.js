@@ -17,18 +17,19 @@ const CommonEntity_1 = require("../utils/CommonEntity");
 let UsageType = class UsageType extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], UsageType.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Product_1.Product, (product) => product.usage_type),
+    typeorm_1.OneToMany(() => Product_1.Product, (product) => product.usage_type),
     __metadata("design:type", Array)
 ], UsageType.prototype, "products", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Usage_1.Usage, (usage) => usage.usage_type),
+    typeorm_1.OneToMany(() => Usage_1.Usage, (usage) => usage.usage_type),
     __metadata("design:type", Array)
 ], UsageType.prototype, "usages", void 0);
 UsageType = __decorate([
-    (0, typeorm_1.Entity)('usage_type')
+    typeorm_1.Entity('usage_type')
 ], UsageType);
 exports.UsageType = UsageType;
+//# sourceMappingURL=UsageType.js.map

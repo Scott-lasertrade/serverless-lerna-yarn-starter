@@ -11,28 +11,18 @@ const typeorm_1 = require("typeorm");
 const OptimisticLockVersionMismatchError_1 = require("./OptimisticLockVersionMismatchError");
 let OptimisticLockingSubscriber = class OptimisticLockingSubscriber {
     beforeUpdate(event) {
-        // To know if an entity has a version number, we check if versionColumn
-        // is defined in the metadatas of that entity.
         if (event.metadata.versionColumn && event.entity) {
-            // Getting the current version of the requested entity update
             const versionFromUpdate = Reflect.get(event.entity, event.metadata.versionColumn.propertyName);
-            // Getting the entity's version from the database
             const versionFromDatabase = event.databaseEntity[event.metadata.versionColumn.propertyName];
-            // they should match otherwise someone has changed it underneath us
             if (versionFromDatabase !== versionFromUpdate) {
                 throw new OptimisticLockVersionMismatchError_1.OptimisticLockVersionMismatchError(event.metadata.tableName, versionFromDatabase, versionFromUpdate);
             }
         }
     }
     beforeRemove(event) {
-        // To know if an entity has a version number, we check if versionColumn
-        // is defined in the metadatas of that entity.
         if (event.metadata.versionColumn && event.entity) {
-            // Getting the current version of the requested entity update
             const versionFromRemove = Reflect.get(event.entity, event.metadata.versionColumn.propertyName);
-            // Getting the entity's version from the database
             const versionFromDatabase = event.databaseEntity[event.metadata.versionColumn.propertyName];
-            // they should match otherwise someone has changed it underneath us
             if (versionFromDatabase !== versionFromRemove) {
                 throw new OptimisticLockVersionMismatchError_1.OptimisticLockVersionMismatchError(event.metadata.tableName, versionFromDatabase, versionFromRemove);
             }
@@ -40,6 +30,7 @@ let OptimisticLockingSubscriber = class OptimisticLockingSubscriber {
     }
 };
 OptimisticLockingSubscriber = __decorate([
-    (0, typeorm_1.EventSubscriber)()
+    typeorm_1.EventSubscriber()
 ], OptimisticLockingSubscriber);
 exports.OptimisticLockingSubscriber = OptimisticLockingSubscriber;
+//# sourceMappingURL=OptimisticLockingSubscriber.js.map

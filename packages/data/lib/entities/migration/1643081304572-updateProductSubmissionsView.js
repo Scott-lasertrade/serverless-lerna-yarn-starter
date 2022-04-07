@@ -250,3 +250,4 @@ class updateProductSubmissionsView1643081304572 {
     }
 }
 exports.updateProductSubmissionsView1643081304572 = updateProductSubmissionsView1643081304572;
+//# sourceMappingURL=1643081304572-updateProductSubmissionsView.js.map

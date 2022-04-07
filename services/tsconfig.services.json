@@ -5,7 +5,7 @@
         "declarationMap": true,
         "emitDecoratorMetadata": true,
         "module": "commonjs",
-        "noEmit": true,
+        "noEmit": false,
         "composite": true,
         "sourceMap": true
     },

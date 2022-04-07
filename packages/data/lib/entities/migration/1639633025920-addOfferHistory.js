@@ -28,3 +28,4 @@ class addOfferHistory1639633025920 {
     }
 }
 exports.addOfferHistory1639633025920 = addOfferHistory1639633025920;
+//# sourceMappingURL=1639633025920-addOfferHistory.js.map

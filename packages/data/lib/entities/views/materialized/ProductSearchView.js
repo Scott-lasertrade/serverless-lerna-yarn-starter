@@ -14,39 +14,39 @@ const typeorm_1 = require("typeorm");
 let ProductSearchView = class ProductSearchView {
 };
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], ProductSearchView.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ProductSearchView.prototype, "title", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Boolean)
 ], ProductSearchView.prototype, "is_draft", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Boolean)
 ], ProductSearchView.prototype, "is_active", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ProductSearchView.prototype, "thumbnail_key", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ProductSearchView.prototype, "thumbnail_bucket", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], ProductSearchView.prototype, "thumbnail_region", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'tsvector' }),
+    typeorm_1.Column({ type: 'tsvector' }),
     __metadata("design:type", String)
 ], ProductSearchView.prototype, "document", void 0);
 ProductSearchView = __decorate([
-    (0, typeorm_1.ViewEntity)({
+    typeorm_1.ViewEntity({
         name: 'product_search_view',
         expression: `
         select 	p.id, 
@@ -70,3 +70,4 @@ ProductSearchView = __decorate([
     })
 ], ProductSearchView);
 exports.ProductSearchView = ProductSearchView;
+//# sourceMappingURL=ProductSearchView.js.map

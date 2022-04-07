@@ -4,15 +4,7 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "outDir": "lib",
-        "baseUrl": ".",
-        "paths": {
-            "@medii/api-common": ["../../../../packages/api/common/src"],
-            "@medii/common": ["../../../../packages/common/src"],
-            "@medii/statemachine": ["../../../../packages/statemachine/src"],
-            "@medii/data": ["../../../../packages/data/src"],
-            "@medii/eventbridge": ["../../../../packages/eventbridge/src"],
-            "@medii/payment": ["../../../../packages/payment/src"]
-        }
+        "baseUrl": "."
     },
     "include": ["./**/*.ts"],
     "exclude": [
@@ -22,13 +14,5 @@
         ".build/**/*",
         "**/__tests__/*",
         "**/__e2e__/*"
-    ],
-    "references": [
-        { "path": "../../../../packages/common" },
-        { "path": "../../../../packages/api/lambda" },
-        { "path": "../../../../packages/statemachine" },
-        { "path": "../../../../packages/data" },
-        { "path": "../../../../packages/eventbridge" },
-        { "path": "../../../../packages/payment" }
     ]
 }

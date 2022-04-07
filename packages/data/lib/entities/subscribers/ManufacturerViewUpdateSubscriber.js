@@ -75,6 +75,7 @@ let ManufacturerViewUpdateSubscriber = class ManufacturerViewUpdateSubscriber {
     }
 };
 ManufacturerViewUpdateSubscriber = __decorate([
-    (0, typeorm_1.EventSubscriber)()
+    typeorm_1.EventSubscriber()
 ], ManufacturerViewUpdateSubscriber);
 exports.ManufacturerViewUpdateSubscriber = ManufacturerViewUpdateSubscriber;
+//# sourceMappingURL=ManufacturerViewUpdateSubscriber.js.map

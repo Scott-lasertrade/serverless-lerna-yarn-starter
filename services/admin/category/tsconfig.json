@@ -2,13 +2,7 @@
     "extends": "../../tsconfig.services.json",
     "compilerOptions": {
         "outDir": "lib",
-        "baseUrl": ".",
-        "paths": {
-            "@medii/api-common": ["../../../packages/api/common/src"],
-            "@medii/api-lambda": ["../../../packages/api/lambda/src"],
-            "@medii/data": ["../../../packages/data/src"],
-            "@medii/common": ["../../../packages/common/src"]
-        }
+        "baseUrl": "."
     },
     "include": ["./**/*.ts"],
     "exclude": [
@@ -18,11 +12,5 @@
         ".build/**/*",
         "**/__tests__/*",
         "**/__e2e__/*"
-    ],
-    "references": [
-        { "path": "../../../packages/common" },
-        { "path": "../../../packages/api/common" },
-        { "path": "../../../packages/api/lambda" },
-        { "path": "../../../packages/data" }
     ]
 }

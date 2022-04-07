@@ -25,3 +25,4 @@ class offerStatusNotVersioned1635987064328 {
     }
 }
 exports.offerStatusNotVersioned1635987064328 = offerStatusNotVersioned1635987064328;
+//# sourceMappingURL=1635987064328-offerStatusNotVersioned.js.map

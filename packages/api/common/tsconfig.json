@@ -5,12 +5,8 @@
         "esModuleInterop": true,
         "outDir": "lib",
         "rootDir": "src",
-        "baseUrl": "./",
-        "paths": {
-            "@medii/common": ["../../common/src"]
-        }
+        "baseUrl": "./"
     },
     "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"],
-    "references": [{ "path": "../../common" }]
+    "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"]
 }

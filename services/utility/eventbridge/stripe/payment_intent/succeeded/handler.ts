@@ -360,9 +360,17 @@ const task: any = async (event) => {
                 params,
                 process.env.STAGE ?? ''
             );
-        } catch (err: any) {
-            console.log(`EVENT BRIDGE| Error: ${err.message}`);
-            throw new AppError(`EVENT BRIDGE| Error: ${err.message}`, 400);
+        } catch (err) {
+            if (err instanceof Error) {
+                console.error(`EVENT BRIDGE| Error: ${err.message}`);
+                throw new AppError(`EVENT BRIDGE| Error: ${err.message}`, 400);
+            } else {
+                console.error(`EVENT BRIDGE| Unexpected Error: ${err}`);
+                throw new AppError(
+                    `EVENT BRIDGE| Unexpected Error: ${err}`,
+                    400
+                );
+            }
         }
     }
 
@@ -373,9 +381,14 @@ const task: any = async (event) => {
             emailParams,
             process.env.STAGE ?? ''
         );
-    } catch (err: any) {
-        console.error(`EVENT BRIDGE| Error: ${err.message}`);
-        throw new AppError(`EVENT BRIDGE| Error: ${err.message}`, 400);
+    } catch (err) {
+        if (err instanceof Error) {
+            console.error(`EVENT BRIDGE| Error: ${err.message}`);
+            throw new AppError(`EVENT BRIDGE| Error: ${err.message}`, 400);
+        } else {
+            console.error(`EVENT BRIDGE| Unexpected Error: ${err}`);
+            throw new AppError(`EVENT BRIDGE| Unexpected Error: ${err}`, 400);
+        }
     }
 
     const response = {
@@ -388,12 +401,19 @@ export const main = async (event, context) => {
     try {
         console.log(event);
         return await handleTimeout(task(event, context), context);
-    } catch (e: any) {
-        return {
-            statusCode: 400,
-            body: JSON.stringify({
-                message: e.message ? e.message : e,
-            }),
-        };
+    } catch (e) {
+        if (e instanceof Error) {
+            return {
+                statusCode: 400,
+                body: JSON.stringify({
+                    message: e.message ? e.message : e,
+                }),
+            };
+        } else {
+            return {
+                statusCode: 400,
+                body: e,
+            };
+        }
     }
 };

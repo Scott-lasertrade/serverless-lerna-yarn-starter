@@ -41,3 +41,4 @@ class seedOfferStatuses1635987248712 {
     }
 }
 exports.seedOfferStatuses1635987248712 = seedOfferStatuses1635987248712;
+//# sourceMappingURL=1635987248712-seedOfferStatuses.js.map

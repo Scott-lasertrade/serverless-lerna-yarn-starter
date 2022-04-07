@@ -165,7 +165,11 @@ export const main = async (
             }
         }
         return callback(null, event);
-    } catch (err: any) {
-        return callback(err, event);
+    } catch (err) {
+        if (err instanceof Error) {
+            callback(err, null);
+        } else {
+            // handle
+        }
     }
 };

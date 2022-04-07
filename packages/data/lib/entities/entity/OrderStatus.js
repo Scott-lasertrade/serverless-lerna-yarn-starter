@@ -16,15 +16,16 @@ const Order_1 = require("./Order");
 let OrderStatus = class OrderStatus extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Order_1.Order, (order) => order.status),
+    typeorm_1.OneToMany(() => Order_1.Order, (order) => order.status),
     __metadata("design:type", Array)
 ], OrderStatus.prototype, "orders", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], OrderStatus.prototype, "name", void 0);
 OrderStatus = __decorate([
-    (0, typeorm_1.Entity)('order_status'),
-    (0, typeorm_1.Unique)(['name'])
+    typeorm_1.Entity('order_status'),
+    typeorm_1.Unique(['name'])
 ], OrderStatus);
 exports.OrderStatus = OrderStatus;
+//# sourceMappingURL=OrderStatus.js.map

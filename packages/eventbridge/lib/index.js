@@ -11,10 +11,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sendToEventBridge = void 0;
 const client_eventbridge_1 = require("@aws-sdk/client-eventbridge");
-const sendToEventBridge = (bridgeName, event, stage) => __awaiter(void 0, void 0, void 0, function* () {
+exports.sendToEventBridge = (bridgeName, event, stage) => __awaiter(void 0, void 0, void 0, function* () {
     const { id, type } = event;
     let client = new client_eventbridge_1.EventBridgeClient({ region: 'ap-southeast-2' });
-    // S.Y. - When offline we need to manually point at the point we're testing against
     if (stage === 'offline') {
         client = new client_eventbridge_1.EventBridgeClient({
             endpoint: 'http://127.0.0.1:4010',
@@ -43,4 +42,4 @@ const sendToEventBridge = (bridgeName, event, stage) => __awaiter(void 0, void 0
         return err;
     }
 });
-exports.sendToEventBridge = sendToEventBridge;
+//# sourceMappingURL=index.js.map

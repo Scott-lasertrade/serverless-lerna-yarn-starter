@@ -28,3 +28,4 @@ class AccessoryToCommonEntity1637108382336 {
     }
 }
 exports.AccessoryToCommonEntity1637108382336 = AccessoryToCommonEntity1637108382336;
+//# sourceMappingURL=1637108382336-AccessoryToCommonEntity.js.map

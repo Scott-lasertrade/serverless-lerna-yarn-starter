@@ -33,3 +33,4 @@ class seedAddressType1638402100648 {
     }
 }
 exports.seedAddressType1638402100648 = seedAddressType1638402100648;
+//# sourceMappingURL=1638402100648-seedAddressType.js.map

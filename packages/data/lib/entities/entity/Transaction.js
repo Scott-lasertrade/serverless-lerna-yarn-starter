@@ -18,28 +18,29 @@ const TransactionType_1 = require("./TransactionType");
 let Transaction = class Transaction extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => TransactionType_1.TransactionType, (transaction_type) => transaction_type.transactions, {
+    typeorm_1.ManyToOne(() => TransactionType_1.TransactionType, (transaction_type) => transaction_type.transactions, {
         cascade: true,
     }),
     __metadata("design:type", TransactionType_1.TransactionType)
 ], Transaction.prototype, "type", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Order_1.Order, (order) => order.transactions, {
+    typeorm_1.ManyToOne(() => Order_1.Order, (order) => order.transactions, {
         cascade: true,
     }),
     __metadata("design:type", Order_1.Order)
 ], Transaction.prototype, "order", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    typeorm_1.Column(),
     __metadata("design:type", String)
 ], Transaction.prototype, "stripe_pi_id", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Checkout_1.Checkout, (checkout) => checkout.transaction, {
+    typeorm_1.OneToOne(() => Checkout_1.Checkout, (checkout) => checkout.transaction, {
         nullable: true,
     }),
     __metadata("design:type", Checkout_1.Checkout)
 ], Transaction.prototype, "checkout", void 0);
 Transaction = __decorate([
-    (0, typeorm_1.Entity)('transaction')
+    typeorm_1.Entity('transaction')
 ], Transaction);
 exports.Transaction = Transaction;
+//# sourceMappingURL=Transaction.js.map

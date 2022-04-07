@@ -28,3 +28,4 @@ class InsertOfferStatusCancel1640159091034 {
     }
 }
 exports.InsertOfferStatusCancel1640159091034 = InsertOfferStatusCancel1640159091034;
+//# sourceMappingURL=1640159091034-InsertOfferStatusCancel.js.map

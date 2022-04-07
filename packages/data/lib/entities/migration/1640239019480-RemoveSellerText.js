@@ -32,3 +32,4 @@ class RemoveSellerText1640239019480 {
     }
 }
 exports.RemoveSellerText1640239019480 = RemoveSellerText1640239019480;
+//# sourceMappingURL=1640239019480-RemoveSellerText.js.map

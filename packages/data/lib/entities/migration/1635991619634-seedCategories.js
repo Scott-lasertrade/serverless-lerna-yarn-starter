@@ -73,3 +73,4 @@ class seedCategories1635991619634 {
     }
 }
 exports.seedCategories1635991619634 = seedCategories1635991619634;
+//# sourceMappingURL=1635991619634-seedCategories.js.map

@@ -5,18 +5,8 @@
         "esModuleInterop": true,
         "outDir": "lib",
         "rootDir": "src",
-        "baseUrl": "./",
-        "paths": {
-            "@medii/data": ["../data/src"],
-            "@medii/common": ["../common/src"],
-            "@medii/transvirtual": ["../transvirtual/src"]
-        }
+        "baseUrl": "./"
     },
     "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"],
-    "references": [
-        { "path": "../common" },
-        { "path": "../data" },
-        { "path": "../transvirtual" }
-    ]
+    "exclude": ["node_modules", "**/__tests__/*", "**/__e2e__/*"]
 }

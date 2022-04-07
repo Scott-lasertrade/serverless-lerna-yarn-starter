@@ -20,48 +20,49 @@ const OrderBuyerDetails_1 = require("./OrderBuyerDetails");
 let Address = class Address extends VersionControlledEntity_1.VersionControlledEntity {
 };
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => Country_1.Country, (country) => country.addresses, {
+    typeorm_1.ManyToOne(() => Country_1.Country, (country) => country.addresses, {
         nullable: true,
     }),
     __metadata("design:type", Country_1.Country)
 ], Address.prototype, "country", void 0);
 __decorate([
-    (0, typeorm_1.ManyToOne)(() => AddressType_1.AddressType, (address_type) => address_type.addresses),
+    typeorm_1.ManyToOne(() => AddressType_1.AddressType, (address_type) => address_type.addresses),
     __metadata("design:type", AddressType_1.AddressType)
 ], Address.prototype, "address_type", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 50 }),
+    typeorm_1.Column({ length: 50 }),
     __metadata("design:type", String)
 ], Address.prototype, "state", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 16 }),
+    typeorm_1.Column({ length: 16 }),
     __metadata("design:type", String)
 ], Address.prototype, "post_code", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 128 }),
+    typeorm_1.Column({ length: 128 }),
     __metadata("design:type", String)
 ], Address.prototype, "address_line_1", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 128 }),
+    typeorm_1.Column({ length: 128 }),
     __metadata("design:type", String)
 ], Address.prototype, "address_line_2", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ length: 50 }),
+    typeorm_1.Column({ length: 50 }),
     __metadata("design:type", String)
 ], Address.prototype, "suburb", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Account_1.Account, (account) => account.address),
+    typeorm_1.OneToOne(() => Account_1.Account, (account) => account.address),
     __metadata("design:type", Account_1.Account)
 ], Address.prototype, "account", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Listing_1.Listing, (listing) => listing.address),
+    typeorm_1.OneToOne(() => Listing_1.Listing, (listing) => listing.address),
     __metadata("design:type", Listing_1.Listing)
 ], Address.prototype, "listing", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => OrderBuyerDetails_1.OrderBuyerDetails, (order_buyer_details) => order_buyer_details.address),
+    typeorm_1.OneToOne(() => OrderBuyerDetails_1.OrderBuyerDetails, (order_buyer_details) => order_buyer_details.address),
     __metadata("design:type", OrderBuyerDetails_1.OrderBuyerDetails)
 ], Address.prototype, "order_buyer_details", void 0);
 Address = __decorate([
-    (0, typeorm_1.Entity)('address')
+    typeorm_1.Entity('address')
 ], Address);
 exports.Address = Address;
+//# sourceMappingURL=Address.js.map

@@ -8,12 +8,11 @@
     "license": "MIT",
     "dependencies": {
         "@aws-sdk/client-s3": "^3.56.0",
-        "@medii/common": "^1.0.12",
-        "@medii/data": "^1.0.9"
+        "@medii/common": "file:../common",
+        "@medii/data": "file:../data"
     },
     "scripts": {
-        "build": "run-s clean build:tsc",
-        "build:tsc": "tsc -b"
+        "tsc": "tsc"
     },
     "devDependencies": {
         "ts-node": "^8.6.2"

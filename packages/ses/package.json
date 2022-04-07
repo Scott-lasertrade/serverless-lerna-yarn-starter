@@ -12,8 +12,7 @@
         "@aws-sdk/client-sfn": "^3.55.0"
     },
     "scripts": {
-        "build": "run-s clean build:tsc",
-        "build:tsc": "tsc -b"
+        "tsc": "tsc"
     },
     "devDependencies": {
         "ts-node": "^8.6.2"

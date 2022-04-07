@@ -7,8 +7,8 @@
         "@aws-sdk/client-cognito-identity-provider": "^3.56.0",
         "@aws-sdk/client-ses": "^3.56.0",
         "@aws-sdk/client-sfn": "^3.55.0",
-        "@medii/api-common": "^1.0.12",
-        "@medii/common": "^1.0.12",
+        "@medii/api-common": "file:../common",
+        "@medii/common": "file:../../common",
         "@middy/core": "^2.5.7",
         "aws-lambda": "^1.0.7"
     },

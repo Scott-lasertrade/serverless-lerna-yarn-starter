@@ -10,3 +10,4 @@ class OptimisticLockVersionMismatchError extends Error {
     }
 }
 exports.OptimisticLockVersionMismatchError = OptimisticLockVersionMismatchError;
+//# sourceMappingURL=OptimisticLockVersionMismatchError.js.map

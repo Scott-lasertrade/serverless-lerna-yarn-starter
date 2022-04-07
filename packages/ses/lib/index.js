@@ -10,8 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUNAndEmailFromCogId = exports.handelTemplateEmail = void 0;
-// import 'source-map-support/register';
-// import 'typeorm-aurora-data-api-driver';
 const client_ses_1 = require("@aws-sdk/client-ses");
 const sesClient = new client_ses_1.SESClient({
     region: 'ap-southeast-2',
@@ -192,7 +190,7 @@ const handelTemplateFooter = () => {
 </table><!-- End -->
 </body>`;
 };
-const handelTemplateEmail = (emailSubject, emailBody, emailToAddress) => __awaiter(void 0, void 0, void 0, function* () {
+exports.handelTemplateEmail = (emailSubject, emailBody, emailToAddress) => __awaiter(void 0, void 0, void 0, function* () {
     const subject = {
         Data: emailSubject,
     };
@@ -228,8 +226,7 @@ const handelTemplateEmail = (emailSubject, emailBody, emailToAddress) => __await
         };
     }
 });
-exports.handelTemplateEmail = handelTemplateEmail;
-const getUNAndEmailFromCogId = (cogId) => __awaiter(void 0, void 0, void 0, function* () {
+exports.getUNAndEmailFromCogId = (cogId) => __awaiter(void 0, void 0, void 0, function* () {
     let user;
     try {
         const config = {
@@ -252,5 +249,5 @@ const getUNAndEmailFromCogId = (cogId) => __awaiter(void 0, void 0, void 0, func
     console.log(user);
     return { userName, emailAddress };
 });
-exports.getUNAndEmailFromCogId = getUNAndEmailFromCogId;
 exports.default = exports.handelTemplateEmail;
+//# sourceMappingURL=index.js.map

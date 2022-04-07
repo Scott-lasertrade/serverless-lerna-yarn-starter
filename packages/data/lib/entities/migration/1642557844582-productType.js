@@ -36,3 +36,4 @@ class productType1642557844582 {
     }
 }
 exports.productType1642557844582 = productType1642557844582;
+//# sourceMappingURL=1642557844582-productType.js.map

@@ -18,7 +18,7 @@ const RelationLoader_1 = require("typeorm/query-builder/RelationLoader");
 const ormconfig_1 = __importDefault(require("./ormconfig"));
 class Database {
     constructor() {
-        this.connectionManager = (0, typeorm_1.getConnectionManager)();
+        this.connectionManager = typeorm_1.getConnectionManager();
     }
     getConnection() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -30,26 +30,20 @@ class Database {
             }
             else {
                 console.log(`Create new connection...`);
-                connection = yield (0, typeorm_1.createConnection)(ormconfig_1.default);
+                connection = yield typeorm_1.createConnection(ormconfig_1.default);
             }
             return connection;
         });
     }
     injectConnectionOptions(connection, connectionOptions) {
-        // S.Y: SEE - https://github.com/typeorm/typeorm/issues/2598
-        // @ts-ignore
         connection.options = connectionOptions;
-        // @ts-ignore
         connection.manager = connection.createEntityManager();
-        // @ts-ignore
         connection.namingStrategy =
-            // @ts-ignore
             connection.options.namingStrategy || new typeorm_1.DefaultNamingStrategy();
-        // @ts-ignore
         connection.relationLoader = new RelationLoader_1.RelationLoader(connection);
-        // @ts-ignore
         connection.buildMetadatas();
         return connection;
     }
 }
 exports.default = Database;
+//# sourceMappingURL=database.js.map

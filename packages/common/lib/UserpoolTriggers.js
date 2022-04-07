@@ -14,3 +14,4 @@ var UserpoolTriggers;
     UserpoolTriggers["VerifyAuthChallengeResponse"] = "VerifyAuthChallengeResponse";
     UserpoolTriggers["UserMigration"] = "UserMigration";
 })(UserpoolTriggers = exports.UserpoolTriggers || (exports.UserpoolTriggers = {}));
+//# sourceMappingURL=UserpoolTriggers.js.map

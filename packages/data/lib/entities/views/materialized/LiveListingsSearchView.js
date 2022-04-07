@@ -14,39 +14,39 @@ const typeorm_1 = require("typeorm");
 let LiveListingsSearchView = class LiveListingsSearchView {
 };
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], LiveListingsSearchView.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], LiveListingsSearchView.prototype, "productId", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], LiveListingsSearchView.prototype, "title", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], LiveListingsSearchView.prototype, "price", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], LiveListingsSearchView.prototype, "thumbnail_key", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], LiveListingsSearchView.prototype, "thumbnail_bucket", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], LiveListingsSearchView.prototype, "thumbnail_region", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'tsvector' }),
+    typeorm_1.Column({ type: 'tsvector' }),
     __metadata("design:type", String)
 ], LiveListingsSearchView.prototype, "document", void 0);
 LiveListingsSearchView = __decorate([
-    (0, typeorm_1.ViewEntity)({
+    typeorm_1.ViewEntity({
         name: 'live_listings_search_view',
         expression: `
         select  l.id,
@@ -75,3 +75,4 @@ LiveListingsSearchView = __decorate([
     })
 ], LiveListingsSearchView);
 exports.LiveListingsSearchView = LiveListingsSearchView;
+//# sourceMappingURL=LiveListingsSearchView.js.map

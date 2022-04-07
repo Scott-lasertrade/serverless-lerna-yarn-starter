@@ -14,39 +14,39 @@ const typeorm_1 = require("typeorm");
 let OfferRelationView = class OfferRelationView {
 };
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], OfferRelationView.prototype, "offer_id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], OfferRelationView.prototype, "offer_status", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], OfferRelationView.prototype, "listing_id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], OfferRelationView.prototype, "listing_status", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", Number)
 ], OfferRelationView.prototype, "product_id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], OfferRelationView.prototype, "product_name", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], OfferRelationView.prototype, "buyer_id", void 0);
 __decorate([
-    (0, typeorm_1.ViewColumn)(),
+    typeorm_1.ViewColumn(),
     __metadata("design:type", String)
 ], OfferRelationView.prototype, "seller_id", void 0);
 OfferRelationView = __decorate([
-    (0, typeorm_1.ViewEntity)({
+    typeorm_1.ViewEntity({
         name: 'offer_relation_view',
         expression: `
         select  o.id as offer_id, 
@@ -75,3 +75,4 @@ OfferRelationView = __decorate([
     })
 ], OfferRelationView);
 exports.OfferRelationView = OfferRelationView;
+//# sourceMappingURL=OfferRelationView.js.map

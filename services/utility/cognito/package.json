@@ -5,18 +5,20 @@
     "main": "serverless.ts",
     "license": "MIT",
     "dependencies": {
-        "@medii/api-lambda": "^1.0.4",
-        "@medii/common": "^1.0.6",
-        "@medii/ses": "^1.0.6",
-        "@typescript-eslint/typescript-estree": "4.33.0",
-        "serverless-iam-roles-per-function": "^3.2.0",
         "@aws-sdk/client-cognito-identity-provider": "^3.55.0",
-        "aws-lambda": "^1.0.7"
+        "@medii/api-lambda": "file:../../../packages/api/lambda",
+        "@medii/common": "file:../../../packages/common",
+        "@medii/ses": "file:../../../packages/ses",
+        "@typescript-eslint/typescript-estree": "4.33.0",
+        "aws-lambda": "^1.0.7",
+        "serverless-iam-roles-per-function": "^3.2.0"
     },
     "scripts": {
-        "test": "serverless-bundle test"
+        "test": "serverless-bundle test",
+        "package": "serverless package"
     },
     "devDependencies": {
+        "serverless-bundle": "^5.3.0",
         "serverless-seed": "^0.3.15",
         "serverless-tscpaths": "^0.0.6",
         "ts-node": "^8.6.2",

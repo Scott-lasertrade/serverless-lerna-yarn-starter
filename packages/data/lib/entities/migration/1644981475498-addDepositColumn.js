@@ -26,3 +26,4 @@ class addDepositColumn1644981475498 {
     }
 }
 exports.addDepositColumn1644981475498 = addDepositColumn1644981475498;
+//# sourceMappingURL=1644981475498-addDepositColumn.js.map

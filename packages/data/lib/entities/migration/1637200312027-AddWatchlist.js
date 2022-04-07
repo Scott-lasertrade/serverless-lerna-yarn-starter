@@ -30,3 +30,4 @@ class AddWatchlist1637200312027 {
     }
 }
 exports.AddWatchlist1637200312027 = AddWatchlist1637200312027;
+//# sourceMappingURL=1637200312027-AddWatchlist.js.map

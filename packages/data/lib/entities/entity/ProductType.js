@@ -16,16 +16,17 @@ const Product_1 = require("./Product");
 let ProductType = class ProductType extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    (0, typeorm_1.Column)({
+    typeorm_1.Column({
         length: 100,
     }),
     __metadata("design:type", String)
 ], ProductType.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Product_1.Product, (product) => product.product_type),
+    typeorm_1.OneToMany(() => Product_1.Product, (product) => product.product_type),
     __metadata("design:type", Array)
 ], ProductType.prototype, "products", void 0);
 ProductType = __decorate([
-    (0, typeorm_1.Entity)('product_type')
+    typeorm_1.Entity('product_type')
 ], ProductType);
 exports.ProductType = ProductType;
+//# sourceMappingURL=ProductType.js.map

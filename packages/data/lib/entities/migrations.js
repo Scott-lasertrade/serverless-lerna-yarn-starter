@@ -1,20 +1,15 @@
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
 }));
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// Subscribers
 __exportStar(require("./migration/1635981526022-InitialSetup"), exports);
 __exportStar(require("./migration/1635981577426-seedManufacturers"), exports);
 __exportStar(require("./migration/1635985542696-seedUsageTypes"), exports);
@@ -84,3 +79,4 @@ __exportStar(require("./migration/1646354945922-addHSCompanyField"), exports);
 __exportStar(require("./migration/1646358207815-addUserEnabledField"), exports);
 __exportStar(require("./migration/1646706321545-addAuditFields"), exports);
 __exportStar(require("./migration/1646795982730-VControlManufacturer"), exports);
+//# sourceMappingURL=migrations.js.map

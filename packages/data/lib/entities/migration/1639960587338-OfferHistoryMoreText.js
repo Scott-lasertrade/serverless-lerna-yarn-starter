@@ -26,3 +26,4 @@ class OfferHistoryMoreText1639960587338 {
     }
 }
 exports.OfferHistoryMoreText1639960587338 = OfferHistoryMoreText1639960587338;
+//# sourceMappingURL=1639960587338-OfferHistoryMoreText.js.map

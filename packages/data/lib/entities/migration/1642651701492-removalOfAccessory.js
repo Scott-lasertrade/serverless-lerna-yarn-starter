@@ -38,3 +38,4 @@ class removalOfAccessory1642651701492 {
     }
 }
 exports.removalOfAccessory1642651701492 = removalOfAccessory1642651701492;
+//# sourceMappingURL=1642651701492-removalOfAccessory.js.map

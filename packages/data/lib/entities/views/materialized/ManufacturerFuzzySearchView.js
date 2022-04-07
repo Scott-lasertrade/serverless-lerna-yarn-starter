@@ -14,11 +14,11 @@ const typeorm_1 = require("typeorm");
 let ManufacturerFuzzySearchView = class ManufacturerFuzzySearchView {
 };
 __decorate([
-    (0, typeorm_1.Column)({ type: 'text' }),
+    typeorm_1.Column({ type: 'text' }),
     __metadata("design:type", String)
 ], ManufacturerFuzzySearchView.prototype, "word", void 0);
 ManufacturerFuzzySearchView = __decorate([
-    (0, typeorm_1.ViewEntity)({
+    typeorm_1.ViewEntity({
         name: 'manufacturer_fuzzy_search_view',
         expression: `
         select word from ts_stat('
@@ -30,3 +30,4 @@ ManufacturerFuzzySearchView = __decorate([
     })
 ], ManufacturerFuzzySearchView);
 exports.ManufacturerFuzzySearchView = ManufacturerFuzzySearchView;
+//# sourceMappingURL=ManufacturerFuzzySearchView.js.map

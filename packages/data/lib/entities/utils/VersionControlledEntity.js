@@ -20,15 +20,16 @@ let VersionControlledEntity = class VersionControlledEntity extends CommonEntity
     }
 };
 __decorate([
-    (0, typeorm_1.VersionColumn)({ default: 1 }),
+    typeorm_1.VersionColumn({ default: 1 }),
     __metadata("design:type", Number)
 ], VersionControlledEntity.prototype, "version", void 0);
 __decorate([
-    (0, typeorm_1.DeleteDateColumn)(),
+    typeorm_1.DeleteDateColumn(),
     __metadata("design:type", Date)
 ], VersionControlledEntity.prototype, "deleted_date", void 0);
 VersionControlledEntity = __decorate([
-    (0, typeorm_1.Entity)(),
+    typeorm_1.Entity(),
     __metadata("design:paramtypes", [Number, Number])
 ], VersionControlledEntity);
 exports.VersionControlledEntity = VersionControlledEntity;
+//# sourceMappingURL=VersionControlledEntity.js.map

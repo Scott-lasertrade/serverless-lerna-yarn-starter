@@ -18,21 +18,22 @@ const Transaction_1 = require("./Transaction");
 let Checkout = class Checkout extends CommonEntity_1.CommonEntity {
 };
 __decorate([
-    (0, typeorm_1.OneToOne)(() => Transaction_1.Transaction, (transaction) => transaction.checkout),
-    (0, typeorm_1.JoinColumn)(),
+    typeorm_1.OneToOne(() => Transaction_1.Transaction, (transaction) => transaction.checkout),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", Transaction_1.Transaction)
 ], Checkout.prototype, "transaction", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => OrderBuyerDetails_1.OrderBuyerDetails, (orderBuyerDetails) => orderBuyerDetails.checkout),
+    typeorm_1.OneToOne(() => OrderBuyerDetails_1.OrderBuyerDetails, (orderBuyerDetails) => orderBuyerDetails.checkout),
     __metadata("design:type", OrderBuyerDetails_1.OrderBuyerDetails)
 ], Checkout.prototype, "buyer_details", void 0);
 __decorate([
-    (0, typeorm_1.OneToMany)(() => Order_1.Order, (order) => order.checkout, {
+    typeorm_1.OneToMany(() => Order_1.Order, (order) => order.checkout, {
         cascade: true,
     }),
     __metadata("design:type", Array)
 ], Checkout.prototype, "orders", void 0);
 Checkout = __decorate([
-    (0, typeorm_1.Entity)('checkout')
+    typeorm_1.Entity('checkout')
 ], Checkout);
 exports.Checkout = Checkout;
+//# sourceMappingURL=Checkout.js.map

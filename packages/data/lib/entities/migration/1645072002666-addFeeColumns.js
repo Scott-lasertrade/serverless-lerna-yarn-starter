@@ -28,3 +28,4 @@ class addFeeColumns1645072002666 {
     }
 }
 exports.addFeeColumns1645072002666 = addFeeColumns1645072002666;
+//# sourceMappingURL=1645072002666-addFeeColumns.js.map
