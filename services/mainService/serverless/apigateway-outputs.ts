@@ -17,5 +17,14 @@ const APIGWOutputs = {
             Name: 'SHARED-API-ROOT',
         },
     },
+    ApiGatewayAdminResourceId: {
+        Description: 'Shared ApiGateway admin resource Id',
+        Value: {
+            Ref: 'AdminPartPath',
+        },
+        Export: {
+            Name: 'ADMIN-API-ROOT',
+        },
+    },
 };
 export default APIGWOutputs;

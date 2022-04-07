@@ -60,6 +60,9 @@ exports.SharedConfig = {
         ROOT: {
             'Fn::ImportValue': 'SHARED-API-ROOT',
         },
+        ADMIN: {
+            'Fn::ImportValue': 'ADMIN-API-ROOT',
+        },
     },
     COGNITO: {
         USERPOOLNAME: {

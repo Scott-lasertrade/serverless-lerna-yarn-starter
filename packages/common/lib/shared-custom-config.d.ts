@@ -42,6 +42,9 @@ export declare const SharedConfig: {
         ROOT: {
             'Fn::ImportValue': string;
         };
+        ADMIN: {
+            'Fn::ImportValue': string;
+        };
     };
     COGNITO: {
         USERPOOLNAME: {
