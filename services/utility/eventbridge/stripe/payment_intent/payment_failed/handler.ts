@@ -55,7 +55,7 @@ const task: any = async (event) => {
             })
             .getMany();
 
-        let relatedAccounts = await dbConn
+        const relatedAccounts = await dbConn
             .createQueryBuilder(Account, 'a')
             .innerJoin('a.orders_bought', 'ord')
             .innerJoin('ord.checkout', 'checkout')
@@ -120,7 +120,7 @@ const task: any = async (event) => {
             await sendToEventBridge(
                 process.env.EVENT_BRIDGE_STATEMACHINE ?? '',
                 params,
-                process.env.STAGE
+                process.env.STAGE ?? ''
             );
         } catch (err: any) {
             console.error(`EVENT BRIDGE| Error: ${err.message}`);

@@ -95,7 +95,7 @@ const task: any = async (event) => {
                 })
                 .getMany();
 
-            let relatedAccounts = await transactionalEntityManager
+            const relatedAccounts = await transactionalEntityManager
                 .createQueryBuilder(Account, 'a')
                 .innerJoin('a.orders_bought', 'ord')
                 .innerJoin('ord.checkout', 'checkout')

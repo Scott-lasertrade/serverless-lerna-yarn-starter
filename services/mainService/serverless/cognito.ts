@@ -349,7 +349,7 @@ const CognitoResources = {
                                                 },
                                                 {
                                                     'Fn::Sub':
-                                                        '${self:provider.stage}/*/protected-*',
+                                                        '${self:provider.stage}/*/protected/*',
                                                 },
                                             ],
                                         ],
@@ -375,7 +375,7 @@ const CognitoResources = {
                                                 },
                                                 {
                                                     'Fn::Sub':
-                                                        '${self:provider.stage}/*/public-*',
+                                                        '${self:provider.stage}/*/public/*',
                                                 },
                                             ],
                                         ],
@@ -455,7 +455,7 @@ const CognitoResources = {
                                                 },
                                                 {
                                                     'Fn::Sub':
-                                                        '${self:provider.stage}/*/admin-*',
+                                                        '${self:provider.stage}/*/admin/*',
                                                 },
                                             ],
                                         ],
@@ -481,7 +481,7 @@ const CognitoResources = {
                                                 },
                                                 {
                                                     'Fn::Sub':
-                                                        '${self:provider.stage}/*/protected-*',
+                                                        '${self:provider.stage}/*/protected/*',
                                                 },
                                             ],
                                         ],
