@@ -102,7 +102,7 @@ const AuroraResources = {
         Type: 'AWS::RDS::DBSubnetGroup',
         Properties: {
             DBSubnetGroupDescription: 'Aurora DB Subnet Group',
-            DBSubnetGroupName: 'aurora-dbsubnet-group',
+            DBSubnetGroupName: '${self:provider.stage}-aurora-dbsubnet-group',
             SubnetIds: [
                 { Ref: 'AuroraDBSubnetA' },
                 { Ref: 'AuroraDBSubnetB' },
