@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SharedConfig = exports.BaseServiceName = void 0;
-exports.BaseServiceName = 'marketplace-backend';
+exports.BaseServiceName = 'medii';
 exports.SharedConfig = {
     enterprise: {
         collectLambdaLogs: false,
@@ -66,9 +66,9 @@ exports.SharedConfig = {
     },
     COGNITO: {
         USERPOOLNAME: {
-            offline: 'marketplace-backend-dev',
-            dev: 'marketplace-backend-${self:provider.stage}',
-            prod: 'marketplace-backend-${self:provider.stage}',
+            offline: 'medii-dev',
+            dev: 'medii-${self:provider.stage}',
+            prod: 'medii-${self:provider.stage}',
         },
         USERPOOLID: {
             offline: 'ap-southeast-2_1q0PND3QW',
@@ -90,14 +90,14 @@ exports.SharedConfig = {
             'Fn::ImportValue': 'COGNITO-DOMAIN',
         },
         IDENTITYPOOLNAME: {
-            offline: 'marketplace-backend-dev',
-            dev: 'marketplace-backend-${self:provider.stage}',
-            prod: 'marketplace-backend-${self:provider.stage}',
+            offline: 'medii-dev',
+            dev: 'medii-${self:provider.stage}',
+            prod: 'medii-${self:provider.stage}',
         },
         DOMAINNAME: {
-            offline: 'marketplace-backend-dev',
-            dev: 'marketplace-backend-${self:provider.stage}',
-            prod: 'marketplace-backend-${self:provider.stage}',
+            offline: 'medii-dev',
+            dev: 'medii-${self:provider.stage}',
+            prod: 'medii-${self:provider.stage}',
         },
         CALLBACKURLS: {
             offline: ['http://localhost:3000/auth/federated-sign-in'],
@@ -126,11 +126,11 @@ exports.SharedConfig = {
         },
     },
     STORAGE: {
-        PRODUCTBUCKETNAME: 'marketplace-backend-${self:provider.stage}-products-bucket',
+        PRODUCTBUCKETNAME: 'medii-${self:provider.stage}-products-bucket',
         PRODUCTBUCKETARN: {
             'Fn::ImportValue': 'PRODUCT-BUCKET-ARN',
         },
-        LISTINGSBUCKETNAME: 'marketplace-backend-${self:provider.stage}-listings-bucket',
+        LISTINGSBUCKETNAME: 'medii-${self:provider.stage}-listings-bucket',
         LISTINGSBUCKETARN: {
             'Fn::ImportValue': 'LISTINGS-BUCKET-ARN',
         },

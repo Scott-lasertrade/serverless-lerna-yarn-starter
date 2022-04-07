@@ -6,7 +6,7 @@ import {
 } from '@medii/common';
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
-    service: BaseServiceName + '-EB-SFN',
+    service: BaseServiceName + '-migration',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',
@@ -40,10 +40,6 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         apiGateway: {
             restApiId: '${self:custom.API.ID}',
             restApiRootResourceId: '${self:custom.API.ROOT}',
-        },
-
-        eventBridge: {
-            useCloudFormation: true,
         },
     },
     // import the function via paths

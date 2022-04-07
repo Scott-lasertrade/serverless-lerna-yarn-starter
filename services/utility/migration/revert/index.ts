@@ -1,19 +1,9 @@
-import { customCors, AWSFunction, handlerPath } from '@medii/api-lambda';
+import { AWSFunction, handlerPath } from '@medii/api-lambda';
 
 export default {
     handler: `${handlerPath(__dirname)}/handler.main`,
     timeout: 10,
     versionFunction: false,
-    events: [
-        {
-            http: {
-                method: 'get',
-                path: 'listing/approval/list',
-                cors: customCors,
-                authorizer: 'aws_iam',
-            },
-        },
-    ],
     iamRoleStatements: [
         {
             Sid: 'AuroraDataAccessPolicy',

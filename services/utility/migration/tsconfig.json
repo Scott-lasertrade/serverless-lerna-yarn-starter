@@ -1,0 +1,28 @@
+{
+    "extends": "../../tsconfig.services.json",
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "outDir": "lib",
+        "baseUrl": ".",
+        "paths": {
+            "@medii/api-common": ["../../../packages/api/common/src"],
+            "@medii/common": ["../../../packages/common/src"],
+            "@medii/data": ["../../../packages/data/src"]
+        }
+    },
+    "include": ["./**/*.ts"],
+    "exclude": [
+        "node_modules/**/*",
+        ".serverless/**/*",
+        ".webpack/**/*",
+        ".build/**/*",
+        "**/__tests__/*",
+        "**/__e2e__/*"
+    ],
+    "references": [
+        { "path": "../../../packages/common" },
+        { "path": "../../../packages/api/lambda" },
+        { "path": "../../../packages/data" }
+    ]
+}

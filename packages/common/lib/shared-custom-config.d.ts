@@ -1,4 +1,4 @@
-export declare const BaseServiceName = "marketplace-backend";
+export declare const BaseServiceName = "medii";
 export declare const SharedConfig: {
     enterprise: {
         collectLambdaLogs: boolean;
