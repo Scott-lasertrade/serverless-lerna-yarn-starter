@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@medii/api-lambda/*": ["../../../packages/api/lambda/*"],
+            "@medii/common/*": ["../../../packages/common/*"],
+            "@medii/data/*": ["../../../packages/data/*"]
+        }
+    }
+}

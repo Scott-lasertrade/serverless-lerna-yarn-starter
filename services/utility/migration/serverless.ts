@@ -18,15 +18,27 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
                 disabledFor: ['prod', 'staging'],
             },
         },
-        bundle: {
-            ignorePackages: ['pg-native'],
+        // bundle: {
+        //     esbuild: false,
+        //     ignorePackages: ['pg-native'],
+        //     disableForkTsChecker: true,
+        // },
+        // esbuild: {
+        //     bundle: true,
+        //     minify: false,
+        //     concurrency: 10,
+        //     packager: 'yarn',
+        // },
+        webpack: {
+            webpackConfig: './webpack.config.js',
+            includeModules: true,
         },
     },
     package: {
         individually: true,
     },
     plugins: [
-        'serverless-bundle',
+        'serverless-webpack',
         'serverless-iam-roles-per-function',
         'serverless-seed',
     ],
