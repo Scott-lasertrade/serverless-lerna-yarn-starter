@@ -1,0 +1,18 @@
+{
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "body": {
+        "post_code": 2341,
+        "address_line_1": "156 Annoying Address",
+        "address_line_2": "Flat 4",
+        "state": "NSW",
+        "city": "Sydeknee",
+        "country": "Australia",
+        "suburb": "Oatley",
+        "tax_id": 455543,
+        "business_name": "MedicineInc",
+        "address_id": 2,
+        "account_id": 1
+    }
+}

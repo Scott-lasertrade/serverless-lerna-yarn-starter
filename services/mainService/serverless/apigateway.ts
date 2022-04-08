@@ -17,5 +17,17 @@ const APIGWResources = {
             PathPart: 'admin',
         },
     },
+    ProtectedPartPath: {
+        Type: 'AWS::ApiGateway::Resource',
+        Properties: {
+            RestApiId: {
+                Ref: 'SharedApiGateway',
+            },
+            ParentId: {
+                'Fn::GetAtt': ['SharedApiGateway', 'RootResourceId'],
+            },
+            PathPart: 'protected',
+        },
+    },
 };
 export default APIGWResources;

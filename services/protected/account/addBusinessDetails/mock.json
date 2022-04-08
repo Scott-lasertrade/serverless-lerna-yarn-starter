@@ -1,0 +1,17 @@
+{
+    "headers": {
+        "Content-Type": "application/json",
+        "AuthorizedUserId": "f46c3767-5935-45d7-95f3-ec745c2a6bf7",
+        "CurrentUserId": "f46c3767-5935-45d7-95f3-ec745c2a6bf7"
+    },
+    "body": {
+        "firstName": "Bob",
+        "lastName": "Jonston",
+        "phoneNumber": "+61434567890",
+        "accountType": "Partnership",
+        "businessPhoneNumber": "+61434567890",
+        "taxId": "123456",
+        "businessName": "Bob's Bakery",
+        "legalName": "Bob's Breadshop"
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "headers": {
+        "Content-Type": "application/json",
+        "AuthorizedUserId": "f46c3767-5935-45d7-95f3-ec745c2a6bf7",
+        "CurrentUserId": "f46c3767-5935-45d7-95f3-ec745c2a6bf7"
+    },
+    "body": {
+        "id": 1,
+        "version": 1,
+        "buyerDetails": {
+            "fName": "Scott",
+            "lName": "Young",
+            "email": "justscoa@gmail.com",
+            "phone": "+61432966026",
+            "bName": "Scott's Company",
+            "taxId": "123456789"
+        },
+        "address": {
+            "line1": "602-608 Princes Hwy",
+            "line2": "Unit 37",
+            "suburb": "Kirrawee",
+            "state": "NSW",
+            "postcode": "2322",
+            "country": "AU"
+        }
+    }
+}

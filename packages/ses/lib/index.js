@@ -243,7 +243,7 @@ const getUNAndEmailFromCogId = (cogId) => __awaiter(void 0, void 0, void 0, func
     }
     catch (error) {
         console.log('AUTHENTICATION ERROR: ', JSON.stringify(error, null, 2));
-        return error;
+        return { error: error };
     }
     const userName = user.UserAttributes[user.UserAttributes.findIndex((arr) => arr.Name === 'given_name')].Value;
     const emailAddress = user.UserAttributes[user.UserAttributes.findIndex((arr) => arr.Name === 'email')].Value;

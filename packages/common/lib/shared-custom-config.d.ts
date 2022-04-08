@@ -11,6 +11,13 @@ export declare const SharedConfig: {
             CUSTOMER_CODE: string;
         };
     };
+    HUBSPOT: {
+        prod: string;
+        dev: string;
+        offline: {
+            HAPIKEY: string;
+        };
+    };
     OFFER: {
         DEFAULT_EXPIRY: {
             offline: number;
@@ -51,6 +58,9 @@ export declare const SharedConfig: {
             'Fn::ImportValue': string;
         };
         ADMIN: {
+            'Fn::ImportValue': string;
+        };
+        PROTECTED: {
             'Fn::ImportValue': string;
         };
     };

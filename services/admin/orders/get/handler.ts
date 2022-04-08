@@ -1,6 +1,5 @@
 import 'source-map-support/register';
 import 'typeorm-aurora-data-api-driver';
-import { Connection } from 'typeorm';
 import { handleTimeout, middyfy } from '@medii/api-lambda';
 import { ValidatedEventAPIGatewayProxyEvent } from '@medii/api-common';
 import { Database, Order } from '@medii/data';

@@ -189,10 +189,10 @@ const handelTemplateFooter = () => {
 };
 
 export const handelTemplateEmail = async (
-    emailSubject,
-    emailBody,
-    emailToAddress
-) => {
+    emailSubject: string,
+    emailBody: string,
+    emailToAddress: string
+): Promise<any> => {
     const subject = {
         Data: emailSubject,
     };
@@ -231,7 +231,9 @@ export const handelTemplateEmail = async (
     }
 };
 
-export const getUNAndEmailFromCogId = async (cogId) => {
+export const getUNAndEmailFromCogId = async (
+    cogId: string
+): Promise<{ userName?: string; emailAddress?: string; error?: any }> => {
     let user;
     try {
         const config: CognitoIdentityProviderClientConfig = {
@@ -247,7 +249,7 @@ export const getUNAndEmailFromCogId = async (cogId) => {
         user = await client.send(adminGetUserCommand);
     } catch (error) {
         console.log('AUTHENTICATION ERROR: ', JSON.stringify(error, null, 2));
-        return error;
+        return { error: error };
     }
     const userName =
         user.UserAttributes[

@@ -1,0 +1,9 @@
+{
+    "userId": 2,
+    "buyerName": "Scott",
+    "buyerPhone": "+61432 966 026",
+    "buyerAddress": "Unit 37/602-608 Princes Hwy, Kirrawee, 2232, Australia",
+    "listingId": 3,
+    "amount": 11111.0,
+    "domain": "http://localhost:3000"
+}

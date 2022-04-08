@@ -1,0 +1,62 @@
+{
+    "headers": {
+        "Content-Type": "application/json",
+        "AuthorizedUserId": "f46c3767-5935-45d7-95f3-ec745c2a6bf7",
+        "CurrentUserId": "f46c3767-5935-45d7-95f3-ec745c2a6bf7"
+    },
+    "body": {
+        "id": 1,
+        "version": 1,
+        "accountId": 1,
+        "accountVersion": 1,
+        "accountAddressId": 1,
+        "accountAddressVersion": 1,
+        "saveAsDefault": false,
+        "productId": 1,
+        "productVersion": 1,
+        "productName": "Tester",
+        "productEdited": false,
+        "manufacturers": {
+            "key": 1,
+            "value": "Acme"
+        },
+        "serialNumber": "123456",
+        "YOM": 2020,
+        "usageTypeId": 1,
+        "usageId": 1,
+        "usageVersion": 1,
+        "usageValue": 123,
+        "comment": "<p>This is a test comment</p>",
+        "accessories": [
+            {
+                "id": 1,
+                "version": 1,
+                "active": true,
+                "product_id": 1,
+                "usage_type_id": 1,
+                "usage_id": 1,
+                "usage_value": 40,
+                "usage_version": 1
+            }
+        ],
+        "cost": 1000,
+        "autoRejectBelow": 500,
+        "autoAcceptAbove": 900,
+        "address": {
+            "id": 1,
+            "version": 1,
+            "addressLine1": "123 Fake Ln",
+            "addressLine2": "Unit 3",
+            "suburb": "suburby",
+            "state": "Outtahere",
+            "postcode": "1234",
+            "country": "AU"
+        },
+        "isOnGroundFloor": true,
+        "isPackagingRequired": false,
+        "isThereSteps": false,
+        "status": "Draft",
+        "hubspotContactId": 551,
+        "domain": "http://localhost:3000"
+    }
+}

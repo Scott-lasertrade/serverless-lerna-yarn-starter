@@ -14,6 +14,13 @@ exports.SharedConfig = {
             CUSTOMER_CODE: 'LASRTECH',
         },
     },
+    HUBSPOT: {
+        prod: '${ssm:/aws/reference/secretsmanager/prod/hubspot~true}',
+        dev: '${ssm:/aws/reference/secretsmanager/dev/hubspot~true}',
+        offline: {
+            HAPIKEY: '839d9ef7-0f0a-4c05-b19d-cc22e92882ac',
+        },
+    },
     OFFER: {
         DEFAULT_EXPIRY: {
             offline: 1 * 60 * 1000,
@@ -55,6 +62,9 @@ exports.SharedConfig = {
         },
         ADMIN: {
             'Fn::ImportValue': '${self:provider.stage}-ADMIN-API-ROOT',
+        },
+        PROTECTED: {
+            'Fn::ImportValue': '${self:provider.stage}-PROTECTED-API-ROOT',
         },
     },
     COGNITO: {

@@ -1,0 +1,10 @@
+{
+    "headers": {
+        "Content-Type": "application/json",
+        "AuthorizedUserId": "f46c3767-5935-45d7-95f3-ec745c2a6bf7",
+        "CurrentUserId": "f46c3767-5935-45d7-95f3-ec745c2a6bf7"
+    },
+    "body": {
+        "productId": 4
+    }
+}

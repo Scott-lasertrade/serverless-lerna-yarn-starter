@@ -26,5 +26,14 @@ const APIGWOutputs = {
             Name: '${self:provider.stage}-ADMIN-API-ROOT',
         },
     },
+    ApiGatewayProtectedResourceId: {
+        Description: 'Shared ApiGateway protected resource Id',
+        Value: {
+            Ref: 'ProtectedPartPath',
+        },
+        Export: {
+            Name: '${self:provider.stage}-PROTECTED-API-ROOT',
+        },
+    },
 };
 export default APIGWOutputs;
