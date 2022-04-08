@@ -19,9 +19,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
             },
         },
         bundle: {
-            // esbuild: false,
             ignorePackages: ['pg-native'],
-            // disableForkTsChecker: true,
         },
     },
     package: {
