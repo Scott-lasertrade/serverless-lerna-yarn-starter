@@ -17,11 +17,12 @@ const serverlessConfiguration: AWS = {
         },
         bundle: {
             ignorePackages: ['pg-native'],
+            disableForkTsChecker: true,
         },
     },
-    // package: {
-    //     individually: true,
-    // },
+    package: {
+        individually: true,
+    },
     plugins: [
         'serverless-bundle',
         'serverless-iam-roles-per-function',
