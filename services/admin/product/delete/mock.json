@@ -1,0 +1,9 @@
+{
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "body": {
+        "id": 1,
+        "version": 1
+    }
+}

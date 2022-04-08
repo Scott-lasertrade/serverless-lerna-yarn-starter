@@ -1,0 +1,30 @@
+{
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "body": {
+        "orderAbn": "12345",
+        "orderBusinessName": "Hello World",
+        "orderAddress": {
+            "addressLine1": "123 Fake Ln",
+            "addressLine2": "Unit 3",
+            "suburb": "suburby",
+            "state": "Outtahere",
+            "postcode": "1234",
+            "country": "AU"
+        },
+        "listingAddress": {
+            "addressLine1": "123 Fake Ln",
+            "addressLine2": "Unit 3",
+            "suburb": "suburby",
+            "state": "Outtahere",
+            "postcode": "1234",
+            "country": "AU"
+        },
+        "shippingFee": 551.51,
+        "includeGST": false
+    },
+    "pathParameters": {
+        "id": 3
+    }
+}

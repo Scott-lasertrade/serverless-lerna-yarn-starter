@@ -3,7 +3,7 @@ import { BaseServiceName, SharedConfig } from '@medii/common';
 import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
-    service: BaseServiceName + '-accounts',
+    service: BaseServiceName + '-ad-accounts',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '2',

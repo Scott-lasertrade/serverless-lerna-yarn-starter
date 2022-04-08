@@ -3,22 +3,22 @@
 // |_________________________|
 //      Category
 import get from './get';
-import getL from './get/listings';
-import getOffM from './get/offersMade';
-import getOffR from './get/offersReceived';
-import getOrdM from './get/ordersMade';
-import getOrdR from './get/ordersReceived';
+import getListings from './get/listings';
+import getOffersMade from './get/offersMade';
+import getOffersRecieved from './get/offersReceived';
+import getOrdersMade from './get/ordersMade';
+import getOrdersReceived from './get/ordersReceived';
 
 import list from './list';
 
 const functions = {
     // Public
     get,
-    getL,
-    getOffM,
-    getOffR,
-    getOrdM,
-    getOrdR,
+    getListings,
+    getOffersMade,
+    getOffersRecieved,
+    getOrdersMade,
+    getOrdersReceived,
     list,
 };
 

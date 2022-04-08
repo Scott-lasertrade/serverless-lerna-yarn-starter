@@ -11,7 +11,7 @@ const ALLOWED_ORIGINS = [
 type ValidatedAPIGatewayProxyEvent<S> = Omit<APIGatewayProxyEvent, 'body'> & {
     body: FromSchema<S>;
 };
-export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<
+export type newManufacturers: strinValidatedEventAPIGatewayProxyEvent<S> = Handler<
     ValidatedAPIGatewayProxyEvent<S>,
     any
 >;
