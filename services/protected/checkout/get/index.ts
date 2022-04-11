@@ -12,10 +12,6 @@ export default {
                 path: 'checkout/get',
                 cors: customCors,
                 authorizer: 'aws_iam',
-                reqValidatorName: {
-                    'Fn::ImportValue':
-                        '${self:provider.stage}-SHARED-REQUEST-VALIDATOR',
-                },
                 request: {
                     schema: {
                         'application/json': schema,
