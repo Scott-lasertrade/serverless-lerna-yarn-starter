@@ -7,9 +7,10 @@ import {
 
 const serverlessConfiguration: ServerlessWithStepFunctions = {
     service: BaseServiceName + '-EB-SFN',
+    configValidationMode: 'error',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2.72.3',
+    frameworkVersion: '3',
     custom: {
         ...SharedConfig,
         seed: {
@@ -17,6 +18,10 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
                 enabled: true,
                 disabledFor: ['prod', 'staging'],
             },
+        },
+        bundle: {
+            ignorePackages: ['pg-native'],
+            disableForkTsChecker: true,
         },
     },
     package: {
@@ -38,12 +43,6 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
             restApiId: '${self:custom.API.ID}',
             restApiRootResourceId: '${self:custom.API.ROOT}',
         },
-
-        eventBridge: {
-            useCloudFormation: true,
-        },
-
-        lambdaHashingVersion: '20201221',
     },
     // import the function via paths
     functions: functions,

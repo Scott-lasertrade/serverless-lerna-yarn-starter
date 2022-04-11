@@ -6,7 +6,8 @@ const serverlessConfiguration: AWS = {
     service: BaseServiceName + '-prot-listing',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2.72.3',
+    configValidationMode: 'error',
+    frameworkVersion: '3',
     custom: {
         ...SharedConfig,
         seed: {

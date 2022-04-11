@@ -13,7 +13,7 @@ export default {
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {
-                    schema: {
+                    schemas: {
                         'application/json': schema,
                     },
                 },

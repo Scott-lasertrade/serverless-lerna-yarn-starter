@@ -10,7 +10,8 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     service: BaseServiceName + '-ut-SFN',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2.72.3',
+    configValidationMode: 'error',
+    frameworkVersion: '3',
     custom: {
         ...SharedConfig,
         seed: {
@@ -21,6 +22,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         },
         bundle: {
             ignorePackages: ['pg-native'],
+            disableForkTsChecker: true,
         },
     },
     package: {

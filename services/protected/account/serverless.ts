@@ -5,8 +5,9 @@ import type { AWS } from '@serverless/typescript';
 const serverlessConfiguration: AWS = {
     service: BaseServiceName + '-prot-account',
     useDotenv: true,
+    configValidationMode: 'error',
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2.72.3',
+    frameworkVersion: '3',
     custom: {
         ...SharedConfig,
         seed: {

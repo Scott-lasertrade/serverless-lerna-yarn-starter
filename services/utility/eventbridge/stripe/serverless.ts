@@ -9,7 +9,8 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     service: BaseServiceName + '-EB-STRIPE',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2.72.3',
+    configValidationMode: 'error',
+    frameworkVersion: '3',
     custom: {
         ...SharedConfig,
         seed: {
@@ -20,6 +21,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         },
         bundle: {
             ignorePackages: ['pg-native'],
+            disableForkTsChecker: true,
         },
     },
     package: {
@@ -40,10 +42,6 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         apiGateway: {
             restApiId: '${self:custom.API.ID}',
             restApiRootResourceId: '${self:custom.API.ROOT}',
-        },
-
-        eventBridge: {
-            useCloudFormation: true,
         },
     },
     // import the function via paths

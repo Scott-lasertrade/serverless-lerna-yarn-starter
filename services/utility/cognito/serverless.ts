@@ -18,6 +18,7 @@ const serverlessConfiguration: AWS = {
         },
         bundle: {
             ignorePackages: ['pg-native'],
+            disableForkTsChecker: true,
         },
     },
     package: {

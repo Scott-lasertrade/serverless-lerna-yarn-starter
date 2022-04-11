@@ -9,6 +9,7 @@
         "@medii/api-lambda": "file:../../../packages/api/lambda",
         "@medii/common": "file:../../../packages/common",
         "@typescript-eslint/typescript-estree": "4.33.0",
+        "serverless": "^3.12.0",
         "serverless-iam-roles-per-function": "^3.2.0"
     },
     "scripts": {

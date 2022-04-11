@@ -8,8 +8,9 @@ import {
 const serverlessConfiguration: ServerlessWithStepFunctions = {
     service: BaseServiceName + '-migration',
     useDotenv: true,
+    configValidationMode: 'error',
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2.72.3',
+    frameworkVersion: '3',
     custom: {
         ...SharedConfig,
         seed: {
@@ -20,6 +21,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         },
         bundle: {
             ignorePackages: ['pg-native'],
+            disableForkTsChecker: true,
         },
     },
     package: {

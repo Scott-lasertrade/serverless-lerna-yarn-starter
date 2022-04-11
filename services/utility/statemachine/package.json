@@ -10,7 +10,7 @@
         "@medii/data": "file:../../../packages/data",
         "@medii/eventbridge": "file:../../../packages/eventbridge",
         "@typescript-eslint/typescript-estree": "4.33.0",
-        "serverless": "2.32.0",
+        "serverless": "^3.12.0",
         "serverless-iam-roles-per-function": "^3.2.0",
         "serverless-step-functions": "^3.5.1",
         "stripe": "^8.215.0"
