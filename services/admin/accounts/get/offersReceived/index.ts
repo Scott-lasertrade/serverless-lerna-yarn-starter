@@ -11,10 +11,6 @@ export default {
                 path: 'accounts/get/{id}/offers/received',
                 cors: customCors,
                 authorizer: 'aws_iam',
-                reqValidatorName: {
-                    'Fn::ImportValue':
-                        '${self:provider.stage}-SHARED-REQUEST-VALIDATOR',
-                },
             },
         },
     ],
