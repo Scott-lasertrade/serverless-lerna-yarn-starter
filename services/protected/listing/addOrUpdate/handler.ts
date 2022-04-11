@@ -35,7 +35,7 @@ async function handleManufacturerCreation(
             ? manufacturers
                   .filter((x: { key: string; value: string }) => Number(x.key))
                   .map((itm: { key: string; value: string }) => {
-                      let toReturn = new Manufacturer(Number(itm.key));
+                      const toReturn = new Manufacturer(Number(itm.key));
                       toReturn.name = itm.value;
                       return toReturn;
                   })
@@ -51,7 +51,7 @@ async function handleManufacturerCreation(
         const requiresApproval = true;
         const mappedManufacturers = newManufacturers.map(
             (manufacturer: string) => {
-                let newManufacturer = new Manufacturer();
+                const newManufacturer = new Manufacturer();
                 newManufacturer.name = manufacturer;
                 newManufacturer.is_approved = !requiresApproval;
                 return newManufacturer;
@@ -81,7 +81,7 @@ async function handleProductCreation(
     console.log('Product| Start');
     // Check if we need to create a new product
     if (!product_id) {
-        let newProduct = new Product();
+        const newProduct = new Product();
         newProduct.name = product_name;
         newProduct.is_active = true;
         newProduct.is_draft = true;
@@ -102,7 +102,7 @@ async function handleProductCreation(
             .save(newProduct);
         console.log('Product| Added');
     } else if (product_edited) {
-        let updatedProduct = new Product(product_id, product_version);
+        const updatedProduct = new Product(product_id, product_version);
         updatedProduct.name = product_name;
         updatedProduct.is_active = true;
         updatedProduct.is_draft = true;
@@ -452,7 +452,7 @@ const task = async (event) => {
             .getOneOrFail();
 
         // LOCATION
-        let curAccount = new Account(accountId, accountVersion);
+        const curAccount = new Account(accountId, accountVersion);
         curAccount.address = new Address(
             accountAddressId,
             accountAddressVersion
@@ -473,7 +473,7 @@ const task = async (event) => {
         if (listing_status === 'Pending Review' && contactId) {
             let curListing: Listing = new Listing();
             let curProduct = listing.product;
-            let tasks: string = '';
+            let tasks = '';
             if (listing_id) {
                 curListing = await transactionalEntityManager
                     .createQueryBuilder(Listing, 'l')
@@ -582,7 +582,7 @@ const task = async (event) => {
 
             // StateMachine Section
             try {
-                let params = {
+                const params = {
                     id: 'listing|add_or_update',
                     type: 'refresh_listings',
                 };

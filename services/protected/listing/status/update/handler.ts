@@ -49,7 +49,7 @@ const task = async (event) => {
             .save(listing);
 
         // Email Section
-        let listingView = await dbConn
+        const listingView = await dbConn
             .createQueryBuilder(ListingSellerView, 'lsv')
             .where('lsv.listing_id = :id', {
                 id: listing_id,
@@ -91,7 +91,7 @@ const task = async (event) => {
 
     // StateMachine Section
     try {
-        let params = {
+        const params = {
             id: 'listing|add_or_update',
             type: 'refresh_listings',
         };
