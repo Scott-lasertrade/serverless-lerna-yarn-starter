@@ -19,7 +19,7 @@ const serverlessConfiguration: AWS = {
     app: BaseServiceName,
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2.30.3',
+    frameworkVersion: '>=2.0.0 <3.0.0',
     custom: {
         ...SharedConfig,
         output: {
