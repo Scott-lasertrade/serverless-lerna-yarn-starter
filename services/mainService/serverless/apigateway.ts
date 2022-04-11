@@ -29,5 +29,14 @@ const APIGWResources = {
             PathPart: 'protected',
         },
     },
+    SharedRequestValidator: {
+        Type: 'AWS::ApiGateway::RequestValidator',
+        Properties: {
+            Name: 'shared-req-validator',
+            RestApiId: { Ref: 'SharedApiGateway' },
+            ValidateRequestBody: true,
+            ValidateRequestParameters: true,
+        },
+    },
 };
 export default APIGWResources;

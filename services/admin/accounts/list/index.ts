@@ -11,6 +11,10 @@ export default {
                 path: 'accounts/list',
                 cors: customCors,
                 authorizer: 'aws_iam',
+                reqValidatorName: {
+                    'Fn::ImportValue':
+                        '${self:provider.stage}-SHARED-REQUEST-VALIDATOR',
+                },
             },
         },
     ],

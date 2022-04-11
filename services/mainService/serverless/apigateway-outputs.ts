@@ -35,5 +35,14 @@ const APIGWOutputs = {
             Name: '${self:provider.stage}-PROTECTED-API-ROOT',
         },
     },
+    SharedRequestValidator: {
+        Description: 'Shared ApiGateway request validator',
+        Value: {
+            Ref: 'shared-req-validator',
+        },
+        Export: {
+            Name: '${self:provider.stage}-SHARED-REQUEST-VALIDATOR',
+        },
+    },
 };
 export default APIGWOutputs;
