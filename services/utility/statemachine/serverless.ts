@@ -10,7 +10,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     service: BaseServiceName + '-ut-SFN',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2',
+    frameworkVersion: '2.72.3',
     custom: {
         ...SharedConfig,
         seed: {

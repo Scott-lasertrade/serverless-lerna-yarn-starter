@@ -6,7 +6,7 @@ const serverlessConfiguration: AWS = {
     service: BaseServiceName + '-hello',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2',
+    frameworkVersion: '2.72.3',
     custom: {
         ...SharedConfig,
         seed: {
