@@ -4,10 +4,10 @@ import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
     service: BaseServiceName + '-prot-checkout',
-    variablesResolutionMode: '20210326',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '3',
+    configValidationMode: 'error',
     custom: {
         ...SharedConfig,
         seed: {
