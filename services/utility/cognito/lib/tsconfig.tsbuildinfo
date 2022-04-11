@@ -452,8 +452,8 @@
         "affectsGlobalScope": false
       },
       "../../../../packages/common/lib/shared-custom-config.d.ts": {
-        "version": "f3131b48761ad66c85cd5ca8ad3ecb42a6a34d74c9a2fce67cbbb14a84296f61",
-        "signature": "f3131b48761ad66c85cd5ca8ad3ecb42a6a34d74c9a2fce67cbbb14a84296f61",
+        "version": "a07f103b9cd4a03bb92300501b0dc2d9fb11f3ada95a6de8b840ba26f842cd5d",
+        "signature": "a07f103b9cd4a03bb92300501b0dc2d9fb11f3ada95a6de8b840ba26f842cd5d",
         "affectsGlobalScope": false
       },
       "../../../../packages/common/lib/typedServerlessStepFunction.d.ts": {
@@ -498,7 +498,7 @@
       },
       "../index.ts": {
         "version": "7d6af589927681ab8b939fdb35849c2100305bff0a23dd4de8ac153369a21653",
-        "signature": "87a7e7c39a335867254c98d9b84603ad6ed746b2dd1d3169cb58f55ae80b760c",
+        "signature": "d6d81a68eecf8b927c6eee739bf94cd4c084bf5cd927c7e90ab4c4c3865c7da1",
         "affectsGlobalScope": false
       },
       "../../../node_modules/@serverless/typescript/index.d.ts": {
@@ -507,7 +507,7 @@
         "affectsGlobalScope": false
       },
       "../serverless.ts": {
-        "version": "de857dea69cd6e552fed8f70905e1c2db5ab262e8cb332d0c482c7cc2729b878",
+        "version": "4cad31d2fb923574fb3884151bce4f1d582247bda0d22fa7a75f5f29758b8a56",
         "signature": "d3d32effdda563978c7b4a2858b18b3628edc52ba7b0089a47e78610369c5877",
         "affectsGlobalScope": false
       },
@@ -1597,7 +1597,7 @@
         "affectsGlobalScope": false
       },
       "../postAuthentication/handler.ts": {
-        "version": "4a64ea3628d84c95a0b9a57b19972c64557796e026b668094a171875121b645c",
+        "version": "860014a817574a49da2c1459197ed99239e16531db7b7e3b11d3526951b3d389",
         "signature": "b58e7ea0cbec645d018a5d1ca7597df62b1272630de4e11aa0d068b4b365937f",
         "affectsGlobalScope": false
       },
@@ -1607,8 +1607,8 @@
         "affectsGlobalScope": false
       },
       "../../../../packages/ses/lib/index.d.ts": {
-        "version": "99b100a094900c5bf0dc3ee1e1d6daee60c289f001dee1ccc0de6963aeab8fb8",
-        "signature": "99b100a094900c5bf0dc3ee1e1d6daee60c289f001dee1ccc0de6963aeab8fb8",
+        "version": "a6fbed47739d2f66f7d53c3d9e656e7af1d9ab459214c28f7494539db7e397a3",
+        "signature": "a6fbed47739d2f66f7d53c3d9e656e7af1d9ab459214c28f7494539db7e397a3",
         "affectsGlobalScope": false
       },
       "../postConfirmation/handler.ts": {
@@ -1622,7 +1622,7 @@
         "affectsGlobalScope": false
       },
       "../preSignUp/handler.ts": {
-        "version": "4f5fefc06f9b694ba7dc04368ac04387124249ef0360b27ab1d1acc9a61a1e90",
+        "version": "4c1a542dce11bd70cde8d2d78d813056c86bf5863b1de61e8bca356951dbfa89",
         "signature": "00ad2324628bd2a8b03558401b2e471703526bace95c8a76d20354d9b44d6a1c",
         "affectsGlobalScope": false
       },
@@ -1926,9 +1926,9 @@
         "signature": "9cafe917bf667f1027b2bb62e2de454ecd2119c80873ad76fc41d941089753b8",
         "affectsGlobalScope": false
       },
-      "../node_modules/@types/keyv/index.d.ts": {
-        "version": "fec943fdb3275eb6e006b35e04a8e2e99e9adf3f4b969ddf15315ac7575a93e4",
-        "signature": "fec943fdb3275eb6e006b35e04a8e2e99e9adf3f4b969ddf15315ac7575a93e4",
+      "../node_modules/keyv/src/index.d.ts": {
+        "version": "cd71905370ede696577acc23c695181e618a7d08616b1d06b43d3e6a12880fab",
+        "signature": "cd71905370ede696577acc23c695181e618a7d08616b1d06b43d3e6a12880fab",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/http-cache-semantics/index.d.ts": {
@@ -2014,6 +2014,11 @@
       "../node_modules/@types/json5/index.d.ts": {
         "version": "c5a14bdeb170e0e67fb4200c54e0e02fd0ec94aca894c212c9d43c2916891542",
         "signature": "c5a14bdeb170e0e67fb4200c54e0e02fd0ec94aca894c212c9d43c2916891542",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/keyv/index.d.ts": {
+        "version": "fec943fdb3275eb6e006b35e04a8e2e99e9adf3f4b969ddf15315ac7575a93e4",
+        "signature": "fec943fdb3275eb6e006b35e04a8e2e99e9adf3f4b969ddf15315ac7575a93e4",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/lodash/common/common.d.ts": {
@@ -2166,17 +2171,6 @@
       "resolveJsonModule": true,
       "outDir": "./",
       "baseUrl": "..",
-      "paths": {
-        "@medii/api-lambda": [
-          "../../../packages/api/lambda/src"
-        ],
-        "@medii/common": [
-          "../../../packages/common/src"
-        ],
-        "@medii/ses": [
-          "../../../packages/ses/src"
-        ]
-      },
       "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
@@ -4129,13 +4123,13 @@
       ],
       "../node_modules/@types/cacheable-request/index.d.ts": [
         "../node_modules/@types/http-cache-semantics/index.d.ts",
-        "../node_modules/@types/keyv/index.d.ts",
         "../node_modules/@types/node/events.d.ts",
         "../node_modules/@types/node/http.d.ts",
         "../node_modules/@types/node/index.d.ts",
         "../node_modules/@types/node/url.d.ts",
         "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/responselike/index.d.ts"
+        "../node_modules/@types/responselike/index.d.ts",
+        "../node_modules/keyv/src/index.d.ts"
       ],
       "../node_modules/@types/eslint-scope/index.d.ts": [
         "../node_modules/@types/eslint/index.d.ts",
@@ -4751,6 +4745,10 @@
       "../node_modules/@types/yargs/index.d.ts": [
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/yargs-parser/index.d.ts"
+      ],
+      "../node_modules/keyv/src/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts"
       ],
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts": [
         "../node_modules/@types/node/util.d.ts"
@@ -7478,6 +7476,10 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/yargs-parser/index.d.ts"
       ],
+      "../node_modules/keyv/src/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts": [
         "../node_modules/@types/node/util.d.ts"
       ],
@@ -7991,6 +7993,7 @@
       "../node_modules/@types/stack-utils/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
+      "../node_modules/keyv/src/index.d.ts",
       "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
       "../node_modules/typescript/lib/lib.es2015.core.d.ts",
       "../node_modules/typescript/lib/lib.es2015.d.ts",

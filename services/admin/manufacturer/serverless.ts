@@ -4,7 +4,7 @@ import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
     service: BaseServiceName + '-ad-manufacturer',
-    variablesResolutionMode: '20210326',
+    configValidationMode: 'error',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '3',
