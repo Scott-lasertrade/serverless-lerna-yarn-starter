@@ -7,16 +7,16 @@ exports.SharedConfig = {
         collectLambdaLogs: false,
     },
     TRANSVIRTUAL: {
-        prod: '${ssm:/aws/reference/secretsmanager/prod/transvirtual~true}',
-        dev: '${ssm:/aws/reference/secretsmanager/dev/transvirtual~true}',
+        prod: '${ssm:/aws/reference/secretsmanager/prod/transvirtual}',
+        dev: '${ssm:/aws/reference/secretsmanager/dev/transvirtual}',
         offline: {
             APIKEY: '78746|YRMKTSNZZP',
             CUSTOMER_CODE: 'LASRTECH',
         },
     },
     HUBSPOT: {
-        prod: '${ssm:/aws/reference/secretsmanager/prod/hubspot~true}',
-        dev: '${ssm:/aws/reference/secretsmanager/dev/hubspot~true}',
+        prod: '${ssm:/aws/reference/secretsmanager/prod/hubspot}',
+        dev: '${ssm:/aws/reference/secretsmanager/dev/hubspot}',
         offline: {
             HAPIKEY: '839d9ef7-0f0a-4c05-b19d-cc22e92882ac',
         },
@@ -29,8 +29,8 @@ exports.SharedConfig = {
         },
     },
     STRIPE: {
-        prod: '${ssm:/aws/reference/secretsmanager/prod/stripe~true}',
-        dev: '${ssm:/aws/reference/secretsmanager/dev/stripe~true}',
+        prod: '${ssm:/aws/reference/secretsmanager/prod/stripe}',
+        dev: '${ssm:/aws/reference/secretsmanager/dev/stripe}',
         offline: {
             SECRETKEY: 'sk_test_51HINWDDpQDarlqIHMzsLZ8kHsv8Onk2ReTy8PvJ5rbmG9mqTmXAheYcdVXMDtIHVVFO4Io6sgZEHRe1gM8NLoHjU00wpnl0GX7',
             PUBLISHABLEKEY: 'pk_test_51HINWDDpQDarlqIHPyO2gQGWoTQb8OHDhdu32voQIa7ZAbE2nePE3neA21B6o7kqJMNnAlw4TazZlwSSTaaRTwkl00jzIAZGwO',

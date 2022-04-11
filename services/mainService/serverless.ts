@@ -16,10 +16,12 @@ import Outputs from './serverless/outputs';
 
 const serverlessConfiguration: AWS = {
     service: BaseServiceName,
+    variablesResolutionMode: '20210326',
     app: BaseServiceName,
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '3',
+
     custom: {
         ...SharedConfig,
         output: {
