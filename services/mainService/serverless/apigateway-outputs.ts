@@ -38,7 +38,7 @@ const APIGWOutputs = {
     SharedRequestValidator: {
         Description: 'Shared ApiGateway request validator',
         Value: {
-            Ref: 'shared-req-validator',
+            Ref: 'SharedRequestValidator',
         },
         Export: {
             Name: '${self:provider.stage}-SHARED-REQUEST-VALIDATOR',
