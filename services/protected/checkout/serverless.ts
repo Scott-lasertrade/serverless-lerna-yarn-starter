@@ -6,7 +6,7 @@ const serverlessConfiguration: AWS = {
     service: BaseServiceName + '-prot-checkout',
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2',
+    frameworkVersion: '2.72.2',
     custom: {
         ...SharedConfig,
         seed: {
@@ -25,7 +25,6 @@ const serverlessConfiguration: AWS = {
     },
     plugins: [
         'serverless-bundle',
-        'serverless-disable-request-validators',
         'serverless-iam-roles-per-function',
         'serverless-seed',
     ],
