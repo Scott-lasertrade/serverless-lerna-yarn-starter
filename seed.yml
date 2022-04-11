@@ -2,6 +2,7 @@ check_code_change: lerna
 
 before_compile:
     - echo //registry.npmjs.org/:_authToken=$NPM_TOKEN >> ~/.npmrc
+    - npm i -g serverless@2.7.3
 
 after_deploy:
     - echo "After deploy"
