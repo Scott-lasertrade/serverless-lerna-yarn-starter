@@ -13,7 +13,7 @@
     },
     "dependencies": {
         "@medii/common": "file:../../packages/common",
-        "serverless": "^2.72.3",
+        "serverless": "^3.12.0",
         "serverless-plugin-additional-stacks": "^1.6.0",
         "serverless-s3-local": "^0.6.22",
         "serverless-stack-output": "^0.2.3"
