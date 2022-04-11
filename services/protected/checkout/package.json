@@ -15,6 +15,7 @@
         "@medii/data": "file:../../../packages/data",
         "@typescript-eslint/typescript-estree": "4.33.0",
         "serverless-iam-roles-per-function": "^3.2.0",
+        "serverless-reqvalidator-plugin": "^2.0.0",
         "stripe": "^8.215.0"
     },
     "devDependencies": {

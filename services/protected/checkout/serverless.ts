@@ -25,6 +25,7 @@ const serverlessConfiguration: AWS = {
     },
     plugins: [
         'serverless-bundle',
+        'serverless-reqvalidator-plugin',
         'serverless-iam-roles-per-function',
         'serverless-seed',
     ],
