@@ -23,6 +23,7 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         bundle: {
             ignorePackages: ['pg-native'],
             disableForkTsChecker: true,
+            concurrency: 2,
         },
     },
     package: {
