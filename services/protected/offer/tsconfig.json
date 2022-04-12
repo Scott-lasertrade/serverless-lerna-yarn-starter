@@ -1,11 +1,8 @@
 {
-    "extends": "./tsconfig.services.json",
+    "extends": "../../tsconfig.services.json",
     "compilerOptions": {
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
         "outDir": "lib",
-        "baseUrl": ".",
-        "target": "ES2020"
+        "baseUrl": "."
     },
     "include": ["./**/*.ts"],
     "exclude": [
@@ -15,5 +12,6 @@
         ".build/**/*",
         "**/__tests__/*",
         "**/__e2e__/*"
-    ]
+    ],
+    "useUnknownInCatchVariables": false
 }

@@ -1,5 +1,5 @@
 {
-    "name": "@medii/admin_account",
+    "name": "@medii/prot_offer",
     "version": "1.0.8",
     "description": "Serverless Admin Account Routes",
     "main": "serverless.ts",
@@ -14,7 +14,6 @@
         "@medii/common": "file:../../../packages/common",
         "@medii/data": "file:../../../packages/data",
         "@medii/eventbridge": "file:../../../packages/eventbridge",
-        "@medii/s3": "file:../../../packages/s3",
         "@medii/ses": "file:../../../packages/ses",
         "@typescript-eslint/typescript-estree": "4.33.0",
         "serverless": "^3.12.0",

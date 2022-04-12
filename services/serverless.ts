@@ -6,12 +6,24 @@ import AuroraResources from './mainService/serverless/aurora';
 import StorageResources from './mainService/serverless/s3';
 import adminAccountFunctions from './admin/accounts/index';
 import adminCategoryFunctions from './admin/category/index';
+import adminListingFunctions from './admin/listing/index';
+import adminManufacturerFunctions from './admin/manufacturer/index';
+import adminOfferFunctions from './admin/offers/index';
+import adminOrderFunctions from './admin/orders/index';
+import adminProductFunctions from './admin/product/index';
+import adminQuestionFunctions from './admin/question/index';
 import cognitoFunctions from './utility/cognito/index';
 import stateMachineFunctions from './utility/statemachine/index';
 
 const functions = {
     ...adminAccountFunctions,
     ...adminCategoryFunctions,
+    ...adminListingFunctions,
+    ...adminManufacturerFunctions,
+    ...adminOfferFunctions,
+    ...adminOrderFunctions,
+    ...adminProductFunctions,
+    ...adminQuestionFunctions,
     ...cognitoFunctions,
     ...stateMachineFunctions,
 };
@@ -34,8 +46,8 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     app: BaseServiceName,
     useDotenv: true,
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
-    frameworkVersion: '2.72.3',
-    variablesResolutionMode: '20210326',
+    frameworkVersion: '3',
+    configValidationMode: 'error',
     custom: {
         ...SharedConfig,
         stepFunctionsLocal: {
