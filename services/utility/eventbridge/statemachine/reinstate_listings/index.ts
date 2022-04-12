@@ -7,8 +7,7 @@ export default {
     events: [
         {
             eventBridge: {
-                eventBus:
-                    'arn:aws:events:ap-southeast-2:823044268509:event-bus/statemachine-${self:provider.stage}',
+                eventBus: 'statemachine-${self:provider.stage}',
                 pattern: {
                     source: ['Statemachine'],
                     'detail-type': ['reinstate_listings'],

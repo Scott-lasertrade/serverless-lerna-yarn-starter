@@ -7,8 +7,7 @@ export default {
     events: [
         {
             eventBridge: {
-                eventBus:
-                    'arn:aws:events:ap-southeast-2:823044268509:event-bus/stripe-${self:provider.stage}',
+                eventBus: 'stripe-${self:provider.stage}',
                 pattern: {
                     source: ['Stripe'],
                     'detail-type': ['payment_intent.succeeded'],
