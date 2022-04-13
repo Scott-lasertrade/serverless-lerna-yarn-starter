@@ -66,6 +66,9 @@ export declare const SharedConfig: {
         PUBLIC: {
             'Fn::ImportValue': string;
         };
+        VALIDATOR: {
+            'Fn::ImportValue': string;
+        };
     };
     COGNITO: {
         USERPOOLNAME: {

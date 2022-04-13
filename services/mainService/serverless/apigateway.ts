@@ -41,5 +41,16 @@ const APIGWResources = {
             PathPart: 'public',
         },
     },
+    CustomRequestValidator: {
+        Type: 'AWS::ApiGateway::RequestValidator',
+        Properties: {
+            Name: 'CustomRequestValidator',
+            RestApiId: {
+                Ref: 'SharedApiGateway',
+            },
+            ValidateRequestBody: true,
+            ValidateRequestParameters: true,
+        },
+    },
 };
 export default APIGWResources;

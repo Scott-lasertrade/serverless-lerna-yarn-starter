@@ -12,6 +12,7 @@ export default {
                 path: '${self:custom.paths.admin}category/add-or-update',
                 cors: customCors,
                 authorizer: 'aws_iam',
+                reqValidatorName: '${self:custom.API.VALIDATOR}',
                 request: {
                     schemas: {
                         'application/json': schema,

@@ -70,6 +70,9 @@ export const SharedConfig = {
         PUBLIC: {
             'Fn::ImportValue': '${self:provider.stage}-PUBLIC-API-ROOT',
         },
+        VALIDATOR: {
+            'Fn::ImportValue': '${self:provider.stage}-API-REQUEST-VALIDATOR',
+        },
     },
     COGNITO: {
         USERPOOLNAME: {

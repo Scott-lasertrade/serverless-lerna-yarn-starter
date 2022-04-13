@@ -44,5 +44,14 @@ const APIGWOutputs = {
             Name: '${self:provider.stage}-PUBLIC-API-ROOT',
         },
     },
+    ApiGatewayCustomRequestValidator: {
+        Description: 'Shared ApiGateway request validator Id',
+        Value: {
+            Ref: 'CustomRequestValidator',
+        },
+        Export: {
+            Name: '${self:provider.stage}-API-REQUEST-VALIDATOR',
+        },
+    },
 };
 export default APIGWOutputs;

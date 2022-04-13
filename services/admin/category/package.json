@@ -14,11 +14,12 @@
         "@medii/common": "file:../../../packages/common",
         "@medii/data": "file:../../../packages/data",
         "@typescript-eslint/typescript-estree": "4.33.0",
+        "serverless": "^3.12.0",
         "serverless-iam-roles-per-function": "^3.2.0",
+        "serverless-reqvalidator-plugin": "^2.0.0",
         "source-map-support": "0.5.19",
         "typeorm": "0.2.38",
-        "typeorm-aurora-data-api-driver": "2.3.1",
-        "serverless": "^3.12.0"
+        "typeorm-aurora-data-api-driver": "2.3.1"
     },
     "devDependencies": {
         "@types/source-map-support": "^0.5.4",
