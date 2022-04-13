@@ -35,7 +35,6 @@ const serverlessConfiguration: AWS = {
         'serverless-iam-roles-per-function',
         'serverless-seed',
         'serverless-reqvalidator-plugin',
-        'serverless-aws-documentation',
     ],
     provider: {
         name: 'aws',
