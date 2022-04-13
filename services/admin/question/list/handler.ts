@@ -32,4 +32,4 @@ const handler: ValidatedEventAPIGatewayProxyEvent<any> = async (
     return await handleTimeout(task(), context);
 };
 
-export const main = middyfy(handler);
+export const main: any = middyfy(handler);

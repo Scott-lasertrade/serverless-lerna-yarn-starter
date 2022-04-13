@@ -39,4 +39,4 @@ const handler: any = async (event) => {
     }
 };
 
-export const main = middyfy(handler);
+export const main: any = middyfy(handler);

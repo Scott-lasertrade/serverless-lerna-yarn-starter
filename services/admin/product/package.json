@@ -22,6 +22,7 @@
     },
     "devDependencies": {
         "@types/source-map-support": "^0.5.4",
+        "serverless-disable-request-validators": "^1.0.3",
         "serverless-seed": "^0.3.15",
         "serverless-tscpaths": "^0.0.6",
         "tsconfig-paths-webpack-plugin": "^3.5.2"

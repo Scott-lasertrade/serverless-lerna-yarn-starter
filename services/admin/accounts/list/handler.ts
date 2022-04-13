@@ -9,6 +9,7 @@ import {
     ListUsersCommandInput,
     ListUsersCommand,
     AttributeType,
+    UserType,
 } from '@aws-sdk/client-cognito-identity-provider';
 import schema from './schema';
 
@@ -36,7 +37,7 @@ const task = async () => {
         UserPoolId: process.env.COGNITO_USER_POOL_ID,
     };
     const listUsersCommand = new ListUsersCommand(listUsersInput);
-    const listOfUsers = (await client.send(listUsersCommand)).Users;
+    const listOfUsers = (await client.send(listUsersCommand)).Users ?? [];
 
     const dbAccounts = await dbConn
         .createQueryBuilder(Account, 'acc')
@@ -44,23 +45,18 @@ const task = async () => {
         .leftJoinAndSelect('user.login_history', 'login_history')
         .getMany();
 
-    const primaryUser = listOfUsers?.find(
+    const primaryUser = listOfUsers.find(
         (usr) =>
             usr.Attributes?.find((att) => (att?.Name ?? '') === 'sub')
                 ?.Value === dbAccounts[0].users[0].cognito_user_id
-    );
+    ) as UserType[];
 
     const mergedAccounts = dbAccounts.map((account) => {
         const acc = {
             account: account,
             primary_user: {
                 ...account.users[0],
-                ...listOfUsers?.find(
-                    (cogUser) =>
-                        cogUser?.Attributes ??
-                        cogUser?.Attributes?.find((attr) => attr.Name === 'sub')
-                            ?.Value === account.users[0].cognito_user_id
-                ),
+                ...primaryUser[0],
             },
         };
         return acc;
@@ -70,18 +66,19 @@ const task = async () => {
         ...acc.account,
         primary_user: {
             id: acc.primary_user.cognito_user_id,
-            email: acc?.primary_user?.Attributes
-                ? getAttribute(acc.primary_user.Attributes, 'email')
-                : '',
-            given_name: acc?.primary_user?.Attributes
-                ? getAttribute(acc.primary_user.Attributes, 'given_name')
-                : '',
-            family_name: acc?.primary_user?.Attributes
-                ? getAttribute(acc.primary_user.Attributes, 'family_name')
-                : '',
-            phone_number: acc?.primary_user?.Attributes
-                ? getAttribute(acc.primary_user.Attributes, 'phone_number')
-                : '',
+            email: getAttribute(acc.primary_user.Attributes ?? [], 'email'),
+            given_name: getAttribute(
+                acc.primary_user.Attributes ?? [],
+                'given_name'
+            ),
+            family_name: getAttribute(
+                acc.primary_user.Attributes ?? [],
+                'family_name'
+            ),
+            phone_number: getAttribute(
+                acc.primary_user.Attributes ?? [],
+                'phone_number'
+            ),
             last_login:
                 acc.primary_user.login_history?.length > 0
                     ? acc.primary_user.login_history.reduce((a, b) =>
@@ -101,4 +98,4 @@ const handler: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
     return await handleTimeout(task(), context);
 };
 
-export const main = middyfy(handler);
+export const main: any = middyfy(handler);
