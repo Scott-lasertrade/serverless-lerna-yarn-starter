@@ -70,12 +70,6 @@ const serverlessConfiguration: AWS = {
                     RequestValidatorId: '${self:custom.API.VALIDATOR}',
                 },
             },
-            ApiGatewayMethodCategoryDeletePost: {
-                Type: 'AWS::ApiGateway::Method',
-                Properties: {
-                    RequestValidatorId: '${self:custom.API.VALIDATOR}',
-                },
-            },
         },
     },
 };
