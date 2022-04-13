@@ -12,6 +12,38 @@ import adminOfferFunctions from './admin/offers/index';
 import adminOrderFunctions from './admin/orders/index';
 import adminProductFunctions from './admin/product/index';
 import adminQuestionFunctions from './admin/question/index';
+
+import protectedAccountFunctions from './protected/account/index';
+import protectedAddressFunctions from './protected/address/index';
+import protectedCartFunctions from './protected/cart/index';
+import protectedCheckoutFunctions from './protected/checkout/index';
+import protectedDealFunctions from './protected/deal/index';
+import protectedListingFunctions from './protected/listing/index';
+import protectedOfferFunctions from './protected/offer/index';
+import protectedOrderFunctions from './protected/order/index';
+import protectedQuestionFunctions from './protected/question/index';
+import protectedStorageFunctions from './protected/storage/index';
+import protectedStripeFunctions from './protected/stripe/index';
+import protectedUserFunctions from './protected/user/index';
+import protectedWatchlistFunctions from './protected/watchlist/index';
+
+import publicCategoryFunctions from './public/category/index';
+import publicCountryFunctions from './public/country/index';
+import publicCurrencyTypeFunctions from './public/currencyType/index';
+import publicGoogleReviewFunctions from './public/googleReviews/index';
+import publicHelloFunctions from './public/hello/index';
+import publicListingFunctions from './public/listing/index';
+import publicManufacturerFunctions from './public/manufacturer/index';
+import publicOfferFunctions from './public/offer/index';
+import publicProductFunctions from './public/product/index';
+import publicProductTypeFunctions from './public/productType/index';
+import publicQuestionFunctions from './public/question/index';
+import publicStorageFunctions from './public/storage/index';
+import publicTransactionFunctions from './public/transaction/index';
+import publicUsageTypeFunctions from './public/usageType/index';
+import publicUserFunctions from './public/user/index';
+import publicWatchlistFunctions from './public/watchlist/index';
+
 import cognitoFunctions from './utility/cognito/index';
 import stateMachineFunctions from './utility/statemachine/index';
 
@@ -24,6 +56,35 @@ const functions = {
     ...adminOrderFunctions,
     ...adminProductFunctions,
     ...adminQuestionFunctions,
+    ...protectedAccountFunctions,
+    ...protectedAddressFunctions,
+    ...protectedCartFunctions,
+    ...protectedCheckoutFunctions,
+    ...protectedDealFunctions,
+    ...protectedListingFunctions,
+    ...protectedOfferFunctions,
+    ...protectedOrderFunctions,
+    ...protectedQuestionFunctions,
+    ...protectedStorageFunctions,
+    ...protectedStripeFunctions,
+    ...protectedUserFunctions,
+    ...protectedWatchlistFunctions,
+    ...publicCategoryFunctions,
+    ...publicCountryFunctions,
+    ...publicCurrencyTypeFunctions,
+    ...publicGoogleReviewFunctions,
+    ...publicHelloFunctions,
+    ...publicListingFunctions,
+    ...publicManufacturerFunctions,
+    ...publicOfferFunctions,
+    ...publicProductFunctions,
+    ...publicProductTypeFunctions,
+    ...publicQuestionFunctions,
+    ...publicStorageFunctions,
+    ...publicTransactionFunctions,
+    ...publicUsageTypeFunctions,
+    ...publicUserFunctions,
+    ...publicWatchlistFunctions,
     ...cognitoFunctions,
     ...stateMachineFunctions,
 };
@@ -49,7 +110,13 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     frameworkVersion: '3',
     configValidationMode: 'error',
     custom: {
+        // OFFLINE: true,`
         ...SharedConfig,
+        paths: {
+            admin: 'admin/',
+            protected: 'protected/',
+            public: 'public/',
+        },
         stepFunctionsLocal: {
             accountId: 101010101010,
             region: 'ap-southeast-2',
@@ -65,6 +132,10 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         },
         s3: {
             host: 'localhost',
+        },
+        webpack: {
+            webpackConfig: './webpack.config.js',
+            includeModules: true,
         },
         // plugin config
         additionalStacks: {
@@ -109,15 +180,17 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
         },
     },
     plugins: [
+        'serverless-webpack',
         'serverless-step-functions',
         'serverless-step-functions-local',
+        'serverless-offline-lambda',
         'serverless-offline',
         // 'serverless-offline-aws-eventbridge',
         'serverless-s3-local',
         'serverless-iam-roles-per-function',
         'serverless-plugin-additional-stacks',
         // 'serverless-plugin-split-stacks',
-        'serverless-bundle',
+        // 'serverless-bundle',
     ],
     package: {
         individually: true,

@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'user/reset',
+                path: '${self:custom.paths.admin}user/reset',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

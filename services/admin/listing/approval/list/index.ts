@@ -8,7 +8,7 @@ export default {
         {
             http: {
                 method: 'get',
-                path: 'listing/approval/list',
+                path: '${self:custom.paths.admin}listing/approval/list',
                 cors: customCors,
                 authorizer: 'aws_iam',
             },

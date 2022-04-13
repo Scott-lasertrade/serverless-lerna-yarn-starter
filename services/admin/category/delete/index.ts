@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'category/delete',
+                path: '${self:custom.paths.admin}category/delete',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

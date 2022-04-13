@@ -8,7 +8,7 @@ export default {
         {
             http: {
                 method: 'get',
-                path: 'product/submission/list',
+                path: '${self:custom.paths.admin}product/submission/list',
                 cors: customCors,
                 authorizer: 'aws_iam',
             },

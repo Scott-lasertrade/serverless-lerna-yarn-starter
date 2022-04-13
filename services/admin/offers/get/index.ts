@@ -8,7 +8,7 @@ export default {
         {
             http: {
                 method: 'get',
-                path: 'offer/get/{id}',
+                path: '${self:custom.paths.admin}offer/get/{id}',
                 cors: customCors,
                 authorizer: 'aws_iam',
             },

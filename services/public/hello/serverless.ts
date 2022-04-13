@@ -3,13 +3,18 @@ import { BaseServiceName, SharedConfig } from '@medii/common';
 import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
-    service: BaseServiceName + '-hello',
+    service: BaseServiceName + '-pub-hello',
     useDotenv: true,
     configValidationMode: 'error',
     disabledDeprecations: ['CLI_OPTIONS_SCHEMA'],
     frameworkVersion: '3',
     custom: {
         ...SharedConfig,
+        paths: {
+            admin: '',
+            protected: '',
+            public: '',
+        },
         seed: {
             incremental: {
                 enabled: true,

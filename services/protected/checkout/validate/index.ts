@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'checkout/validate',
+                path: '${self:custom.paths.protected}checkout/validate',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

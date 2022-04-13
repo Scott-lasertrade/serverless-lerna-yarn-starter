@@ -1,0 +1,17 @@
+{
+    "extends": "../../tsconfig.services.json",
+    "compilerOptions": {
+        "outDir": "lib",
+        "baseUrl": "."
+    },
+    "include": ["./**/*.ts"],
+    "exclude": [
+        "node_modules/**/*",
+        ".serverless/**/*",
+        ".webpack/**/*",
+        ".build/**/*",
+        "**/__tests__/*",
+        "**/__e2e__/*"
+    ],
+    "useUnknownInCatchVariables": false
+}

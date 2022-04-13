@@ -101,7 +101,7 @@ const CognitoResources = {
     CognitoUserPoolDomain: {
         Type: 'AWS::Cognito::UserPoolDomain',
         Properties: {
-            Domain: '${self:custom.COGNITO.DOMAINNAME.${self:provider.stage}}',
+            Domain: '${self:custom.COGNITO.DOMAINNAME}',
             UserPoolId: {
                 Ref: 'CognitoUserPoolHandel',
             },

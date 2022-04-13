@@ -88,16 +88,16 @@ const task = async (event) => {
         primary_user: {
             ...primaryAccountUser,
             email: user?.UserAttributes
-                ? getAttribute(user.UserAttributes, 'email')
+                ? getAttribute(user.UserAttributes ?? [], 'email')
                 : '',
             given_name: user?.UserAttributes
-                ? getAttribute(user.UserAttributes, 'given_name')
+                ? getAttribute(user.UserAttributes ?? [], 'given_name')
                 : '',
             family_name: user?.UserAttributes
-                ? getAttribute(user.UserAttributes, 'family_name')
+                ? getAttribute(user.UserAttributes ?? [], 'family_name')
                 : '',
             phone_number: user?.UserAttributes
-                ? getAttribute(user.UserAttributes, 'phone_number')
+                ? getAttribute(user.UserAttributes ?? [], 'phone_number')
                 : '',
         },
     };

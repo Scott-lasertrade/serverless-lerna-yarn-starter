@@ -8,7 +8,7 @@ export default {
         {
             http: {
                 method: 'get',
-                path: 'product/validate/{id}',
+                path: '${self:custom.paths.admin}product/validate/{id}',
                 cors: customCors,
                 authorizer: 'aws_iam',
             },

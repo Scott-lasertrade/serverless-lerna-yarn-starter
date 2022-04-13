@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'category/add-or-update',
+                path: '${self:custom.paths.admin}category/add-or-update',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

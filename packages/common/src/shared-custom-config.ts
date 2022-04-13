@@ -67,6 +67,9 @@ export const SharedConfig = {
         PROTECTED: {
             'Fn::ImportValue': '${self:provider.stage}-PROTECTED-API-ROOT',
         },
+        PUBLIC: {
+            'Fn::ImportValue': '${self:provider.stage}-PUBLIC-API-ROOT',
+        },
     },
     COGNITO: {
         USERPOOLNAME: {

@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'put',
-                path: 'deal/add',
+                path: '${self:custom.paths.protected}deal/add',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

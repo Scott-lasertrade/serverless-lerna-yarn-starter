@@ -14,6 +14,11 @@ const serverlessConfiguration: ServerlessWithStepFunctions = {
     frameworkVersion: '3',
     custom: {
         ...SharedConfig,
+        paths: {
+            admin: '',
+            protected: '',
+            public: '',
+        },
         seed: {
             incremental: {
                 enabled: true,

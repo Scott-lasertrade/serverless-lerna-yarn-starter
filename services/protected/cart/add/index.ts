@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'put',
-                path: 'cart/add/{listingId}',
+                path: '${self:custom.paths.protected}cart/add/{listingId}',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

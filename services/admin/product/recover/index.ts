@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'product/recover',
+                path: '${self:custom.paths.admin}product/recover',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

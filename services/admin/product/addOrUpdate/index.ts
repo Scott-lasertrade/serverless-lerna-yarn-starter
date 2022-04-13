@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'product/add-or-update',
+                path: '${self:custom.paths.admin}product/add-or-update',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

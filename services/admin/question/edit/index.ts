@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'put',
-                path: 'question/{qId}/edit',
+                path: '${self:custom.paths.admin}question/{qId}/edit',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

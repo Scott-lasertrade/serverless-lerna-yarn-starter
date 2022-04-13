@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'put',
-                path: 'usage-type/add',
+                path: '${self:custom.paths.admin}usage-type/add',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

@@ -1,0 +1,9 @@
+{
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "body": {
+        "listing_id": 1,
+        "account_id": 1
+    }
+}

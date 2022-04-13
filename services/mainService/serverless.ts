@@ -24,6 +24,11 @@ const serverlessConfiguration: AWS = {
 
     custom: {
         ...SharedConfig,
+        paths: {
+            admin: '',
+            protected: '',
+            public: '',
+        },
         output: {
             file: 'serverless-config.json',
         },

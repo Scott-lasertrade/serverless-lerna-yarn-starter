@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'listing/add-or-update',
+                path: '${self:custom.paths.protected}listing/add-or-update',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

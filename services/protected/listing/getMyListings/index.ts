@@ -8,7 +8,7 @@ export default {
         {
             http: {
                 method: 'get',
-                path: 'listing/list/by-account/{aId}',
+                path: '${self:custom.paths.protected}listing/list/by-account/{aId}',
                 cors: customCors,
                 authorizer: 'aws_iam',
             },

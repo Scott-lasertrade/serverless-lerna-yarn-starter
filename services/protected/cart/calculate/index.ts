@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'cart/calculate',
+                path: '${self:custom.paths.protected}cart/calculate',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

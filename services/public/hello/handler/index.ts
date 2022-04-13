@@ -8,7 +8,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'public/hello',
+                path: '${self:custom.paths.public}hello',
                 cors: customCors,
             },
         },

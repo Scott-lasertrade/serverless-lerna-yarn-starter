@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'user/suspend',
+                path: '${self:custom.paths.admin}user/suspend',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

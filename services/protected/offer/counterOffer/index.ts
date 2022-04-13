@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'put',
-                path: 'protected/offer/counterOffer/{id}',
+                path: '${self:custom.paths.protected}offer/counterOffer/{id}',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

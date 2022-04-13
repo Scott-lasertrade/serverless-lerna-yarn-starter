@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'listing/{id}/images/update',
+                path: '${self:custom.paths.protected}listing/{id}/images/update',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

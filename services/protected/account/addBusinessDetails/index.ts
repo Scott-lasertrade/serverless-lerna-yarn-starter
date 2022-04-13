@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'put',
-                path: 'account/{accountId}/add-business-details',
+                path: '${self:custom.paths.protected}account/{accountId}/add-business-details',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

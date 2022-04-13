@@ -10,6 +10,11 @@ const serverlessConfiguration: AWS = {
     configValidationMode: 'error',
     custom: {
         ...SharedConfig,
+        paths: {
+            admin: '',
+            protected: '',
+            public: '',
+        },
         seed: {
             incremental: {
                 enabled: true,

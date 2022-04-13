@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'put',
-                path: 'listing/{id}/add-report-ticket',
+                path: '${self:custom.paths.protected}listing/{id}/add-report-ticket',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

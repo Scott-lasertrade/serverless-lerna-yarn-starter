@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'cart/transaction/create',
+                path: '${self:custom.paths.protected}cart/transaction/create',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

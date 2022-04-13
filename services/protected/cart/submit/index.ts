@@ -9,7 +9,7 @@ export default {
         {
             http: {
                 method: 'post',
-                path: 'cart/submit',
+                path: '${self:custom.paths.protected}cart/submit',
                 cors: customCors,
                 authorizer: 'aws_iam',
                 request: {

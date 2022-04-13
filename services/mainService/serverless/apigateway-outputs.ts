@@ -35,5 +35,14 @@ const APIGWOutputs = {
             Name: '${self:provider.stage}-PROTECTED-API-ROOT',
         },
     },
+    ApiGatewayPublicResourceId: {
+        Description: 'Shared ApiGateway public resource Id',
+        Value: {
+            Ref: 'PublicPartPath',
+        },
+        Export: {
+            Name: '${self:provider.stage}-PUBLIC-API-ROOT',
+        },
+    },
 };
 export default APIGWOutputs;
