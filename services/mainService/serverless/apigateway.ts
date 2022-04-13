@@ -49,7 +49,7 @@ const APIGWResources = {
                 Ref: 'SharedApiGateway',
             },
             ValidateRequestBody: true,
-            ValidateRequestParameters: true,
+            ValidateRequestParameters: false,
         },
     },
 };

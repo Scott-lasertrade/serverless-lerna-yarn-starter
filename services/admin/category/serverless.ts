@@ -26,6 +26,9 @@ const serverlessConfiguration: AWS = {
             disableForkTsChecker: true,
             concurrency: 2,
         },
+        'serverless-disable-request-validators': {
+            action: 'delete',
+        },
     },
     package: {
         individually: true,
@@ -34,7 +37,7 @@ const serverlessConfiguration: AWS = {
         'serverless-bundle',
         'serverless-iam-roles-per-function',
         'serverless-seed',
-        'serverless-reqvalidator-plugin',
+        'serverless-disable-request-validators',
     ],
     provider: {
         name: 'aws',
@@ -59,6 +62,22 @@ const serverlessConfiguration: AWS = {
     },
     // import the function via paths
     functions: functions,
+    resources: {
+        Resources: {
+            ApiGatewayMethodCategoryAddDashorDashupdatePost: {
+                Type: 'AWS::ApiGateway::Method',
+                Properties: {
+                    RequestValidatorId: '${self:custom.API.VALIDATOR}',
+                },
+            },
+            ApiGatewayMethodCategoryDeletePost: {
+                Type: 'AWS::ApiGateway::Method',
+                Properties: {
+                    RequestValidatorId: '${self:custom.API.VALIDATOR}',
+                },
+            },
+        },
+    },
 };
 
 module.exports = serverlessConfiguration;
