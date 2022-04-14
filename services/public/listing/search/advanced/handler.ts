@@ -156,7 +156,7 @@ const task = async (event) => {
     const max = event.body.max;
     const orderBy = event.body.orderBy;
     const orderDescending = event.body.orderDescending;
-    const lastId = event.body.lastId;
+    const lastId = event.body.lastId ?? 0;
     const previousPage = event.body.previousPage;
     const limit = event.body.limit;
     const showOutOfStock = event.body.showOutOfStock;
@@ -165,7 +165,7 @@ const task = async (event) => {
 
     console.log('Searching against: ', searchTerm);
     const performAdvancedSearch = async (searchQuery: string) => {
-        let parameterList: any[] = [];
+        let parameterList: string[] = [];
         const paginationOrder = buildRowPaginationOrderBy(
             orderBy,
             orderDescending,
@@ -231,6 +231,7 @@ const task = async (event) => {
 
         parameterList.push(lastId);
         parameterList.push(limit);
+        console.log(parameterList, query);
 
         return (await dbConn.query(query, parameterList)).map((res) => {
             console.log(res);
